@@ -91,121 +91,69 @@
   </button>
 </div>
 
-<div class="grid gap-2 place-content-center lg:mt-10 md:mt-8 sm:mt-7">
+<!-- Project -->
+<div class="grid gap-2 place-content-center lg:mt-10 md:mt-8 sm:mt-7 w-full mt-5">
   <div class="text-center">
     <h1 class="font-medium leading-tight lg:text-5xl md:text-2xl sm:text:xl text-sky-600">PROJECT OBJECTIVES</h1>
     <hr>
   </div>
-
-  <div class="flex justify-around w-[80rem]">
-
-    <div class="flex justify-center hover:animate-pulse">
-      <div class="flex justify-center">
-      <div class="rounded-lg shadow-lg bg-white w-[18rem]">
-        <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-          <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" alt=""/>
-        </a>
-        <div class="p-6">
-          <h5 class="text-gray-900 text-xl font-medium mb-2">Project 1</h5>
-          <p class="text-gray-700 text-base mb-4 text-justify">
-            Coastal erosion trends and management strategies for region 1
-          </p>
-          <div class="flex justify-end  border">
-            <a href="/dashboard" class="text-blue-600 motion-safe:hover:scale-110">readmore...</a>
-          </div>  
-        </div>
-      </div>
-      </div>
-    </div>
-
-    <div class="flex justify-center">
-      <div class="flex justify-center hover:animate-pulse">
-      <div class="rounded-lg shadow-lg bg-white w-[18rem]">
-        <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-          <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" alt=""/>
-        </a>
-        <div class="p-6">
-          <h5 class="text-gray-900 text-xl font-medium mb-2">Project 1</h5>
-          <p class="text-gray-700 text-base mb-4 text-justify">
-            Coastal erosion trends and management strategies for region 1
-          </p>
-          <div class="flex justify-end  border">
-            <a href="/dashboard" class="text-blue-600">readmore...</a>
-          </div>  
-        </div>
-      </div>
-      </div>
-    </div>
-
-    <div class="flex justify-center">
-      <div class="flex justify-center hover:animate-pulse">
-      <div class="rounded-lg shadow-lg bg-white w-[18rem]">
-        <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-          <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" alt=""/>
-        </a>
-        <div class="p-6">
-          <h5 class="text-gray-900 text-xl font-medium mb-2">Project 1</h5>
-          <p class="text-gray-700 text-base mb-4 text-justify">
-            Coastal erosion trends and management strategies for region 1
-          </p>
-          <div class="flex justify-end  border">
-            <a href="/dashboard" class="text-blue-600">readmore...</a>
-          </div>  
-        </div>
-      </div>
-      </div>
-    </div>
-
-    <div class="flex justify-center">
-      <div class="flex justify-center hover:animate-pulse">
-      <div class="rounded-lg shadow-lg bg-white w-[18rem]">
-        <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-          <img class="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" alt=""/>
-        </a>
-        <div class="p-6">
-          <h5 class="text-gray-900 text-xl font-medium mb-2">Project 1</h5>
-          <p class="text-gray-700 text-base mb-4 text-justify">
-            Coastal erosion trends and management strategies for region 1
-          </p>
-          <div class="flex justify-end  border">
-            <a href="/dashboard" class="text-blue-600">readmore...</a>
-          </div>  
-        </div>
-      </div>
-      </div>
-    </div>
-
-  </div>
-
 </div>
-<!-- 
+
+
+<div class="flex justify-evenly w-full mt-5 bg-stone-100 py-8">
+    <!-- <div class="max-w-sm overflow-hidden rounded-lg bg-white shadow-md hover:font-normal duration-200 hover:scale-105 hover:shadow-lg cursor-pointer">
+      <div class="p-5 flex items-center">
+        <p class="text-medium mb-2 text-gray-700 text-justify">
+          (1) Provide knowledge know-how Region 1 HEI researchers on coastal erosion research 
+          (2) Establish the trends and possible causes of erosion aling the coasts of Region 1
+          (3) Identify hotspots of erosion and recommend management options that can be considered by the LGU
+        </p>
+      </div>
+    </div>
+    <div class="max-w-sm overflow-hidden rounded-xl bg-white shadow-md duration-200  hover:font-normal hover:scale-105 hover:shadow-lg cursor-pointer">
+      <div class="p-5 flex items-center">
+        <p class="text-medium mb-2 py-5 text-gray-700 text-justify">
+          Develop an integrated model to assess and predict coastal flooding due to the combined effects of river swelling and storm surges which will serve as a basis
+          for sustainable and integrated coastal flood management
+        </p>
+      </div>
+    </div>
+    <div class="max-w-sm overflow-hidden rounded-xl bg-white shadow-md duration-200 hover:font-normal hover:scale-105 hover:shadow-lg cursor-pointer">
+      <div class="p-5 flex items-center">
+        <p class="text-medium mb-2 py-5 text-gray-700 text-justify">
+          Establish strategies for coastal protection and climate change mitigation using science-based engineering solutions
+        </p>
+      </div>
+    </div>
+    <div class="max-w-sm overflow-hidden rounded-xl bg-white shadow-md duration-200 hover:font-normal hover:scale-105 hover:shadow-lg cursor-pointer">
+      <div class="p-5 flex items-center">
+        <p class="text-medium mb-2 py-5 text-gray-700 text-justify">Formulate policies that will enhance that resiliency of coastal communities to flooding and storm surge</p>
+      </div>
+    </div> -->
+    <div class="shrink-0">
+      <img src="img/coaster.png" class="duration-200 hover:scale-105 cursor-pointer object-fill w-[20rem] h-[20rem]" alt="#">
+    </div>
+</div>
+
+<!-- /Project -->
+
 <div class="grid gap-2 place-content-center mt-10">
   <div class="text-center">
-    <h1 class="font-medium leading-tight text-5xl mt-0 mb-2 text-sky-600">LATEST UPDATES</h1>
+    <h1 class="font-medium leading-tight lg:text-5xl md:text-2xl sm:text:xl text-sky-600">LATEST UPDATES</h1>
     <hr class="">
   </div>
-  <div class="text-center w-[60rem]">
-    <p class="">
-      The COASTER aims to spearhead the development of technologies and innovation to mitigate and manage coastal disasters and risks in the Philippines. This project is funded by DOST-PCIEERD.
-    </p>
-     </div>
 </div>
 
 <div class="grid gap-2 place-content-center mt-10">
   <div class="text-center">
-    <h1 class="font-medium leading-tight text-5xl mt-0 mb-2 text-sky-600">ABOUT US</h1>
+    <h1 class="font-medium leading-tight lg:text-5xl md:text-2xl sm:text:xl text-sky-600">ABOUT US</h1>
     <hr class="">
   </div>
-  <div class="text-center w-[60rem]">
-    <p class="">
-      The COASTER aims to spearhead the development of technologies and innovation to mitigate and manage coastal disasters and risks in the Philippines. This project is funded by DOST-PCIEERD.
-    </p>
-     </div>
 </div>
 
 <div class="grid gap-2 place-content-center mt-10">
   <div class="text-center">
-    <h1 class="font-medium leading-tight text-5xl mt-0 mb-2 text-sky-600">COOP AGENCIES</h1>
+    <h1 class="font-medium leading-tight lg:text-5xl md:text-2xl sm:text:xl text-sky-600  ">COOP AGENCIES</h1>
     <hr class="">
   </div>
   <div class="flex justify-center">
@@ -218,8 +166,8 @@
       <div class="shrink-0">
           <a href="https://www.mmsu.edu.ph/"><img src="img/mmsulogo.png" class="object-fill w-20 h-20" alt="#"></a>
       </div>
-    </div>
-</div> -->
+  </div>
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>

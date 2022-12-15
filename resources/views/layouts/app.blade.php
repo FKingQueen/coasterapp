@@ -51,21 +51,21 @@
 <body>
     <div id="app">
 
-            <!-- Navbar start -->
-            <nav id="navbar" class="fixed top-0 z-40 flex w-full flex-row justify-between bg-sky-900 lg:px-20 md:px-3 sm:px-1 border-b-4 border-sky-600">
+        <!-- Navbar start -->
+        <nav id="navbar" class="fixed top-0 z-40 flex w-full flex-row justify-between bg-slate-400 lg:px-20 md:px-3 sm:px-1 border-b-4 border-sky-600">
             <div class="px-5 xl:px-12 py-2 flex w-full items-center">
                 <div class="items-center flex space-x-3">
                     <div class="shrink-0">
-                        <a href="/"><img src="img/coaster.png" class="object-fill w-10 h-10" alt="#"></a>
+                        <a href="/dashboard"><img src="img/coaster.png" class="duration-200 hover:scale-110 cursor-pointer object-fill w-10 h-10" alt="#"></a>
                     </div>
                     <div class="font-sans pointer tracking-widest text-white font-semibold text-[13px] hidden md:flex">
-                        <a href="/dashboard" class="flex text-white-600 hover:text-cyan-500
-                    cursor-pointer transition-colors duration-300">
+                        <a href="/dashboard" class="flex 
+                    cursor-pointer text-transparent bg-clip-text font-bold text-sky-900 hover:bg-gradient-to-r hover:from-sky-900 hover:to-cyan-500">
                         COASTAL ENGINEERING, MANAGEMENT RESEARCH <br> & DEVELOPMENT CENTER
                         </a>
                     </div>
                     <div class="font-sans pointer tracking-widest text-white text-[15px] font-semibold flex md:hidden">
-                        <a href="/dashboard" class="flex text-white-600 hover:text-cyan-500
+                        <a href="/dashboard" class="flex text-sky-900 hover:text-white
                     cursor-pointer transition-colors duration-300">
                             COASTER
                         </a>
@@ -76,10 +76,10 @@
                 <ul class="hidden lg:flex text-white px-5 mx-auto text-[9px] font-semibold font-heading space-x-8 ">
                     <!-- About -->
                     <div class="relative" x-data="{ open: false }">
-                        <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white-600 hover:text-cyan-500
+                        <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-sky-900 hover:text-white
                         cursor-pointer transition-colors duration-300" aria-expanded="false">
                             ABOUT
-                            <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-gray-400 h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-sky-900 h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                             </svg>
                         </button>
@@ -96,7 +96,7 @@
 
                             <div class="overflow-hidden shadow-lg ring-1 ring-black  ring-opacity-5">
                                 <div class="relative grid gap-6 bg-stone-700 border-x-4 px-5 py-6 sm:gap-8 sm:p-8">
-                                    <a href="#" class="-m-3 flex items-start p-2 hover:bg-cyan-700">
+                                    <a href="#" class="-m-3 flex items-start p-2  hover:bg-cyan-700">
                                         <div class="ml-4">
                                             <p class="text-[12px] font-semibold font-medium text-gray-100">ABOUT</p>
                                         </div>
@@ -113,10 +113,10 @@
                     <!-- /About -->
                     <!-- Services -->
                     <div class="relative" x-data="{ open: false }">
-                        <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white-600 hover:text-cyan-500
+                        <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-sky-900 hover:text-white
                         cursor-pointer transition-colors duration-300" aria-expanded="false">
                             SERVICES
-                            <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-gray-400 h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-sky-900 h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                             </svg>
                         </button>
@@ -155,10 +155,10 @@
                     <!-- /Services -->
                     <!-- Project -->
                     <div class="relative" x-data="{ open: false }">
-                        <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white-600 hover:text-cyan-500
+                        <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-sky-900 hover:text-white
                         cursor-pointer transition-colors duration-300" aria-expanded="false">
                             PROJECT
-                            <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-gray-400 h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-sky-900 h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                             </svg>
                         </button>
@@ -206,18 +206,9 @@
                 
                 </div>
             </div>
-            <button id="btnSidebarToggler" type="button" class=" text-2xl lg:invisible md:visible sm:visible text-white hover:text-gray-200">
-                <svg id="navClosed" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="h-8 w-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                <svg id="navOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="hidden h-8 w-8">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
 
-            <div class="flex items-center justify-center">
+            <!-- Search -->
+            <!-- <div class="flex items-center justify-center">
                 <div class=" rounded-lg bg-gray-200">
                     <div class="flex">
                     <div class="flex w-10 items-center justify-center rounded-tl-lg rounded-bl-lg border-r border-gray-200 bg-white p-4">
@@ -229,7 +220,22 @@
                     <button class="bg-blue-600 p-1 rounded-tr-lg rounded-br-lg text-white hover:bg-blue-800 transition-colors">Search</button>
                     </div>
                 </div>
-                </div>
+            </div> -->
+            <!-- /Search -->
+
+            <!-- Sidebar -->
+            <button id="btnSidebarToggler" type="button" class=" text-2xl lg:invisible md:visible sm:visible text-white hover:text-gray-200">
+                <svg id="navClosed" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="h-8 w-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <svg id="navOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="hidden h-8 w-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <!-- /Sidebar -->
+
         </nav>
         <!-- Navbar end -->
 
@@ -273,7 +279,23 @@
         <main>
             @yield('content')
         </main>
+
 <!-- 
+    <a class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg  focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mr-1.5" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+      Link with href
+    </a>
+    <button class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg  focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      Button with data-bs-target
+    </button>
+
+    <div class="offcanvas offcanvas-start fixed bottom-0 flex flex-col max-w-full bg-white invisible bg-clip-padding shadow-sm outline-none transition duration-300 ease-in-out text-gray-700 top-0 left-0 border-none w-96" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header flex items-center justify-between p-4">
+        <h5 class="offcanvas-title mb-0 leading-normal font-semibold" id="offcanvasExampleLabel">Offcanvas</h5>
+        <button type="button" class="btn-close box-content w-4 h-4 p-2 -my-5 -mr-2 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+    </div> -->
+
+
         <footer class="bg-sky-900">
             <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
@@ -366,7 +388,7 @@
                 © 2022 Comany Name
                 </p>
             </div>
-        </footer> -->
+        </footer>
     </div>
 </body>
 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
