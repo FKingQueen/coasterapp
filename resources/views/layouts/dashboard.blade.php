@@ -90,6 +90,15 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<!-- Latest Update -->
+<div class="grid gap-2 place-content-center mt-10">
+  <div class="text-center">
+    <h1 class="font-medium leading-tight lg:text-5xl md:text-2xl sm:text:xl text-sky-600">LATEST UPDATES</h1>
+    <hr class="">
+  </div>
+</div>
+
+<!-- /Latest Update -->
 
 <!-- Project -->
 <div class="grid gap-2 place-content-center lg:mt-10 md:mt-8 sm:mt-7 w-full mt-5">
@@ -98,58 +107,123 @@
     <hr>
   </div>
 </div>
+<div class="bg-sky-50 w-full lg:h-[40rem] grid grid-cols-1 content-center mt-2">
+  <div class="flex justify-center w-full">
+    <div class="w-3/4 lg:w-full md:flex justify-center gap-4">
+      <div class="flex justify-center ">
+        <div class="rounded-lg shadow-lg bg-white max-w-xs  grid-cols-3 gap-4">
+          <a href="#!" class="">
+            <img class="rounded-t-lg " src="img/project1.png" alt=""/>
+          </a>
+          <div class="p-6 grid grid-cols-1 gap-4">
+            <div>
+              <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 1</h5>
+            </div>
+            <div>
+              <p class="text-gray-700 text-base mb-4 text-justify whitespace-normal">
+                Coastal erosion trend and management strategies for Region 1
+              </p>
+            </div>
+          </div>
+          <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <div class="rounded-lg shadow-lg bg-white max-w-xs">
+          <a href="#!">
+            <img class="rounded-t-lg" src="img/project2.png" alt=""/>
+          </a>
+          <div class="p-6 grid grid-cols-1 gap-4">
+            <div>
+              <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 2</h5>
+            </div>
+            <div>
+              <p class="text-gray-700 text-base mb-4 text-justify whitespace-normal">
+                Assessment, Monitoring, and Prediction of Coastal Flodding of Seelcted Municipalities in Region 1
+              </p>
+            </div>
+          </div>
+          <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
+        </div>
+      </div>
 
 
-<div class="flex justify-evenly w-full mt-5 bg-stone-100 py-8">
-    <!-- <div class="max-w-sm overflow-hidden rounded-lg bg-white shadow-md hover:font-normal duration-200 hover:scale-105 hover:shadow-lg cursor-pointer">
-      <div class="p-5 flex items-center">
-        <p class="text-medium mb-2 text-gray-700 text-justify">
-          (1) Provide knowledge know-how Region 1 HEI researchers on coastal erosion research 
-          (2) Establish the trends and possible causes of erosion aling the coasts of Region 1
-          (3) Identify hotspots of erosion and recommend management options that can be considered by the LGU
-        </p>
+      <div class="flex justify-center">
+        <div class="rounded-lg shadow-lg bg-white max-w-xs">
+          <a href="#!">
+            <img class="rounded-t-lg" src="img/project3.png" alt=""/>
+          </a>
+          <div class="p-6 grid grid-cols-1 gap-4">
+            <div>
+              <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 3</h5>
+            </div>
+            
+            <div>
+              <p class="text-gray-700 text-base mb-4 text-justify">
+                Development of Sceiened-Based Engineering Approach to Coastal Protection in Region 1
+              </p>
+            </div>
+          </div>
+          <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
+        </div>
+        
       </div>
-    </div>
-    <div class="max-w-sm overflow-hidden rounded-xl bg-white shadow-md duration-200  hover:font-normal hover:scale-105 hover:shadow-lg cursor-pointer">
-      <div class="p-5 flex items-center">
-        <p class="text-medium mb-2 py-5 text-gray-700 text-justify">
-          Develop an integrated model to assess and predict coastal flooding due to the combined effects of river swelling and storm surges which will serve as a basis
-          for sustainable and integrated coastal flood management
-        </p>
-      </div>
-    </div>
-    <div class="max-w-sm overflow-hidden rounded-xl bg-white shadow-md duration-200 hover:font-normal hover:scale-105 hover:shadow-lg cursor-pointer">
-      <div class="p-5 flex items-center">
-        <p class="text-medium mb-2 py-5 text-gray-700 text-justify">
-          Establish strategies for coastal protection and climate change mitigation using science-based engineering solutions
-        </p>
-      </div>
-    </div>
-    <div class="max-w-sm overflow-hidden rounded-xl bg-white shadow-md duration-200 hover:font-normal hover:scale-105 hover:shadow-lg cursor-pointer">
-      <div class="p-5 flex items-center">
-        <p class="text-medium mb-2 py-5 text-gray-700 text-justify">Formulate policies that will enhance that resiliency of coastal communities to flooding and storm surge</p>
-      </div>
-    </div> -->
-    <div class="shrink-0">
-      <img src="img/coaster.png" class="duration-200 hover:scale-105 cursor-pointer object-fill w-[20rem] h-[20rem]" alt="#">
-    </div>
-</div>
 
-<!-- /Project -->
-
-<div class="grid gap-2 place-content-center mt-10">
-  <div class="text-center">
-    <h1 class="font-medium leading-tight lg:text-5xl md:text-2xl sm:text:xl text-sky-600">LATEST UPDATES</h1>
-    <hr class="">
+      <div class="flex justify-center">
+        <div class="rounded-lg shadow-lg bg-white max-w-xs">
+          <a href="#!">
+            <img class="rounded-t-lg" src="img/project4.png" alt=""/>
+          </a>
+          <div class="p-4 grid grid-cols-1 gap-2 ">
+            <div>
+              <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 4</h5>
+            </div>
+            <div>
+              <p class="text-gray-700 text-base mb-4 text-justify">
+                Enhancing Coastal Design and Infrastructure Intervention Through the Establishment of Wave Testing Facility
+              </p>
+            </div>
+          </div>
+            <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
+
+<!-- /Project -->
+
+<!-- About Us -->
 <div class="grid gap-2 place-content-center mt-10">
   <div class="text-center">
     <h1 class="font-medium leading-tight lg:text-5xl md:text-2xl sm:text:xl text-sky-600">ABOUT US</h1>
     <hr class="">
   </div>
 </div>
+
+
+<div class="flex justify-center w-full mt-5">
+  <div >
+    <div class="xl:w-[90rem] lg:w-[50rem] sm:w-[10rem] text-justify indent-8">
+        The Coastal Engineering Research Center or CoastER Center is the country’s first coastal engineering and management research and development center and 
+        the hub of innovations for coastal resiliency. This facility will spur the development of innovations that address coastal erosion, development construction 
+        materials for coastal protection, policies, and guidelines intended to protect resources from coastal flooding and improve the lives of people in coastal 
+        communities. It will also bolster the capability of Filipino engineers towards coastal engineering leading to the development of a master’s degree for coastal 
+        engineering.
+    </div>
+    <hr class="my-6 border-sky-300" />
+    <div class="xl:w-[90rem] lg:w-[50rem] sm:w-[10rem] text-justify indent-8">
+        The COASTER aims to spearhead the development of technologies and innovation to mitigate and manage coastal disasters and risks. The overall goal of the 
+        center is to take the lead in coastal science and engineering studies to better undertand the magniture of certain process and hazards and their impacts
+        on the maritime environment including tidal deltas and low-lying lands.
+    </div>
+  </div>
+  
+</div>
+
+<!-- /About Us -->
 
 <div class="grid gap-2 place-content-center mt-10">
   <div class="text-center">
@@ -161,10 +235,22 @@
           <a href="https://www.dost.gov.ph/"><img src="img/DOST.png" class="object-fill w-20 h-20" alt="#"></a>
       </div>
       <div class="shrink-0">
-          <a href="https://www.dost.gov.ph/"><img src="img/PCIEERD.png" class="object-fill w-20 h-20" alt="#"></a>
+          <a href="https://www.dost.gov.ph/"><img src="img/MMSU.png" class="object-fill w-20 h-20" alt="#"></a>
       </div>
       <div class="shrink-0">
-          <a href="https://www.mmsu.edu.ph/"><img src="img/mmsulogo.png" class="object-fill w-20 h-20" alt="#"></a>
+          <a href="https://www.mmsu.edu.ph/"><img src="img/KYOTO.png" class="object-fill w-20 h-20" alt="#"></a>
+      </div>
+      <div class="shrink-0">
+          <a href="https://www.mmsu.edu.ph/"><img src="img/DILIMAN.png" class="object-fill w-20 h-20" alt="#"></a>
+      </div>
+      <div class="shrink-0">
+          <a href="https://www.mmsu.edu.ph/"><img src="img/DMMMSU.png" class="object-fill w-20 h-20" alt="#"></a>
+      </div>
+      <div class="shrink-0">
+          <a href="https://www.mmsu.edu.ph/"><img src="img/CIVIL.png" class="object-fill w-20 h-20" alt="#"></a>
+      </div>
+      <div class="shrink-0">
+          <a href="https://www.mmsu.edu.ph/"><img src="img/DPWH.png" class="object-fill w-20 h-20" alt="#"></a>
       </div>
   </div>
 </div>

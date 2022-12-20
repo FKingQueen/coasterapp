@@ -52,20 +52,22 @@
     <div id="app">
 
         <!-- Navbar start -->
-        <nav id="navbar" class="fixed top-0 z-40 flex w-full flex-row justify-between bg-[#0d2247] lg:px-20 md:px-3 sm:px-1 border-b-4 border-cyan-900">
+        <nav id="navbar" class="fixed top-0 z-40 flex w-full flex-row justify-between bg-slate-400 lg:px-20 md:px-3 sm:px-1 border-b-4 border-cyan-900">
             <div class="px-5 xl:px-12 py-2 flex w-full items-center">
                 <div class="items-center flex space-x-3">
-                    <div class="shrink-0 hidden md:flex">
-                        <a href="/dashboard"><img src="img/coaster.png" class="duration-200 hover:scale-110 cursor-pointer object-fill w-10 h-10" alt="#"></a>
+                    <div class="shrink-0">
+                        <a href="/dashboard"><img src="img/coastername.png" class="duration-200 hover:scale-110 cursor-pointer object-fill w-10 h-10" alt="#"></a>
                     </div>
                     <div class="font-sans pointer tracking-widest text-white font-semibold text-[13px] hidden md:flex">
                         <a href="/dashboard" class="flex 
-                    cursor-pointer text-transparent bg-clip-text font-bold text-white hover:bg-gradient-to-r hover:from-sky-900 hover:to-cyan-500">
+                    cursor-pointer text-transparent bg-clip-text font-bold text-sky-900 hover:bg-gradient-to-r hover:from-sky-900 hover:to-cyan-500">
                         COASTAL ENGINEERING, MANAGEMENT RESEARCH <br> & DEVELOPMENT CENTER
                         </a>
                     </div>
                     <div class="font-sans pointer tracking-widest text-white text-[15px] font-semibold flex md:hidden">
-                            <a href="/dashboard"><img src="img/coastername.png" class="duration-200 hover:scale-110 cursor-pointer object-fill w-32" alt="#"></a>
+                        <a href="/dashboard" class="flex text-sky-900 hover:text-white
+                    cursor-pointer transition-colors duration-300">
+                            COASTER
                         </a>
                     </div>
                 </div>
@@ -74,10 +76,10 @@
                 <ul class="hidden lg:flex text-white px-5 mx-auto text-[9px] font-semibold font-heading space-x-8 ">
                     <!-- About -->
                     <div class="relative" x-data="{ open: false }">
-                        <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white hover:text-white
+                        <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-sky-900 hover:text-white
                         cursor-pointer transition-colors duration-300" aria-expanded="false">
                             ABOUT
-                            <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-white h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-sky-900 h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                             </svg>
                         </button>
@@ -111,10 +113,10 @@
                     <!-- /About -->
                     <!-- Services -->
                     <div class="relative" x-data="{ open: false }">
-                        <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white hover:text-white
+                        <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-sky-900 hover:text-white
                         cursor-pointer transition-colors duration-300 " aria-expanded="false">
                             SERVICES
-                            <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-white h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-sky-900 h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                             </svg>
                         </button>
@@ -153,10 +155,10 @@
                     <!-- /Services -->
                     <!-- Project -->
                     <div class="relative" x-data="{ open: false }">
-                        <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white hover:text-white
+                        <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-sky-900 hover:text-white
                         cursor-pointer transition-colors duration-300" aria-expanded="false">
                             PROJECT
-                            <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-white h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-sky-900 h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                             </svg>
                         </button>
@@ -173,22 +175,22 @@
 
                             <div class="overflow-hidden shadow-lg ring-1 ring-black  ring-opacity-5">
                                 <div class="relative grid gap-6 bg-stone-700 border-x-4 px-5 py-6 sm:gap-8 sm:p-8">
-                                    <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                    <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                         <div class="">
                                             <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">COASTAL EROSION TRENDS AND MANAGEMENT STRATEGIES FOR REGION 1</p>
                                         </div>
                                     </a>
-                                    <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                    <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                         <div class="">
                                             <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">ASSESSMENT MONITORING, AND PREDICTION OF COASTAL FLOODING OF SELECTED MUNICIPALITIES IN REGION 1</p>
                                         </div>
                                     </a>
-                                    <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                    <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                         <div class="">
                                             <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">DEVELOPMENT OF SCIENCE-BASED ENGINEERING APPROACH TO COASTAL PROTECTION IN REGION 1</p>
                                         </div>
                                     </a>
-                                    <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                    <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                         <div class="">
                                             <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">ENHANCING COASTAL DESIGN AND INFRASTRUCTURE INTERVENTION THROUGH THE ESTABLISHMENT OF WAVE TESTING FACILITY</p>
                                         </div>
