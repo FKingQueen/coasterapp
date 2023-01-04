@@ -132,7 +132,7 @@
         </nav>
         <!-- Navbar end -->
         <div style="margin-top: 75px;" class=" w-full flex justify-center {{ route('login') == url()->current() || route('register') == url()->current() ? 'hidden' : ''}}">
-            <div class="w-2/4 border">
+            <div class="w-2/4 ">
                 <main>
                     @yield('content')
                 </main>

@@ -1,34 +1,44 @@
 @extends('layouts.app')
 
 @section('content')
-<div class=" w-full">
-    <div class="border-b-2 mb-3 border-cyan-600">
+<div class=" w-full bg-stone-100">
+    <div class="border-b-2 mb-3 bg-white border-cyan-600">
         <p class="font-bold text-[2vw] ml-2 text-stone-600" >
             Coaster Articles
         </p>
     </div>
-    <div class="flex justify-center">
-        <div class="border w-3/4 flex">
-            <div class="w-2/4 ">
-                <img src="img/coaster_banner.jpg" class="object-cover h-80 rounded-l-lg">
+    @foreach($articles as $article)
+    <div class="flex justify-center ">
+        <div class="w-5/6 flex border-b-4 mb-3 border-cyan-600">
+            <div class="w-2/4 bg-slate-50 flex justify-center">
+                <img src="img/DMMMSU.png" class="object-cover z-1 h-72 rounded-l-lg">
             </div>
-            <div class="w-2/4 p-2">
+            <div class="w-2/4 p-2 bg-white">
                 <div>
                     <p class="font-['Open_Sans'] font-bold text-[1.2vw]">
-                        Sample
+                    {{ Illuminate\Support\Str::limit($article->title, 50) }}
                     </p>
                     <p class=" text-xs text-gray-700 text-opacity-50 ">
-                    Sample
+                        {{$article->created_at}}
                     </p>
                 </div>
-                <div>
-                    <p class="text-[1vw]">
-                        Sample
+                <div class="mt-5">
+                    <p class="text-[.8vw]">
+                        {!! Illuminate\Support\Str::limit($article->article, 160) !!}
                     </p>
                 </div>
+            </div>
+            <div class="w-1/12 p-2 bg-white border-l-2 border-gray-300 grid grid-cols-1 gap-4 place-content-evenly">
+            <button class="">
+
+            </button>
+            <button class="bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 ...">
+            
+            </button>
             </div>
         </div>
     </div>
+    @endforeach
 </div>
 
 @endsection
