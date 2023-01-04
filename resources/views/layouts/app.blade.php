@@ -16,6 +16,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- Text Editor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -45,6 +48,47 @@
             background: #1f2937;
             background-color: #1f2937;
         }
+        .animated {
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+
+		.animated.faster {
+			-webkit-animation-duration: 500ms;
+			animation-duration: 500ms;
+		}
+
+		.fadeIn {
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+		}
+
+		.fadeOut {
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity: 1;
+			}
+
+			to {
+				opacity: 0;
+			}
+		}
     </style>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -56,10 +100,14 @@
                 <div>
                     <h1 class="text-2xl font-bold bg-gradient-to-tr from-indigo-600 to-green-600 bg-clip-text text-transparent hover:cursor-pointer">Coaster Admin</h1>
                 </div>
-                <div>    
+                
+                <div class="flex w-[20vw] h-[2.1vw]">    
+                    <button onclick="openModal('create-article-modal')" class="transition rounded-lg w-full ease-in-out outline outline-offset-2 outline-2 hover:outline-cyan-700 hover:text-cyan-700 hover:scale-110 duration-400  hover:font-normal text-white">
+                    Create New Article
+                    </button>
                     <div class="flex items-center">
                         <div class="md:flex items-center hidden space-x-4 ml-8 lg:ml-12">
-                            <a class="text-white  hover:cursor-pointer hover:text-gray-300 " href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"> LOGOUT</a>
+                            <a class="text-white  hover:cursor-pointer hover:text-gray-300 font-sm" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"> LOGOUT</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
@@ -83,53 +131,120 @@
             <!-- /Sidebar -->
         </nav>
         <!-- Navbar end -->
-
-
-        <main id="mainS" style="margin-top: 50px;" class="{{ route('login') == url()->current() || route('register') == url()->current() ? 'hidden' : ''}}">
-            <!-- section hero -->
-            <section>
-                <div  class="bg-gray-100 sm:grid grid-cols-5 grid-rows-2 px-4 py-6 min-h-full lg:min-h-screen space-y-6 sm:space-y-0 sm:gap-4">
-
-                    <div class="col-span-4 flex items-center">
-                            @yield('content')
-                    </div>
-                    <div class="h-96 col-span-1 ">
-                        <div class="bg-white py-3 px-4 rounded-lg flex justify-around items-center ">
-                        <input type="text" placeholder="search" class=" bg-gray-100 rounded-md  outline-none pl-2 ring-indigo-700 w-full mr-2 p-2">
-                        <a href="">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor ">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg></span>
-                        </a>
-                        </div>
-                        <div class="bg-white  rounded-md">
-                            <div class="bg-white rounded-md list-none  text-center mt-1">
-                                <li class="{{ route('home') == url()->current() ? 'bg-cyan-700 text-white' : ''}} py-3 border-b-2 hover:shadow-[inset_25rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow] hover:text-white "><a href="#" class="list-none font-bold">ARTICLES</a></li>
-                                <li class="py-3 border-b-2 hover:shadow-[inset_25rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow] hover:text-white"><a href="#" class="list-none font-bold">PROJECT 1</a></li>
-                                <li class="py-3 border-b-2 hover:shadow-[inset_25rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow] hover:text-white"><a href="#" class="list-none font-bold">PROJECT 2</a></li>
-                                <li class="py-3 border-b-2 hover:shadow-[inset_25rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow] hover:text-white"><a href="#" class="list-none font-bold">PROJECT 3</a></li>
-                                <li class="py-3 border-b-2 hover:shadow-[inset_25rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow] hover:text-white"><a href="#" class="list-none font-bold">PROJECT 4</a></li>
-                                <li class="py-3 border-b-2 hover:shadow-[inset_25rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow] hover:text-white"><a href="#" class="list-none font-bold">RELATED</a></li>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+        <div style="margin-top: 75px;" class=" w-full flex justify-center {{ route('login') == url()->current() || route('register') == url()->current() ? 'hidden' : ''}}">
+            <div class="w-2/4 border">
+                <main>
+                    @yield('content')
+                </main>
+            </div>
+            <div class="w-1/4 border">
+        hello
+            </div>
+        </div>
         
         <main class="{{ route('login') == url()->current() || route('register') == url()->current() ? '' : 'hidden'}}">
             @yield('content')
         </main>
+
     </div>
+    
+    <!-- Create New Article -->
+	<div class="create-article-modal fixed w-full inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster" style="background: rgba(0,0,0,.7);">
+		<div class="border border-blue-500 shadow-lg modal-container bg-white w-2/4 md:max-w-11/12 mx-auto rounded-xl shadow-lg z-50 overflow-y-auto">
+			<div class="modal-content py-4 text-left px-6">
+				<!--Title-->
+				<div class="flex justify-between items-center pb-3">
+					<p class="text-2xl font-bold text-gray-500">New Article</p>
+					<div class="modal-close cursor-pointer z-50" onclick="modalClose('create-article-modal')">
+						<svg class="fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+							viewBox="0 0 18 18">
+							<path
+								d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+							</path>
+						</svg>
+					</div>
+				</div>
+				<!--Body-->
+                <form action="{{ route('createArticle') }}" method="POST">
+                    @csrf
+                    <div class="my-5 mr-5 ml-5 flex justify-center">
+                        <div id="add_caretaker_form" class="w-full">
+                            <div >
+                                <div class="">
+                                    <label for="title" class="text-md text-gray-600">Title</label>
+                                </div>
+                                <div class="">
+                                    <input type="text" id="title" autocomplete="off" name="title" class="p-2 w-full border-2 border-gray-300 mb-5 rounded-md" placeholder="Title">
+                                </div>
+                                <div class="">
+                                    <label for="article" class="text-md text-gray-600">Context</label>
+                                </div>
+                                <div>
+                                    <textarea name="editor" id="editor" cols="30" rows="10"></textarea>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--Footer-->
+                    <div class="flex justify-evenly pt-2 space-x-14">
+                        <button type="reset"
+                            class="px-4 bg-gray-200 p-3 rounded text-black hover:bg-gray-300 font-semibold" onclick="modalClose('create-article-modal')">Cancel
+                        </button>
+                        <button type="submit"
+                            class="px-4 bg-blue-500 p-3 ml-3 rounded-lg text-white hover:bg-teal-400" onclick="validate_form(document.getElementById('add_caretaker_form'))">Post
+                        </button>
+                    </div>
+                </form>
+			</div>
+		</div>
+	</div>
+    <!-- /Create New Article -->
+
+<!--  -->
 
 </body>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .then( editor => {
+                    console.log( editor );
+            } )
+            .catch( error => {
+                    console.error( error );
+            } );
+    </script>
+    <script>
+        all_modals = ['create-article-modal']
+        all_modals.forEach((modal)=>{
+            const modalSelected = document.querySelector('.'+modal);
+            modalSelected.classList.remove('fadeIn');
+            modalSelected.classList.add('fadeOut');
+            modalSelected.style.display = 'none';
+        })
+        const modalClose = (modal) => {
+            const modalToClose = document.querySelector('.'+modal);
+            modalToClose.classList.remove('fadeIn');
+            modalToClose.classList.add('fadeOut');
+            setTimeout(() => {
+                modalToClose.style.display = 'none';
+            }, 500);
+        }
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const navbar = document.getElementById("navbar");
-        mainS.style.top = 100 + "px";
-        console.log(navbar.clientHeight);
+        const openModal = (modal) => {
+            const modalToOpen = document.querySelector('.'+modal);
+            modalToOpen.classList.remove('fadeOut');
+            modalToOpen.classList.add('fadeIn');
+            modalToOpen.style.display = 'flex';
+        }
         
-    });
-</script>
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navbar = document.getElementById("navbar");
+            mainS.style.top = 100 + "px";
+            console.log(navbar.clientHeight);
+            
+        });
+    </script>
 </html>
