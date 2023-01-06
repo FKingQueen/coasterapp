@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use Illuminate\Support\Facades\File;
 
 class HomeController extends Controller
 {
@@ -29,11 +30,34 @@ class HomeController extends Controller
     }
     public function createArticle(Request $request)
     {
+
+        $request->validate([
+            'image' => 'required',
+        ]);
+
         $article =  new Article();
         $article->project_id = 1;
         $article->title = $request->title;
         $article->article = $request->editor;
         $res = $article->save();
+
+        $art = Article::find($article->id);
+        
+        if($request->hasfile('image'))
+        {
+            $dest = 'uploads/article/'.$art->image;
+            if(File::exists($dest))
+            {
+                File::delete($dest);
+            }
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = $art->id.'.'.$extension;
+            $file->move('uploads/article/', $filename);
+            $art->image = $filename;
+        }
+        $res = $art->update();
+
         return back();
     }
 }
