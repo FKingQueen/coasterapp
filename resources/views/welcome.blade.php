@@ -369,6 +369,70 @@
             <hr class="">
           </div>
         </div>
+        <div class="flex">
+            <div class="w-2/12 flex items-center">
+              <div class="w-full text-right">
+                <button onclick="prev()" class="p-3 rounded-full bg-white border-gray-700 shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div id="sliderContainer" class="w-10/12 overflow-hidden">
+              <ul id="slider" class="flex w-full transition-margin duration-700">
+                <li class="w-96">
+                  <div class="border rounded-lg p-4 h-full">
+                    <img class="rounded-t-lg h-52 w-full object-cover" src="img/project1.png" alt=""/>
+                  </div>
+                </li>
+                <li class="w-96">
+                  <div class="border rounded-lg p-4 h-full">
+                    <img class="rounded-t-lg h-52 w-full object-cover" src="img/project2.png" alt=""/>
+                  </div>
+                </li>
+                <li class="w-96">
+                  <div class="border rounded-lg p-4 h-full">
+                    <img class="rounded-t-lg h-52 w-full object-cover" src="img/project3.png" alt=""/>
+                  </div>
+                </li>
+                <li class="w-96">
+                  <div class="border rounded-lg p-4 h-full">
+                    <img class="rounded-t-lg h-52 w-full object-cover" src="img/project4.png" alt=""/>
+                  </div>
+                </li>
+                <li class="w-96">
+                  <div class="border rounded-lg p-4 h-full">
+                    <img class="rounded-t-lg h-52 w-full object-cover" src="img/project1.png" alt=""/>
+                  </div>
+                </li>
+                <li class="w-96">
+                  <div class="border rounded-lg p-4 h-full">
+                    <img class="rounded-t-lg h-52 w-full object-cover" src="img/project2.png" alt=""/>
+                  </div>
+                </li>
+                <li class="w-96">
+                  <div class="border rounded-lg p-4 h-full">
+                    <img class="rounded-t-lg h-52 w-full object-cover" src="img/project3.png" alt=""/>
+                  </div>
+                </li>
+                <li class="w-96">
+                  <div class="border rounded-lg p-4 h-full">
+                    <img class="rounded-t-lg h-52 w-full object-cover" src="img/project4.png" alt=""/>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="w-2/12 flex items-center">
+              <div class="w-full">
+                <button onclick="next()" class="p-3 rounded-full bg-white border-gray-700 shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+        </div>
 
         <!-- /Latest Update -->
 
@@ -528,6 +592,35 @@
         </div>
 
 </body>
+<script>
+  let sliderContainer = document.getElementById('sliderContainer');
+  let slider = document.getElementById('slider');
+  let cards = document.getElementsByTagName('li');
+
+  let elementsToShow = 3;
+
+  let sliderContainerWidth = sliderContainer.clientWidth;
+
+  let cardWidth = sliderContainerWidth/elementsToShow;
+
+  slider.style.width = cards.length*cardWidth+'px';
+
+  for(let index = 0; index < cards.length; index++) 
+  {
+    const element = cards[index];
+    element.style.width = cardWidth+'px';
+  }
+
+  function prev(){
+    if(+slider.style.marginLeft.slice(0, -2) != -cardWidth*(cards.length-elementsToShow))
+    slider.style.marginLeft= ((+slider.style.marginLeft.slice(0, -2)) - cardWidth) + 'px';
+  }
+
+  function next(){
+    if(+slider.style.marginLeft.slice(0, -2) != 0)
+    slider.style.marginLeft= ((+slider.style.marginLeft.slice(0, -2)) + cardWidth) + 'px';
+  }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
 <script>
@@ -551,4 +644,6 @@
         
     });
 </script>
+
+
 </html>

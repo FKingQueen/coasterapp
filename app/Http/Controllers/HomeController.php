@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use Illuminate\Support\Facades\File;
+use Carbon\Carbon;
+
 
 class HomeController extends Controller
 {
@@ -25,8 +27,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $article = Article::get();
-        return view('article', array('articles' => $article));
+        $article = Article::all()->reverse();
+        
+        foreach($article as $key => $arti)
+        {
+            $date[$key] =  Carbon::createFromFormat('Y-m-d H:i:s', $arti->created_at)->format('F d, Y');
+        };
+
+        return view('article', array('articles' => $article, 'date' => $date));
     }
     public function createArticle(Request $request)
     {

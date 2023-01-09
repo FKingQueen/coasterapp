@@ -13,8 +13,10 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+
     <!-- Text Editor -->
-    <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script> -->
+    <script src="https://cdn.tiny.cloud/1/pj83hy3jqcyp9knhor63ei0napaxc9izb164lop5wg69xnk3/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -39,6 +41,95 @@
                             </button>
                             <input type="search" name="" id="" placeholder="Search" class="w-full pl-3 text-sm text-black outline-none focus:outline-none bg-transparent" />
                         </div> -->
+
+                        <!-- Create Article Modal -->
+                        <div x-data="{ modelOpen: false }" class="grid grid-cols-1 gap-4 place-content-center">
+                            <button @click="modelOpen =!modelOpen" class="transition transition ease-in-out hover:scale-110  duration-500 text-white hover:text-cyan-700">
+                                Create Article
+                            </button>
+
+                            <div x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                                <div class="flex items-end justify-center min-h-screen px-4 text-center md:items-center sm:block sm:p-0">
+                                    <div x-cloak @click="modelOpen = false" x-show="modelOpen" 
+                                        x-transition:enter="transition ease-out duration-300 transform"
+                                        x-transition:enter-start="opacity-0" 
+                                        x-transition:enter-end="opacity-100"
+                                        x-transition:leave="transition ease-in duration-200 transform"
+                                        x-transition:leave-start="opacity-100" 
+                                        x-transition:leave-end="opacity-0"
+                                        class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-40" aria-hidden="true"
+                                    ></div>
+
+                                    <div x-cloak x-show="modelOpen" 
+                                        x-transition:enter="transition ease-out duration-300 transform"
+                                        x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" 
+                                        x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                                        x-transition:leave="transition ease-in duration-200 transform"
+                                        x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" 
+                                        x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                        class="inline-block w-full max-w-xl p-8 my-20 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl 2xl:max-w-2xl"
+                                    >
+                                        <div class="flex items-center justify-between space-x-4">
+                                            <h1 class="text-xl font-medium text-gray-800 ">New Article</h1>
+
+                                            <!-- <button @click="modelOpen = false" class="text-gray-600 focus:outline-none hover:text-gray-700">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                            </button> -->
+                                        </div>
+
+                                        <!-- Create Article Form -->
+                                        <form action="{{ route('createArticle') }}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <div class="mt-5">
+                                                <img id="output" width="300" />
+                                            </div>
+                                            <div class="mt-4">
+                                            <label class="block text-sm text-gray-700 capitalize dark:text-gray-200">Image</label>
+                                            </div>
+                                            <div class="">
+                                                <label>
+                                                    <span class="sr-only">Choose profile photo</span>
+                                                    <input required onchange="loadFile(event)" accept="image/png, image/jpeg" name="image" id="image" type="file" class=" text-sm text-slate-500
+                                                    file:mr-4 file:py-2 file:px-4
+                                                    file:rounded-lg file:border-0
+                                                    file:text-sm file:font-semibold
+                                                    file:bg-violet-50 file:text-violet-700
+                                                    hover:file:bg-violet-100
+                                                    "/>
+                                                </label>
+                                                <script>
+                                                    var loadFile = function(event) {
+                                                        var image = document.getElementById('output');
+                                                        image.src = URL.createObjectURL(event.target.files[0]);
+                                                    };
+                                                </script>
+                                            </div>
+
+                                            
+                                            <div class="mt-4">
+                                                <label for="user name" class="block text-sm text-gray-700 capitalize dark:text-gray-200 mt-2">Title</label>
+                                                <input required id="title" autocomplete="off" name="title" placeholder="Title" type="text" class="block w-full px-3 py-2  text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
+                                            </div>
+
+                                            <div class="mt-4">
+                                                <label for="email" class="block text-sm text-gray-700 capitalize dark:text-gray-200">Context</label>
+                                                <textarea name="editor" id="editor" cols="30" rows="10"></textarea>
+                                            </div>
+                                            
+                                            <div class="flex justify-end mt-6">
+                                                <button type="submit" class="px-3 py-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-100 rounded-md dark:bg-gray-500 dark:hover:bg-gray-700 dark:focus:bg-gray-700 hover:bg-gray-600 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+                                                    POST
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <!-- Create Article Form -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Create Article Modal -->
                         <ul class="flex items-center">
                             <li>
                                 <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700"></div>
@@ -180,5 +271,14 @@
 </body>
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
+<script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+    });
+  </script>
 
 </html>

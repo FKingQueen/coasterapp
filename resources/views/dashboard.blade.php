@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'COASTER') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -369,6 +369,64 @@
             <hr class="">
           </div>
         </div>
+        <div class="flex bg-sky-50 mt-2">
+            <div class="w-2/12 flex items-center">
+              <div class="w-full text-right">
+                <button onclick="prev()" class="p-3 rounded-full bg-white border-gray-700 shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div id="sliderContainer" class="w-10/12 overflow-hidden">
+              <ul id="slider" class="flex w-full transition-margin duration-700">
+                @foreach($articles as $key => $article)
+                <li class="w-96">
+                        <div class="rounded-lg p-4 h-full">
+                            <card class="relative h-[30rem] sm:h-96 w-[35rem] rounded-lg">
+                                <!-- Background Image -->
+                                <img src="{{ asset('uploads/article/'.($article->image))}}" class="object-cover w-full h-full rounded-lg" />
+                                <!-- Content -->
+                                <div class="absolute w-full h-full bottom-0 bg-gradient-to-r from-cyan-900/70 to-gray-900/10 rounded-lg grid content-end text-center">
+
+                                    <div class="">
+                                        <!-- Content -->
+                                        <p class="text-lg text-white/70">
+                                            {!! Illuminate\Support\Str::limit($article->article, 150) !!}
+                                        </p>
+                                    </div>
+
+                                    <!-- Title -->
+                                    <div class="w-full flex justify-start mt-">
+                                      <p class=" font-bold text-gray-100 ml-3">
+                                          {{ Illuminate\Support\Str::limit($article->title, 50) }}
+                                      </p>
+                                    </div>
+                                    <!-- Date -->
+                                    <div class="w-full flex justify-start mb-2">
+                                      <p class="text-white/70 ml-3 text-sm font-light">
+                                          {{$date[$key]}}
+                                      </p>
+                                    </div>
+                                </div>
+                            </card>
+                        </div>
+                  </li>
+                  @endforeach
+
+              </ul>
+            </div>
+            <div class="w-2/12 flex items-center">
+              <div class="w-full">
+                <button onclick="next()" class="p-3 rounded-full bg-white border-gray-700 shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+        </div>
 
         <!-- /Latest Update -->
 
@@ -527,21 +585,36 @@
           </div>
         </div>
 
-<!-- 
-    <a class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg  focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mr-1.5" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-      Link with href
-    </a>
-    <button class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg  focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-      Button with data-bs-target
-    </button>
-
-    <div class="offcanvas offcanvas-start fixed bottom-0 flex flex-col max-w-full bg-white invisible bg-clip-padding shadow-sm outline-none transition duration-300 ease-in-out text-gray-700 top-0 left-0 border-none w-96" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-      <div class="offcanvas-header flex items-center justify-between p-4">
-        <h5 class="offcanvas-title mb-0 leading-normal font-semibold" id="offcanvasExampleLabel">Offcanvas</h5>
-        <button type="button" class="btn-close box-content w-4 h-4 p-2 -my-5 -mr-2 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-    </div> -->
 </body>
+<script>
+  let sliderContainer = document.getElementById('sliderContainer');
+  let slider = document.getElementById('slider');
+  let cards = document.getElementsByTagName('li');
+
+  let elementsToShow = 3;
+
+  let sliderContainerWidth = sliderContainer.clientWidth;
+
+  let cardWidth = sliderContainerWidth/elementsToShow;
+
+  slider.style.width = cards.length*cardWidth+'px';
+
+  for(let index = 0; index < cards.length; index++) 
+  {
+    const element = cards[index];
+    element.style.width = cardWidth+'px';
+  }
+
+  function prev(){
+    if(+slider.style.marginLeft.slice(0, -2) != -cardWidth*(cards.length-elementsToShow))
+    slider.style.marginLeft= ((+slider.style.marginLeft.slice(0, -2)) - cardWidth) + 'px';
+  }
+
+  function next(){
+    if(+slider.style.marginLeft.slice(0, -2) != 0)
+    slider.style.marginLeft= ((+slider.style.marginLeft.slice(0, -2)) + cardWidth) + 'px';
+  }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
 <script>
@@ -565,4 +638,6 @@
         
     });
 </script>
+
+
 </html>
