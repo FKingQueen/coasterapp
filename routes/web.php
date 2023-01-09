@@ -22,3 +22,4 @@ Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/createArticle', [App\Http\Controllers\HomeController::class, 'createArticle'])->name('createArticle');
+Route::post('/updateArticle/{id}', [App\Http\Controllers\HomeController::class, 'updateArticle'])->name('updateArticle');

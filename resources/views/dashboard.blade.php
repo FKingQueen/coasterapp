@@ -384,7 +384,7 @@
                 @foreach($articles as $key => $article)
                 <li class="w-96">
                         <div class="rounded-lg p-4 h-full">
-                            <card class="relative h-[30rem] sm:h-96 w-[35rem] rounded-lg">
+                            <card class="relative w-full rounded-lg">
                                 <!-- Background Image -->
                                 <img src="{{ asset('uploads/article/'.($article->image))}}" class="object-cover w-full h-full rounded-lg" />
                                 <!-- Content -->
@@ -406,7 +406,7 @@
                                     <!-- Date -->
                                     <div class="w-full flex justify-start mb-2">
                                       <p class="text-white/70 ml-3 text-sm font-light">
-                                          {{$date[$key]}}
+                                          {{$article->date}}
                                       </p>
                                     </div>
                                 </div>
@@ -632,9 +632,7 @@
             navClosed.classList.toggle("hidden");
             navOpen.classList.toggle("hidden");
         });
-        content1.style.top = parseInt(navbar.clientHeight) - 1 + "px";
         sidebar.style.top = parseInt(navbar.clientHeight) - 1 + "px";
-        console.log(content1.style.top);
         
     });
 </script>
