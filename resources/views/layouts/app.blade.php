@@ -17,14 +17,67 @@
     <!-- Text Editor -->
     <!-- <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script> -->
     <script src="https://cdn.tiny.cloud/1/pj83hy3jqcyp9knhor63ei0napaxc9izb164lop5wg69xnk3/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <!-- Preloader -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        .loader-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #242f3f;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        }
+        .loader {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        border: 4px solid #Fff;
+        animation: loader 2s infinite ease;
+        }
+        .loader-inner {
+        vertical-align: top;
+        display: inline-block;
+        width: 100%;
+        background-color: #fff;
+        animation: loader-inner 2s infinite ease-in;
+        }
+
+        @keyframes loader {
+        0% { transform: rotate(0deg);}
+        25% { transform: rotate(180deg);}
+        50% { transform: rotate(180deg);}
+        75% { transform: rotate(360deg);}
+        100% { transform: rotate(360deg);}
+        }
+
+        @keyframes loader-inner {
+        0% { height: 0%;}
+        25% { height: 0%;}
+        50% { height: 100%;}
+        75% { height: 100%;}
+        100% { height: 0%;}
+        }
+    </style>
 </head>
 
 <body>
+
+    <div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
     <div id="app" class="">
         <div x-data="setup()" :class="{ 'dark': isDark } ">
             <div class=" min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white text-black">
@@ -212,6 +265,14 @@
       tinycomments_mode: 'embedded',
       tinycomments_author: 'Author name',
     });
-  </script>
+</script>
+
+
+
+<script>
+    $(window).on("load",function(){
+        $(".loader-wrapper").fadeOut("slow");
+    });
+</script>
 
 </html>

@@ -1,114 +1,113 @@
 @extends('layouts.app')
 
 @section('content')
-<div class=" bg-indigo-50">
+<div class="bg-indigo-50">
   <!-- Header -->
   <header>
     <h1 class="bg-white py-4 text-center">
-    <a href="/" class="text-xl font-bold text-gray-700 cursor-pointer">ARTICLE MANAGEMENT</h1>
+    <a href="#" class="text-xl font-bold text-gray-700 cursor-pointer">ARTICLE MANAGEMENT</h1>
     </h1>
-    <nav class="mt-6">
+    <nav class="mt-3">
       <ul class="items-center">
         <li class="text-center">
-    
-        <!-- Create Article Modal -->
-        <div x-data="{ modalCreate: false }" class="grid grid-cols-1 gap-4 place-content-center">
-        <a href="" @click="modalCreate =!modalCreate" class="text-md font-semibold text-gray-600 hover:text-gray-800">New Article</a>
+            <!-- Create Article Modal -->
+            <div x-data="{ modalCreate: false }" class="grid grid-cols-1 gap-4 place-content-center">
+            <a href="#" @click="modalCreate =!modalCreate" class="text-md font-semibold text-gray-600 hover:text-gray-800">New Article</a>
 
-                            <div x-show="modalCreate" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-                                <div class="flex items-end justify-center min-h-screen px-4 text-center md:items-center sm:block sm:p-0">
-                                    <div x-cloak @click="modalCreate = false" x-show="modalCreate" 
-                                        x-transition:enter="transition ease-out duration-300 transform"
-                                        x-transition:enter-start="opacity-0" 
-                                        x-transition:enter-end="opacity-100"
-                                        x-transition:leave="transition ease-in duration-200 transform"
-                                        x-transition:leave-start="opacity-100" 
-                                        x-transition:leave-end="opacity-0"
-                                        class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-40" aria-hidden="true"
-                                    ></div>
+                <div x-show="modalCreate" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                    <div class="flex items-end justify-center min-h-screen px-4 text-center md:items-center sm:block sm:p-0">
+                        <div x-cloak @click="modalCreate = false" x-show="modalCreate" 
+                            x-transition:enter="transition ease-out duration-300 transform"
+                            x-transition:enter-start="opacity-0" 
+                            x-transition:enter-end="opacity-100"
+                            x-transition:leave="transition ease-in duration-200 transform"
+                            x-transition:leave-start="opacity-100" 
+                            x-transition:leave-end="opacity-0"
+                            class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-40" aria-hidden="true"
+                        ></div>
 
-                                    <div x-cloak x-show="modalCreate" 
-                                        x-transition:enter="transition ease-out duration-300 transform"
-                                        x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" 
-                                        x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
-                                        x-transition:leave="transition ease-in duration-200 transform"
-                                        x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" 
-                                        x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                                        class="inline-block w-full max-w-xl p-8 my-20 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl 2xl:max-w-2xl"
-                                    >
-                                        <div class="flex items-center justify-between space-x-4">
-                                            <h1 class="text-xl font-medium text-gray-800 ">New Article</h1>
+                        <div x-cloak x-show="modalCreate" 
+                            x-transition:enter="transition ease-out duration-300 transform"
+                            x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" 
+                            x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                            x-transition:leave="transition ease-in duration-200 transform"
+                            x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" 
+                            x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                            class="inline-block w-full max-w-xl p-8 my-20 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl 2xl:max-w-2xl"
+                        >
+                            <div class="flex items-center justify-between space-x-4">
+                                <h1 class="text-xl font-medium text-gray-800 ">New Article</h1>
 
-                                            <!-- <button @click="modalCreate = false" class="text-gray-600 focus:outline-none hover:text-gray-700">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </button> -->
-                                        </div>
-
-                                        <!-- Create Article Form -->
-                                        <form action="{{ route('createArticle') }}" method="POST" enctype="multipart/form-data">
-                                            @csrf
-                                            <div class="mt-5">
-                                                <img id="output" width="300" />
-                                            </div>
-                                            <div class="mt-4">
-                                            <label class="block text-sm text-gray-700 capitalize dark:text-gray-200">Image</label>
-                                            </div>
-                                            <div class="">
-                                                <label>
-                                                    <span class="sr-only">Choose profile photo</span>
-                                                    <input required onchange="loadFile(event)" accept="image/png, image/jpeg" name="image" id="image" type="file" class=" text-sm text-slate-500
-                                                    file:mr-4 file:py-2 file:px-4
-                                                    file:rounded-lg file:border-0
-                                                    file:text-sm file:font-semibold
-                                                    file:bg-violet-50 file:text-violet-700
-                                                    hover:file:bg-violet-100
-                                                    "/>
-                                                </label>
-                                                <script>
-                                                    var loadFile = function(event) {
-                                                        var image = document.getElementById('output');
-                                                        image.src = URL.createObjectURL(event.target.files[0]);
-                                                    };
-                                                </script>
-                                            </div>
-
-                                            
-                                            <div class="mt-4">
-                                                <label for="user name" class="block text-sm text-gray-700 capitalize dark:text-gray-200 mt-2">Title</label>
-                                                <input required id="title" autocomplete="off" name="title" placeholder="Title" type="text" class="block w-full px-3 py-2  text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
-                                            </div>
-
-                                            <div class="mt-4">
-                                                <label for="email" class="block text-sm text-gray-700 capitalize dark:text-gray-200">Context</label>
-                                                <textarea name="editor" id="editor" cols="30" rows="10" ></textarea>
-                                            </div>
-                                            
-                                            <div class="flex justify-end mt-6">
-                                                <button type="submit" class="px-3 py-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-100 rounded-md dark:bg-gray-500 dark:hover:bg-gray-700 dark:focus:bg-gray-700 hover:bg-gray-600 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
-                                                    POST
-                                                </button>
-                                            </div>
-                                        </form>
-                                        <!-- Create Article Form -->
-                                    </div>
-                                </div>
+                                <!-- <button @click="modalCreate = false" class="text-gray-600 focus:outline-none hover:text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </button> -->
                             </div>
+
+                            <!-- Create Article Form -->
+                            <form action="{{ route('createArticle') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="mt-5">
+                                    <img id="output1" width="300" />
+                                </div>
+                                <div class="mt-4">
+                                <label class="block text-sm text-gray-700 capitalize dark:text-gray-200">Image</label>
+                                </div>
+                                <div class="">
+                                    <label>
+                                        <span class="sr-only">Choose profile photo</span>
+                                        <input required onchange="loadFile(event)" accept="image/png, image/jpeg" name="image" id="image" type="file" class=" text-sm text-slate-500
+                                        file:mr-4 file:py-2 file:px-4
+                                        file:rounded-lg file:border-0
+                                        file:text-sm file:font-semibold
+                                        file:bg-violet-50 file:text-violet-700
+                                        hover:file:bg-violet-100
+                                        "/>
+                                    </label>
+                                    <script>
+                                        var loadFile = function(event) {
+                                            var image = document.getElementById('output1');
+                                            image.src = URL.createObjectURL(event.target.files[0]);
+                                        };
+                                    </script>
+                                </div>
+
+                                
+                                <div class="mt-4">
+                                    <label for="user name" class="block text-sm text-gray-700 capitalize dark:text-gray-200 mt-2">Title</label>
+                                    <input required id="title" autocomplete="off" name="title" placeholder="Title" type="text" class="block w-full px-3 py-2  text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
+                                </div>
+
+                                <div class="mt-4">
+                                    <label for="email" class="block text-sm text-gray-700 capitalize dark:text-gray-200">Context</label>
+                                    <textarea name="editor" id="editor" cols="30" rows="10" ></textarea>
+                                </div>
+                                
+                                <div class="flex justify-end mt-6">
+                                    <button type="submit" class="px-3 py-2 text-sm tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-100 rounded-md dark:bg-gray-500 dark:hover:bg-gray-700 dark:focus:bg-gray-700 hover:bg-gray-600 focus:outline-none focus:bg-gray-500 focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+                                        POST
+                                    </button>
+                                </div>
+                            </form>
+                            <!-- Create Article Form -->
                         </div>
-                        <!-- Create Article Modal -->
+                    </div>
+                </div>
+            </div>
+            <!-- Create Article Modal -->
         </li>
       </ul>
     </nav>
   </header>
-  <section class="min-h-screen body-font text-gray-600 ">
-    <div class="container mx-auto px-5 py-10">
+  <section class="h-fit body-font text-gray-600 ">
+    <div class="container mx-auto px-5 py-6">
       <div class="-m-4 flex flex-wrap">
         @foreach($articles as $key => $article)
             <div class="w-full p-4 md:w-1/2 lg:w-1/4">
                 <!-- Edit Article Modal -->
                 <div x-data="{ modalEdit_{{$article->id}}: false }" class="grid grid-cols-1 gap-4 place-content-center">
-                    <button @click="modalEdit_{{$article->id}} =!modalEdit_{{$article->id}}" class="relative block h-48 overflow-hidden rounded shadow-lg">
+                    <button @click="modalEdit_{{$article->id}} = !modalEdit_{{$article->id}}" class="relative block h-48 overflow-hidden rounded shadow-lg">
                         <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer " src="{{ asset('uploads/article/'.($article->image))}}" />
                     </button>
 
@@ -247,9 +246,9 @@
                     </div>
                 </div>
                 <!-- /Edit Article Modal -->
-                <div class="mt-4">
+                <div class="mt-3">
                     <h2 class="title-font text-lg font-medium text-gray-900">{{$article->title}}</h2>
-                    <p class="mt-1 text-gray-900/50">{{$article->date}}</p>
+                    <p class=" text-gray-900/50">{{$article->date}}</p>
                 </div>
             </div>
         @endforeach
