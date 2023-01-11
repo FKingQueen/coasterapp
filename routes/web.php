@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,8 @@ Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'inde
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/createArticle', [App\Http\Controllers\HomeController::class, 'createArticle'])->name('createArticle');
 Route::post('/updateArticle/{id}', [App\Http\Controllers\HomeController::class, 'updateArticle'])->name('updateArticle');
+Route::post('/deleteArticle/{id}', [App\Http\Controllers\HomeController::class, 'deleteArticle'])->name('deleteArticle');
+// Route::post('/article', [App\Http\Controllers\HomeController::class, '/userManagement'])->name('article');
+
+// Admin
+Route::get('/userManagement', [App\Http\Controllers\AdminController::class, 'index'])->name('userManagement');

@@ -34,7 +34,7 @@ class HomeController extends Controller
             $article[$key]->date = Carbon::createFromFormat('Y-m-d H:i:s', $arti->created_at)->format('F d, Y');
         }
 
-        return view('article', array('articles' => $article));
+        return view('admin.article', array('articles' => $article));
     }
     
     public function createArticle(Request $request)
@@ -99,6 +99,15 @@ class HomeController extends Controller
             $art->image = $filename;
         }
         $res = $art->update();
+
+        return back();
+    }
+
+    public function deleteArticle($id)
+    {
+        $res = DB::table('articles')
+        ->where('id', $id)
+        ->delete();
 
         return back();
     }
