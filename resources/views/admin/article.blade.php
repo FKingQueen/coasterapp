@@ -5,7 +5,7 @@
   <!-- Header -->
   <header>
     <h1 class="bg-white py-4 text-center">
-    <a href="#" class="text-xl font-bold text-gray-700 cursor-pointer">ARTICLE MANAGEMENT</h1>
+    <a href="#" class="text-xl font-bold text-gray-700 cursor-pointer">Article Management</h1>
     </h1>
     <nav class="mt-3">
       <ul class="items-center">

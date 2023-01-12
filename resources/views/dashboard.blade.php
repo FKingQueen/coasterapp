@@ -441,7 +441,10 @@
                         <div class="rounded-lg p-4 h-full">
                             <card class="relative w-full rounded-lg">
                                 <!-- Background Image -->
-                                <img src="{{ asset('uploads/article/'.($article->image))}}" class="object-cover w-full h-full rounded-lg" />
+                                <div class="h-48">
+                                  <img src="{{ asset('uploads/article/'.($article->image))}}" class="object-cover w-full h-full rounded-lg" />
+                                </div>
+
                                 <!-- Content -->
                                 <div class="absolute w-full h-full bottom-0 bg-gradient-to-r from-cyan-900/70 to-gray-900/10 rounded-lg grid content-end text-center">
 
