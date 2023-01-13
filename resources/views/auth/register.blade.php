@@ -32,7 +32,7 @@
                 </div>
                 <!-- password input -->
                 <div class=" mb-6">
-                    <input id="password" type="password" class="w-full py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500 " name="password" placeholder="Password" required autocomplete="new-password">
+                    <input  id="password" type="password" class="w-full py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500 " name="password" placeholder="Password" required autocomplete="new-password">
                 </div>
                 <div class=" mb-6">
                     <input id="password-confirm" type="password" class="w-full py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500 " name="password_confirmation" placeholder="Password" required autocomplete="new-password">

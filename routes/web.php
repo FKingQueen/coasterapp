@@ -28,3 +28,5 @@ Route::post('/deleteArticle/{id}', [App\Http\Controllers\HomeController::class, 
 
 // Admin
 Route::get('/userManagement', [App\Http\Controllers\AdminController::class, 'index'])->name('userManagement');
+Route::post('/createUser', [App\Http\Controllers\AdminController::class, 'createUser'])->name('createUser');
+Route::post('/updateUser/{id}', [App\Http\Controllers\AdminController::class, 'updateUser'])->name('updateUser');

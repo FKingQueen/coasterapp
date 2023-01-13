@@ -1743,6 +1743,9 @@ textarea.form-control.is-invalid {
 .mb-1 {
   margin-bottom: 0.25rem;
 }
+.ml-2 {
+  margin-left: 0.5rem;
+}
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -1754,9 +1757,6 @@ textarea.form-control.is-invalid {
 }
 .mr-1 {
   margin-right: 0.25rem;
-}
-.ml-2 {
-  margin-left: 0.5rem;
 }
 .ml-auto {
   margin-left: auto;
@@ -2181,10 +2181,6 @@ textarea.form-control.is-invalid {
 .border-transparent {
   border-color: transparent;
 }
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
 .bg-\[\#0d2247\] {
   --tw-bg-opacity: 1;
   background-color: rgb(13 34 71 / var(--tw-bg-opacity));
@@ -2422,9 +2418,6 @@ textarea.form-control.is-invalid {
 }
 .text-justify {
   text-align: justify;
-}
-.text-start {
-  text-align: start;
 }
 .indent-8 {
   text-indent: 2rem;
