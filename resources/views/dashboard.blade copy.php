@@ -703,3 +703,225 @@
 
 
 </html>
+
+        <!-- Latest Update -->
+        <div class="grid gap-2 place-content-center mt-10">
+            <div class="text-center">
+              <h1 class="font-medium leading-tight lg:text-5xl md:text-2xl sm:text:xl text-sky-600">LATEST UPDATES</h1>
+              <hr class="">
+            </div>
+          </div>
+          <div class="flex bg-sky-50 mt-2">
+              <div class="w-2/12 flex items-center">
+                <div class="w-full text-right">
+                  <button onclick="prev()" class="p-3 rounded-full bg-white border-gray-700 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div id="sliderContainer" class="w-10/12 overflow-hidden">
+                <ul id="slider" class="flex w-full transition-margin duration-700">
+                  @foreach($articles as $key => $article)
+                  <li class="w-96">
+                          <div class="rounded-lg p-4 h-full">
+                              <card class="relative w-full rounded-lg">
+                                  <!-- Background Image -->
+                                  <div class="h-48">
+                                    <img src="{{ asset('uploads/article/'.($article->image))}}" class="object-cover w-full h-full rounded-lg" />
+                                  </div>
+
+                                  <!-- Content -->
+                                  <div class="absolute w-full h-full bottom-0 bg-gradient-to-r from-cyan-900/70 to-gray-900/10 rounded-lg grid content-end text-center">
+
+                                      <div class="">
+                                          <!-- Content -->
+                                          <p class="text-lg text-white/70 tc">
+                                              {!! Illuminate\Support\Str::limit($article->article, 150) !!}
+                                          </p>
+                                      </div>
+
+                                      <!-- Title -->
+                                      <div class="w-full flex justify-start mt-">
+                                        <p class=" font-bold text-gray-100 ml-3">
+                                            {{ Illuminate\Support\Str::limit($article->title, 50) }}
+                                        </p>
+                                      </div>
+                                      <!-- Date -->
+                                      <div class="w-full flex justify-start mb-2">
+                                        <p class="text-white/70 ml-3 text-sm font-light">
+                                            {{$article->date}}
+                                        </p>
+                                      </div>
+                                  </div>
+                              </card>
+                          </div>
+                    </li>
+                    @endforeach
+
+                </ul>
+              </div>
+              <div class="w-2/12 flex items-center">
+                <div class="w-full">
+                  <button onclick="next()" class="p-3 rounded-full bg-white border-gray-700 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+          </div>
+
+        <!-- /Latest Update -->
+
+        <!-- Project -->
+          <div class="grid gap-2 place-content-center lg:mt-10 md:mt-8 sm:mt-7 w-full mt-5">
+            <div class="text-center">
+              <h1 class="font-medium leading-tight lg:text-5xl md:text-2xl sm:text:xl text-sky-600">PROJECT OBJECTIVES</h1>
+              <hr>
+            </div>
+          </div>
+          <div class="bg-sky-50 w-full lg:h-[40rem] grid grid-cols-1 content-center mt-2">
+            <div class="flex justify-center w-full">
+              <div class="w-3/4 lg:w-full md:flex justify-center gap-4">
+                <div class="flex justify-center ">
+                  <div class="rounded-lg shadow-lg bg-white max-w-xs  grid-cols-3 gap-4">
+                    <a href="#!" class="">
+                      <img class="rounded-t-lg " src="img/project1.png" alt=""/>
+                    </a>
+                    <div class="p-6 grid grid-cols-1 gap-4">
+                      <div>
+                        <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 1</h5>
+                      </div>
+                      <div>
+                        <p class="text-gray-700 text-base mb-4 text-justify whitespace-normal">
+                          Coastal erosion trend and management strategies for Region 1
+                        </p>
+                      </div>
+                    </div>
+                    <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
+                  </div>
+                </div>
+
+                <div class="flex justify-center">
+                  <div class="rounded-lg shadow-lg bg-white max-w-xs">
+                    <a href="#!">
+                      <img class="rounded-t-lg" src="img/project2.png" alt=""/>
+                    </a>
+                    <div class="p-6 grid grid-cols-1 gap-4">
+                      <div>
+                        <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 2</h5>
+                      </div>
+                      <div>
+                        <p class="text-gray-700 text-base mb-4 text-justify whitespace-normal">
+                          Assessment, Monitoring, and Prediction of Coastal Flodding of Seelcted Municipalities in Region 1
+                        </p>
+                      </div>
+                    </div>
+                    <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
+                  </div>
+                </div>
+
+
+                <div class="flex justify-center">
+                  <div class="rounded-lg shadow-lg bg-white max-w-xs">
+                    <a href="#!">
+                      <img class="rounded-t-lg" src="img/project3.png" alt=""/>
+                    </a>
+                    <div class="p-6 grid grid-cols-1 gap-4">
+                      <div>
+                        <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 3</h5>
+                      </div>
+                      
+                      <div>
+                        <p class="text-gray-700 text-base mb-4 text-justify">
+                          Development of Sceiened-Based Engineering Approach to Coastal Protection in Region 1
+                        </p>
+                      </div>
+                    </div>
+                    <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
+                  </div>
+                  
+                </div>
+
+                <div class="flex justify-center">
+                  <div class="rounded-lg shadow-lg bg-white max-w-xs">
+                    <a href="#!">
+                      <img class="rounded-t-lg" src="img/project4.png" alt=""/>
+                    </a>
+                    <div class="p-4 grid grid-cols-1 gap-2 ">
+                      <div>
+                        <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 4</h5>
+                      </div>
+                      <div>
+                        <p class="text-gray-700 text-base mb-4 text-justify">
+                          Enhancing Coastal Design and Infrastructure Intervention Through the Establishment of Wave Testing Facility
+                        </p>
+                      </div>
+                    </div>
+                      <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- /Project -->
+
+        <!-- About Us -->
+          <div class="grid gap-2 place-content-center mt-10">
+            <div class="text-center">
+              <h1 class="font-medium leading-tight lg:text-5xl md:text-2xl sm:text:xl text-sky-600">ABOUT US</h1>
+              <hr class="">
+            </div>
+          </div>
+          <div class="flex justify-center w-full mt-5">
+            <div>
+              <div class="xl:w-[90rem] lg:w-[50rem] sm:w-[10rem] text-justify indent-8">
+                  The Coastal Engineering Research Center or CoastER Center is the country’s first coastal engineering and management research and development center and 
+                  the hub of innovations for coastal resiliency. This facility will spur the development of innovations that address coastal erosion, development construction 
+                  materials for coastal protection, policies, and guidelines intended to protect resources from coastal flooding and improve the lives of people in coastal 
+                  communities. It will also bolster the capability of Filipino engineers towards coastal engineering leading to the development of a master’s degree for coastal 
+                  engineering.
+              </div>
+              <hr class="my-6 border-sky-300" />
+              <div class="xl:w-[90rem] lg:w-[50rem] sm:w-[10rem] text-justify indent-8">
+                  The COASTER aims to spearhead the development of technologies and innovation to mitigate and manage coastal disasters and risks. The overall goal of the 
+                  center is to take the lead in coastal science and engineering studies to better undertand the magniture of certain process and hazards and their impacts
+                  on the maritime environment including tidal deltas and low-lying lands.
+              </div>
+            </div>
+          </div>
+        <!-- /About Us -->
+
+        <!-- Coop Agencies -->
+          <div class="grid gap-2 place-content-center mt-10">
+            <div class="text-center">
+              <h1 class="font-medium leading-tight lg:text-5xl md:text-2xl sm:text:xl text-sky-600  ">COOP AGENCIES</h1>
+              <hr class="">
+            </div>
+            <div class="flex justify-center">
+                <div class="shrink-0">
+                    <a href="https://www.dost.gov.ph/"><img src="img/DOST.png" class="object-fill w-20 h-20" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.dost.gov.ph/"><img src="img/MMSU.png" class="object-fill w-20 h-20" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/KYOTO.png" class="object-fill w-20 h-20" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/DILIMAN.png" class="object-fill w-20 h-20" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/DMMMSU.png" class="object-fill w-20 h-20" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/CIVIL.png" class="object-fill w-20 h-20" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/DPWH.png" class="object-fill w-20 h-20" alt="#"></a>
+                </div>
+            </div>
+          </div>
+        <!-- /Coop Agencies -->
