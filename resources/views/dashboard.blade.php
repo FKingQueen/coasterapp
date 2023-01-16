@@ -104,9 +104,9 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 </head>
 <body class="bg-gray-50">
-    <div class="loader-wrapper">
+    <!-- <div class="loader-wrapper">
       <span class="loader"><span class="loader-inner"></span></span>
-    </div>
+    </div> -->
 
     <div id="app">
 
@@ -129,134 +129,136 @@
                   </div>
                       
                   <!-- Nav Links -->
-                  <ul class="hidden lg:flex text-white px-5 mx-auto text-[9px] font-semibold font-heading space-x-8 ">
-                      <!-- About -->
-                      <div class="relative" x-data="{ open: false }">
-                          <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white hover:text-white
-                          cursor-pointer transition-colors duration-300" aria-expanded="false">
-                              ABOUT
-                              <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-white h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                              </svg>
-                          </button>
+                  <div id="navButton" style="display: none;" class="mx-auto">
+                    <ul class="hidden lg:flex text-white px-5  text-[9px] font-semibold font-heading space-x-8 ">
+                        <!-- About -->
+                        <div class="relative" x-data="{ open: false }">
+                            <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white hover:text-white
+                            cursor-pointer transition-colors duration-300" aria-expanded="false">
+                                ABOUT
+                                <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-white h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
 
-                          <div 
-                              x-show="open" 
-                              x-transition:enter="transition ease-out duration-200"
-                              x-transition:enter-start="opacity-0 scale-90"
-                              x-transition:enter-end="opacity-100 scale-100"
-                              x-transition:leave="transition ease-in duration-200"
-                              x-transition:leave-start="opacity-100 scale-100"
-                              x-transition:leave-end="opacity-0 scale-90"
-                              class="absolute left-1/2 z-full mt-3 w-screen w-60 -translate-x-1/2 transform px-5 sm:px-0">
+                            <div 
+                                x-show="open" 
+                                x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 scale-90"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-90"
+                                class="absolute left-1/2 z-full mt-3 w-screen w-60 -translate-x-1/2 transform px-5 sm:px-0">
 
-                              <div class="overflow-hidden shadow-lg ring-1 ring-black  ring-opacity-5">
-                                  <div class="relative grid gap-6 bg-stone-700 border-x-4 px-5 py-6 sm:gap-8 sm:p-8">
-                                      <a href="#" class="-m-3 flex items-start p-2  hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
-                                          <div class="ml-4">
-                                              <p class="text-[12px] font-semibold font-medium text-gray-100">ABOUT</p>
-                                          </div>
-                                      </a>
-                                      <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
-                                          <div class="ml-4">
-                                              <p class="text-[12px] font-semibold font-medium text-gray-100">CONTACT</p>
-                                          </div>
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <!-- /About -->
-                      <!-- Services -->
-                      <div class="relative" x-data="{ open: false }">
-                          <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white hover:text-white
-                          cursor-pointer transition-colors duration-300 " aria-expanded="false">
-                              SERVICES
-                              <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-white h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                              </svg>
-                          </button>
+                                <div class="overflow-hidden shadow-lg ring-1 ring-black  ring-opacity-5">
+                                    <div class="relative grid gap-6 bg-stone-700 border-x-4 px-5 py-6 sm:gap-8 sm:p-8">
+                                        <a href="#" class="-m-3 flex items-start p-2  hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                            <div class="ml-4">
+                                                <p class="text-[12px] font-semibold font-medium text-gray-100">ABOUT</p>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                            <div class="ml-4">
+                                                <p class="text-[12px] font-semibold font-medium text-gray-100">CONTACT</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /About -->
+                        <!-- Services -->
+                        <div class="relative" x-data="{ open: false }">
+                            <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white hover:text-white
+                            cursor-pointer transition-colors duration-300 " aria-expanded="false">
+                                SERVICES
+                                <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-white h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
 
-                          <div 
-                              x-show="open" 
-                              x-transition:enter="transition ease-out duration-200"
-                              x-transition:enter-start="opacity-0 scale-90"
-                              x-transition:enter-end="opacity-100 scale-100"
-                              x-transition:leave="transition ease-in duration-200"
-                              x-transition:leave-start="opacity-100 scale-100"
-                              x-transition:leave-end="opacity-0 scale-90"
-                              class="absolute left-1/2 z-full mt-3 w-screen w-60 -translate-x-1/2 transform px-5 sm:px-0">
+                            <div 
+                                x-show="open" 
+                                x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 scale-90"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-90"
+                                class="absolute left-1/2 z-full mt-3 w-screen w-60 -translate-x-1/2 transform px-5 sm:px-0">
 
-                              <div class="overflow-hidden shadow-lg ring-1 ring-black  ring-opacity-5">
-                                  <div class="relative grid gap-6 bg-stone-700 border-x-4 px-5 py-6 sm:gap-8 sm:p-8">
-                                      <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
-                                          <div class="ml-4">
-                                              <p class="text-[12px] font-semibold font-medium text-gray-100">TIDAL & WAVE</p>
-                                          </div>
-                                      </a>
-                                      <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
-                                          <div class="ml-4">
-                                              <p class="text-[12px] font-semibold font-medium text-gray-100">WEATHER</p>
-                                          </div>
-                                      </a>
-                                      <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
-                                          <div class="ml-4">
-                                              <p class="text-[12px] font-semibold font-medium text-gray-100">MAP</p>
-                                          </div>
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <!-- /Services -->
-                      <!-- Project -->
-                      <div class="relative" x-data="{ open: false }">
-                          <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white hover:text-white
-                          cursor-pointer transition-colors duration-300" aria-expanded="false">
-                              PROJECT
-                              <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-white h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                              </svg>
-                          </button>
+                                <div class="overflow-hidden shadow-lg ring-1 ring-black  ring-opacity-5">
+                                    <div class="relative grid gap-6 bg-stone-700 border-x-4 px-5 py-6 sm:gap-8 sm:p-8">
+                                        <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                            <div class="ml-4">
+                                                <p class="text-[12px] font-semibold font-medium text-gray-100">TIDAL & WAVE</p>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                            <div class="ml-4">
+                                                <p class="text-[12px] font-semibold font-medium text-gray-100">WEATHER</p>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                            <div class="ml-4">
+                                                <p class="text-[12px] font-semibold font-medium text-gray-100">MAP</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Services -->
+                        <!-- Project -->
+                        <div class="relative" x-data="{ open: false }">
+                            <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white hover:text-white
+                            cursor-pointer transition-colors duration-300" aria-expanded="false">
+                                PROJECT
+                                <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-white h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
 
-                          <div 
-                              x-show="open" 
-                              x-transition:enter="transition ease-out duration-200"
-                              x-transition:enter-start="opacity-0 scale-90"
-                              x-transition:enter-end="opacity-100 scale-100"
-                              x-transition:leave="transition ease-in duration-200"
-                              x-transition:leave-start="opacity-100 scale-100"
-                              x-transition:leave-end="opacity-0 scale-90"
-                              class="absolute left-1/2 z-full mt-3 w-screen w-80 -translate-x-1/2 transform px-1 sm:px-0">
+                            <div 
+                                x-show="open" 
+                                x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 scale-90"
+                                x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-200"
+                                x-transition:leave-start="opacity-100 scale-100"
+                                x-transition:leave-end="opacity-0 scale-90"
+                                class="absolute left-1/2 z-full mt-3 w-screen w-80 -translate-x-1/2 transform px-1 sm:px-0">
 
-                              <div class="overflow-hidden shadow-lg ring-1 ring-black  ring-opacity-5">
-                                  <div class="relative grid gap-6 bg-stone-700 border-x-4 px-5 py-6 sm:gap-8 sm:p-8">
-                                      <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
-                                          <div class="">
-                                              <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">COASTAL EROSION TRENDS AND MANAGEMENT STRATEGIES FOR REGION 1</p>
-                                          </div>
-                                      </a>
-                                      <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
-                                          <div class="">
-                                              <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">ASSESSMENT MONITORING, AND PREDICTION OF COASTAL FLOODING OF SELECTED MUNICIPALITIES IN REGION 1</p>
-                                          </div>
-                                      </a>
-                                      <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
-                                          <div class="">
-                                              <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">DEVELOPMENT OF SCIENCE-BASED ENGINEERING APPROACH TO COASTAL PROTECTION IN REGION 1</p>
-                                          </div>
-                                      </a>
-                                      <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
-                                          <div class="">
-                                              <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">ENHANCING COASTAL DESIGN AND INFRASTRUCTURE INTERVENTION THROUGH THE ESTABLISHMENT OF WAVE TESTING FACILITY</p>
-                                          </div>
-                                      </a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <!-- /Project -->
-                  </ul>
+                                <div class="overflow-hidden shadow-lg ring-1 ring-black  ring-opacity-5">
+                                    <div class="relative grid gap-6 bg-stone-700 border-x-4 px-5 py-6 sm:gap-8 sm:p-8">
+                                        <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                            <div class="">
+                                                <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">COASTAL EROSION TRENDS AND MANAGEMENT STRATEGIES FOR REGION 1</p>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                            <div class="">
+                                                <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">ASSESSMENT MONITORING, AND PREDICTION OF COASTAL FLOODING OF SELECTED MUNICIPALITIES IN REGION 1</p>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                            <div class="">
+                                                <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">DEVELOPMENT OF SCIENCE-BASED ENGINEERING APPROACH TO COASTAL PROTECTION IN REGION 1</p>
+                                            </div>
+                                        </a>
+                                        <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                            <div class="">
+                                                <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">ENHANCING COASTAL DESIGN AND INFRASTRUCTURE INTERVENTION THROUGH THE ESTABLISHMENT OF WAVE TESTING FACILITY</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Project -->
+                    </ul>
+                  </div>
                   <!-- Header Icons -->
                   <div class="hidden xl:flex items-center space-x-5 items-center">
                   
@@ -316,7 +318,7 @@
         <!-- Sidebar end -->
 
         <!-- Carousel -->
-          <div id="carousel" class="swiper mySwiper">
+          <div id="carousel" style="display: none;" class="sample swiper mySwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <img
@@ -346,61 +348,67 @@
           </div>
         <!-- /Carousel -->
 
-        <div class="grid gap-2 place-content-center mt-10">
-            <div class="text-center">
-              <h1 class="font-medium leading-tight text-3xl text-sky-600">LATEST UPDATES</h1>
-              <hr class="">
-            </div>
-        </div>
+        <!-- Latest Update -->
+            <div id="latestUpdate" style="display: none;">
+                <div class="grid gap-2 place-content-center mt-10">
+                    <div class="text-center">
+                    <h1 class="font-medium leading-tight text-3xl text-sky-600">LATEST UPDATES</h1>
+                    <hr class="">
+                    </div>
+                </div>
 
-        <div class="lg:w-2/3 sm:w-1/3 bg-white mx-auto drop-shadow-md mt-5">
-            <div class="flex items-center mt-2 flex-wrap pt-4">
-                @foreach($articles as $key => $article)
-                    @if($loop->iteration == 9)
-                        @break
-                    @endif
-                        <div class="w-full md:w-2/3 xl:w-1/4 p-6 flex flex-col ">
-                            <a href="#" class="border-b-4 border-cyan-900/30 hover:drop-shadow-2xl">
-                                <img class=" w-full object-cover lg:h-[13rem] h-[10rem] p-2" src="{{ asset('uploads/article/'.($article->image))}}">
-                                <div class="pt-3 flex items-center justify-between overflow-hidden">
-                                    <p class="text-gray-900 font-sm">
-                                        {{ Illuminate\Support\Str::limit($article->title, 10) }}
-                                    </p>
+                <div class="lg:w-2/3 sm:w-1/3 bg-white mx-auto drop-shadow-md mt-5">
+                    <div class="flex items-center mt-2 flex-wrap pt-4">
+                        @foreach($articles as $key => $article)
+                            @if($loop->iteration == 9)
+                                @break
+                            @endif
+                                <div class="w-full md:w-2/3 xl:w-1/4 p-6 flex flex-col ">
+                                    <a href="#" class="border-b-4 border-cyan-900/30 hover:drop-shadow-2xl">
+                                        <img class=" w-full object-cover lg:h-[13rem] h-[10rem] p-2" src="{{ asset('uploads/article/'.($article->image))}}">
+                                        <div class="pt-3 flex items-center justify-between overflow-hidden">
+                                            <p class="text-gray-900 font-sm">
+                                                {{ Illuminate\Support\Str::limit($article->title, 10) }}
+                                            </p>
+                                        </div>
+                                        <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
+                                    </a>
                                 </div>
-                                <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
-                            </a>
-                        </div>
-                @endforeach
-            </div>
-            <div>
-            <button type="button" class="lg:mb-0 mb-2 font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_100rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
-            </div>
-        </div>
-
-        <!-- About Us -->
-            <div class="grid gap-2 place-content-center mt-10">
-                <div class="text-center">
-                <h1 class="font-medium leading-tight lg:text-5xl md:text-2xl sm:text:xl text-sky-600">ABOUT US</h1>
-                <hr class="">
+                        @endforeach
+                    </div>
+                    <div>
+                    <button type="button" class="lg:mb-0 mb-2 font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_100rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
+                    </div>
                 </div>
             </div>
-          <div class="flex justify-center w-full mt-5">
-            <div>
-              <div class="xl:w-[90rem] lg:w-[50rem] sm:w-[10rem] text-justify indent-8 p-3">
-                  The Coastal Engineering Research Center or CoastER Center is the country’s first coastal engineering and management research and development center and 
-                  the hub of innovations for coastal resiliency. This facility will spur the development of innovations that address coastal erosion, development construction 
-                  materials for coastal protection, policies, and guidelines intended to protect resources from coastal flooding and improve the lives of people in coastal 
-                  communities. It will also bolster the capability of Filipino engineers towards coastal engineering leading to the development of a master’s degree for coastal 
-                  engineering.
-              </div>
-              <hr class="my-6 border-sky-300" />
-              <div class="xl:w-[90rem] lg:w-[50rem] sm:w-[10rem] text-justify indent-8 p-3">
-                  The COASTER aims to spearhead the development of technologies and innovation to mitigate and manage coastal disasters and risks. The overall goal of the 
-                  center is to take the lead in coastal science and engineering studies to better undertand the magniture of certain process and hazards and their impacts
-                  on the maritime environment including tidal deltas and low-lying lands.
-              </div>
+        <!-- /Latest Update -->  
+
+        <!-- About Us -->
+            <div id="aboutUs" style="display: none;">
+                <div class="grid gap-2 place-content-center mt-10">
+                    <div class="text-center">
+                    <h1 class="font-medium leading-tight lg:text-5xl md:text-2xl sm:text:xl text-sky-600">ABOUT US</h1>
+                    <hr class="">
+                    </div>
+                </div>
+                <div class="flex justify-center w-full mt-5">
+                    <div>
+                        <div class="xl:w-[90rem] lg:w-[50rem] sm:w-[10rem] text-justify indent-8 p-3">
+                            The Coastal Engineering Research Center or CoastER Center is the country’s first coastal engineering and management research and development center and 
+                            the hub of innovations for coastal resiliency. This facility will spur the development of innovations that address coastal erosion, development construction 
+                            materials for coastal protection, policies, and guidelines intended to protect resources from coastal flooding and improve the lives of people in coastal 
+                            communities. It will also bolster the capability of Filipino engineers towards coastal engineering leading to the development of a master’s degree for coastal 
+                            engineering.
+                        </div>
+                        <hr class="my-6 border-sky-300" />
+                        <div class="xl:w-[90rem] lg:w-[50rem] sm:w-[10rem] text-justify indent-8 p-3">
+                            The COASTER aims to spearhead the development of technologies and innovation to mitigate and manage coastal disasters and risks. The overall goal of the 
+                            center is to take the lead in coastal science and engineering studies to better undertand the magniture of certain process and hazards and their impacts
+                            on the maritime environment including tidal deltas and low-lying lands.
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         <!-- /About Us -->
 
 
@@ -491,9 +499,14 @@
 
 <!-- Preload Effects-->
   <script>
-      $(window).on("load",function(){
-          $(".loader-wrapper").fadeOut("slow");
-      });
+        $(window).on("load",function(){
+        //   $(".loader-wrapper").fadeOut("slow");
+            $("#navButton").fadeIn();
+            $("#carousel").fadeIn();
+            $("#latestUpdate").fadeIn();
+            $("#latestUpdate").fadeIn();
+            $("#aboutUs").fadeIn();
+        });
   </script>
 <!-- /Preload Effects-->
 </html>
