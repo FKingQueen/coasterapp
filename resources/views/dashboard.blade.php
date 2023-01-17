@@ -349,45 +349,193 @@
         <!-- /Carousel -->
 
         <!-- Latest Update -->
-            <div id="latestUpdate" style="display: none;">
-                <div class="grid gap-2 place-content-center mt-10">
-                    <div class="text-center">
-                    <h1 class="font-medium leading-tight text-3xl text-sky-600">LATEST UPDATES</h1>
-                    <hr class="">
-                    </div>
-                </div>
+          <div id="latestUpdate" style="display: none;">
+              <div class="grid gap-2 place-content-center lg:mt-10 mt-2">
+                  <div class="text-center">
+                  <h1 class="font-medium leading-tight text-3xl text-sky-600">LATEST UPDATES</h1>
+                  <hr class="">
+                  </div>
+              </div>
 
-                <div class="lg:w-2/3 sm:w-1/3 bg-white mx-auto drop-shadow-md mt-5">
-                    <div class="flex items-center mt-2 flex-wrap pt-4">
-                        @foreach($articles as $key => $article)
-                            @if($loop->iteration == 9)
-                                @break
-                            @endif
-                                <div class="w-full md:w-2/3 xl:w-1/4 p-6 flex flex-col ">
-                                    <a href="#" class="border-b-4 border-cyan-900/30 hover:drop-shadow-2xl">
-                                        <img class=" w-full object-cover lg:h-[13rem] h-[10rem] p-2" src="{{ asset('uploads/article/'.($article->image))}}">
-                                        <div class="pt-3 flex items-center justify-between overflow-hidden">
-                                            <p class="text-gray-900 font-sm">
-                                                {{ Illuminate\Support\Str::limit($article->title, 10) }}
-                                            </p>
-                                        </div>
-                                        <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
-                                    </a>
-                                </div>
-                        @endforeach
-                    </div>
-                    <div>
-                    <button type="button" class="lg:mb-0 mb-2 font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_100rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
-                    </div>
+              <div class="lg:w-2/3 sm:w-1/3 bg-white mx-auto drop-shadow-md mt-5">
+                  <div class="flex items-center mt-2 flex-wrap pt-4">
+                      @foreach($articles as $key => $article)
+                          @if($loop->iteration == 9)
+                              @break
+                          @endif
+                            <div class="w-full md:w-2/3 xl:w-1/4 p-6 flex flex-col">
+                                <a href="#" class="border-b-4 border-cyan-600 hover:drop-shadow-xl">
+                                    <img class=" w-full object-cover lg:h-[13rem] h-[10rem] p-2" src="{{ asset('uploads/article/'.($article->image))}}">
+                                    <div class="pt-3 flex items-center justify-between overflow-hidden">
+                                        <p class="text-gray-900 font-sm">
+                                            {{ Illuminate\Support\Str::limit($article->title, 15) }}
+                                        </p>
+                                    </div>
+                                    <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
+                                </a>
+                            </div>  
+                      @endforeach
+                  </div>
+                  <div>
+                  <button type="button" class="lg:mb-0 mb-2 font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_100rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">View More</button>
+                  </div>
+              </div>
+          </div>
+        <!-- /Latest Update -->  
+   
+        <!-- Project -->
+          <div id="projectObjective" style="display: none;">
+            <div class="grid gap-2 place-content-center mt-10">
+                <div class="text-center">
+                  <h1 class="font-medium leading-tight text-3xl text-sky-600">PROJECT OBJECTIVES</h1>
+                  <hr class="">
                 </div>
             </div>
-        <!-- /Latest Update -->  
+
+            <div class="bg-sky-200">
+              <div class="w-full mt-5">
+                  <div class="flex justify-center mt-2 flex-wrap pt-4 pb-4 gap-1">
+                    <div class="w-full md:w-2/3 xl:w-1/6 flex flex-col bg-white">
+                        <a href="#" class="border-b-4 border-cyan-600">
+                            <img class=" w-full object-cover lg:h-[13rem] h-[10rem]" src="{{ asset('uploads/article/'.($article->image))}}">
+                            <div class="pt-3 flex items-center justify-between overflow-hidden">
+                                <p class="text-gray-900 font-sm">
+                                    {{ Illuminate\Support\Str::limit($article->title, 15) }}
+                                </p>
+                            </div>
+                            <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
+                        </a>
+                    </div>  
+                    <div class="w-full md:w-2/3 xl:w-1/6 flex flex-col bg-white">
+                        <a href="#" class="border-b-4 border-cyan-600">
+                            <img class=" w-full object-cover lg:h-[13rem] h-[10rem]" src="{{ asset('uploads/article/'.($article->image))}}">
+                            <div class="pt-3 flex items-center justify-between overflow-hidden">
+                                <p class="text-gray-900 font-sm">
+                                    {{ Illuminate\Support\Str::limit($article->title, 15) }}
+                                </p>
+                            </div>
+                            <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
+                        </a>
+                    </div>  
+                    <div class="w-full md:w-2/3 xl:w-1/6 flex flex-col bg-white">
+                        <a href="#" class="border-b-4 border-cyan-600">
+                            <img class=" w-full object-cover lg:h-[13rem] h-[10rem]" src="{{ asset('uploads/article/'.($article->image))}}">
+                            <div class="pt-3 flex items-center justify-between overflow-hidden">
+                                <p class="text-gray-900 font-sm">
+                                    {{ Illuminate\Support\Str::limit($article->title, 15) }}
+                                </p>
+                            </div>
+                            <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
+                        </a>
+                    </div>  
+                    <div class="w-full md:w-2/3 xl:w-1/6 flex flex-col bg-white">
+                        <a href="#" class="border-b-4 border-cyan-600">
+                            <img class=" w-full object-cover lg:h-[13rem] h-[10rem]" src="{{ asset('uploads/article/'.($article->image))}}">
+                            <div class="pt-3 flex items-center justify-between overflow-hidden">
+                                <p class="text-gray-900 font-sm">
+                                    {{ Illuminate\Support\Str::limit($article->title, 15) }}
+                                </p>
+                            </div>
+                            <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
+                        </a>
+                    </div>  
+                  </div>
+              </div>
+            </div>
+            
+<!-- 
+            <div class="bg-sky-200 w-full lg:h-[40rem] grid grid-cols-1 content-center mt-2">
+              <div class="flex justify-center w-full">
+                <div class="w-3/4 lg:w-full md:flex justify-center gap-4">
+                  <div class="flex justify-center ">
+                    <div class="rounded-lg shadow-lg bg-white max-w-xs  grid-cols-3 gap-4">
+                      <a href="#!" class="">
+                        <img class="rounded-t-lg " src="img/project1.png" alt=""/>
+                      </a>
+                      <div class="p-6 grid grid-cols-1 gap-4">
+                        <div>
+                          <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 1</h5>
+                        </div>
+                        <div>
+                          <p class="text-gray-700 text-base mb-4 text-justify whitespace-normal">
+                            Coastal erosion trend and management strategies for Region 1
+                          </p>
+                        </div>
+                      </div>
+                      <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
+                    </div>
+                  </div>
+
+                  <div class="flex justify-center">
+                    <div class="rounded-lg shadow-lg bg-white max-w-xs">
+                      <a href="#!">
+                        <img class="rounded-t-lg" src="img/project2.png" alt=""/>
+                      </a>
+                      <div class="p-6 grid grid-cols-1 gap-4">
+                        <div>
+                          <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 2</h5>
+                        </div>
+                        <div>
+                          <p class="text-gray-700 text-base mb-4 text-justify whitespace-normal">
+                            Assessment, Monitoring, and Prediction of Coastal Flodding of Seelcted Municipalities in Region 1
+                          </p>
+                        </div>
+                      </div>
+                      <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
+                    </div>
+                  </div>
+
+
+                  <div class="flex justify-center">
+                    <div class="rounded-lg shadow-lg bg-white max-w-xs">
+                      <a href="#!">
+                        <img class="rounded-t-lg" src="img/project3.png" alt=""/>
+                      </a>
+                      <div class="p-6 grid grid-cols-1 gap-4">
+                        <div>
+                          <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 3</h5>
+                        </div>
+                        
+                        <div>
+                          <p class="text-gray-700 text-base mb-4 text-justify">
+                            Development of Sceiened-Based Engineering Approach to Coastal Protection in Region 1
+                          </p>
+                        </div>
+                      </div>
+                      <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
+                    </div>
+                    
+                  </div>
+
+                  <div class="flex justify-center">
+                    <div class="rounded-lg shadow-lg bg-white max-w-xs">
+                      <a href="#!">
+                        <img class="rounded-t-lg" src="img/project4.png" alt=""/>
+                      </a>
+                      <div class="p-4 grid grid-cols-1 gap-2 ">
+                        <div>
+                          <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 4</h5>
+                        </div>
+                        <div>
+                          <p class="text-gray-700 text-base mb-4 text-justify">
+                            Enhancing Coastal Design and Infrastructure Intervention Through the Establishment of Wave Testing Facility
+                          </p>
+                        </div>
+                      </div>
+                        <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        <!-- /Project -->
 
         <!-- About Us -->
             <div id="aboutUs" style="display: none;">
                 <div class="grid gap-2 place-content-center mt-10">
                     <div class="text-center">
-                    <h1 class="font-medium leading-tight lg:text-5xl md:text-2xl sm:text:xl text-sky-600">ABOUT US</h1>
+                    <h1 class="font-medium leading-tight text-3xl text-sky-600">ABOUT US</h1>
                     <hr class="">
                     </div>
                 </div>
@@ -411,7 +559,39 @@
             </div>
         <!-- /About Us -->
 
-
+        <!-- Coop Agencies -->
+          <div id="coopAgencies" style="display: none;" class="grid gap-2 place-content-center mt-10">
+              <div class="grid gap-2 place-content-center lg:mt-10 mt-2">
+                  <div class="text-center">
+                  <h1 class="font-medium leading-tight text-3xl text-sky-600">COOP AGENCIES</h1>
+                  <hr class="">
+                  </div>
+              </div>
+            <div class="flex justify-center">
+                <div class="shrink-0">
+                    <a href="https://www.dost.gov.ph/"><img src="img/DOST.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.dost.gov.ph/"><img src="img/MMSU.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/KYOTO.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/DILIMAN.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/DMMMSU.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/CIVIL.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/DPWH.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+                </div>
+            </div>
+          </div>
+        <!-- /Coop Agencies -->
     </div>
 
 </body>
@@ -506,6 +686,8 @@
             $("#latestUpdate").fadeIn();
             $("#latestUpdate").fadeIn();
             $("#aboutUs").fadeIn();
+            $("#projectObjective").fadeIn();
+            $("#coopAgencies").fadeIn();
         });
   </script>
 <!-- /Preload Effects-->
