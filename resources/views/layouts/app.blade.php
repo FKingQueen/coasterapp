@@ -12,16 +12,13 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-
-    <!-- Text Editor -->
-    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script> -->
-    <script src="https://cdn.tiny.cloud/1/pj83hy3jqcyp9knhor63ei0napaxc9izb164lop5wg69xnk3/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <!-- Preloader -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @yield('css')
 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
@@ -73,10 +70,6 @@
 </head>
 
 <body>
-
-    <div class="loader-wrapper">
-      <span class="loader"><span class="loader-inner"></span></span>
-    </div>
 
     <div id="app" class="">
         <div x-data="setup()" :class="{ 'dark': isDark } ">
@@ -140,62 +133,7 @@
                                     </span>
                                     
                                     <span class="ml-2 text-sm tracking-wide truncate"> Article </span>
-                                    <span aria-hidden="true" class="ml-auto">
-                                    <!-- active class 'rotate-180' -->
-                                        <svg
-                                            @click="$event.preventDefault(); open = !open"
-                                            class="w-4 h-4 transition-transform transform"
-                                            :class="{ 'rotate-180': open }"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-
-                                    </span>
                                 </a>
-
-                                <div x-show="open" class="mt-2 space-y-2 px-7 " role="menu" aria-label="Authentication">
-                                    <!-- active & hover classes 'text-gray-700 dark:text-light' -->
-                                    <!-- inActive classes 'text-gray-400 dark:text-gray-400' -->
-                                    <a
-                                    href="#"
-                                    role="menuitem"
-                                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
-                                    >
-                                    All
-                                    </a>
-                                    <a
-                                    href="#"
-                                    role="menuitem"
-                                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
-                                    >
-                                    Project 1
-                                    </a>
-                                    <a
-                                    href="#"
-                                    role="menuitem"
-                                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
-                                    >
-                                    Project 2
-                                    </a>
-                                    <a
-                                    href="#"
-                                    role="menuitem"
-                                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
-                                    >
-                                    Project 3
-                                    </a>
-                                    <a
-                                    href="#"
-                                    role="menuitem"
-                                    class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
-                                    >
-                                    Project 4
-                                    </a>
-                                </div>
                             </li>
 
                             <li x-data="{isActive: false, open: false}" >
@@ -238,7 +176,7 @@
                 </div>
                 <!-- ./Sidebar -->
                 <!-- Content Main -->
-                <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
+                <div class="h-full ml-14 mt-14 mb-10 md:ml-64" id="content" style="display: none;">
                     @yield('content')
                 </div>
                 <!-- /Content Main -->
@@ -250,27 +188,15 @@
         </main>
         
     </div>
-    
-
 
 </body>
 <!-- Scripts -->
+@yield('js')
 <script src="{{ asset('js/app.js') }}" defer></script>
-<script>
-    tinymce.init({
-      selector: 'textarea',
-      content_style:
-        "body { background: #6A7A95; color: white; font-size: 14pt; font-family: Arial; }",
-      tinycomments_mode: 'embedded',
-      tinycomments_author: 'Author name',
-    });
-</script>
-
-
 
 <script>
     $(window).on("load",function(){
-        $(".loader-wrapper").fadeOut("slow");
+        $("#content").fadeIn();
     });
 </script>
 

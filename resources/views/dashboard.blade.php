@@ -17,83 +17,34 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+      <style>
+          ul.breadcrumb li+li::before {
+              content: "\276F";
+              padding-left: 8px;
+              padding-right: 4px;
+              color: inherit;
+          }
 
-    
-    <style>
-        ul.breadcrumb li+li::before {
-            content: "\276F";
-            padding-left: 8px;
-            padding-right: 4px;
-            color: inherit;
-        }
+          ul.breadcrumb li span {
+              opacity: 60%;
+          }
 
-        ul.breadcrumb li span {
-            opacity: 60%;
-        }
+          #sidebar {
+              -webkit-transition: all 300ms cubic-bezier(0, 0.77, 0.58, 1);
+              transition: all 300ms cubic-bezier(0, 0.77, 0.58, 1);
+          }
 
-        #sidebar {
-            -webkit-transition: all 300ms cubic-bezier(0, 0.77, 0.58, 1);
-            transition: all 300ms cubic-bezier(0, 0.77, 0.58, 1);
-        }
+          #sidebar.show {
+              transform: translateX(0);
+          }
 
-        #sidebar.show {
-            transform: translateX(0);
-        }
-
-        #sidebar ul li a.active {
-            background: #1f2937;
-            background-color: #1f2937;
-        }
-
-        tc, p {
-          color: white;
-        }
-
-        .loader-wrapper {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: #242f3f;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 100;
-        }
-        .loader {
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        position: relative;
-        border: 4px solid #Fff;
-        animation: loader 2s infinite ease;
-        }
-        .loader-inner {
-        vertical-align: top;
-        display: inline-block;
-        width: 100%;
-        background-color: #fff;
-        animation: loader-inner 2s infinite ease-in;
-        }
-
-        @keyframes loader {
-        0% { transform: rotate(0deg);}
-        25% { transform: rotate(180deg);}
-        50% { transform: rotate(180deg);}
-        75% { transform: rotate(360deg);}
-        100% { transform: rotate(360deg);}
-        }
-
-        @keyframes loader-inner {
-        0% { height: 0%;}
-        25% { height: 0%;}
-        50% { height: 100%;}
-        75% { height: 100%;}
-        100% { height: 0%;}
-        }
-    </style>
+          #sidebar ul li a.active {
+              background: #1f2937;
+              background-color: #1f2937;
+          }
+      </style>
+    <!-- Styles -->
 
     <!-- Navigaiton Bar Dropdown -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -104,10 +55,6 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 </head>
 <body class="bg-gray-50">
-    <!-- <div class="loader-wrapper">
-      <span class="loader"><span class="loader-inner"></span></span>
-    </div> -->
-
     <div id="app">
 
         <!-- Navbar start -->
@@ -349,7 +296,7 @@
         <!-- /Carousel -->
 
         <!-- Latest Update -->
-          <div id="latestUpdate" style="display: none;">
+          <div id="latestUpdate" style="display: none;" class="w-full drop-shadow-md border ">
               <div class="grid gap-2 place-content-center lg:mt-10 mt-2">
                   <div class="text-center">
                   <h1 class="font-medium leading-tight text-3xl text-sky-600">LATEST UPDATES</h1>
@@ -357,14 +304,14 @@
                   </div>
               </div>
 
-              <div class="lg:w-2/3 sm:w-1/3 bg-white mx-auto drop-shadow-md mt-5">
+              <div class="lg:w-4/5 sm:w-2/3 bg-white mx-auto mt-5 ">
                   <div class="flex items-center mt-2 flex-wrap pt-4">
                       @foreach($articles as $key => $article)
-                          @if($loop->iteration == 9)
+                          @if($loop->iteration == 5)
                               @break
                           @endif
                             <div class="w-full md:w-2/3 xl:w-1/4 p-6 flex flex-col">
-                                <a href="#" class="border-b-4 border-cyan-600 hover:drop-shadow-xl">
+                                <a href="#" class="border-b-4 border-cyan-600/30 hover:drop-shadow-2xl">
                                     <img class=" w-full object-cover lg:h-[13rem] h-[10rem] p-2" src="{{ asset('uploads/article/'.($article->image))}}">
                                     <div class="pt-3 flex items-center justify-between overflow-hidden">
                                         <p class="text-gray-900 font-sm">
@@ -377,7 +324,7 @@
                       @endforeach
                   </div>
                   <div>
-                  <button type="button" class="lg:mb-0 mb-2 font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_100rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">View More</button>
+                    <button type="button" class="lg:mb-0 mb-2 font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_100rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">View More</button>
                   </div>
               </div>
           </div>
@@ -385,66 +332,14 @@
    
         <!-- Project -->
           <div id="projectObjective" style="display: none;">
-            <div class="grid gap-2 place-content-center mt-10">
+            <div class="grid gap-2 place-content-center m-10">
                 <div class="text-center">
                   <h1 class="font-medium leading-tight text-3xl text-sky-600">PROJECT OBJECTIVES</h1>
                   <hr class="">
                 </div>
             </div>
-
-            <div class="bg-sky-200">
-              <div class="w-full mt-5">
-                  <div class="flex justify-center mt-2 flex-wrap pt-4 pb-4 gap-1">
-                    <div class="w-full md:w-2/3 xl:w-1/6 flex flex-col bg-white">
-                        <a href="#" class="border-b-4 border-cyan-600">
-                            <img class=" w-full object-cover lg:h-[13rem] h-[10rem]" src="{{ asset('uploads/article/'.($article->image))}}">
-                            <div class="pt-3 flex items-center justify-between overflow-hidden">
-                                <p class="text-gray-900 font-sm">
-                                    {{ Illuminate\Support\Str::limit($article->title, 15) }}
-                                </p>
-                            </div>
-                            <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
-                        </a>
-                    </div>  
-                    <div class="w-full md:w-2/3 xl:w-1/6 flex flex-col bg-white">
-                        <a href="#" class="border-b-4 border-cyan-600">
-                            <img class=" w-full object-cover lg:h-[13rem] h-[10rem]" src="{{ asset('uploads/article/'.($article->image))}}">
-                            <div class="pt-3 flex items-center justify-between overflow-hidden">
-                                <p class="text-gray-900 font-sm">
-                                    {{ Illuminate\Support\Str::limit($article->title, 15) }}
-                                </p>
-                            </div>
-                            <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
-                        </a>
-                    </div>  
-                    <div class="w-full md:w-2/3 xl:w-1/6 flex flex-col bg-white">
-                        <a href="#" class="border-b-4 border-cyan-600">
-                            <img class=" w-full object-cover lg:h-[13rem] h-[10rem]" src="{{ asset('uploads/article/'.($article->image))}}">
-                            <div class="pt-3 flex items-center justify-between overflow-hidden">
-                                <p class="text-gray-900 font-sm">
-                                    {{ Illuminate\Support\Str::limit($article->title, 15) }}
-                                </p>
-                            </div>
-                            <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
-                        </a>
-                    </div>  
-                    <div class="w-full md:w-2/3 xl:w-1/6 flex flex-col bg-white">
-                        <a href="#" class="border-b-4 border-cyan-600">
-                            <img class=" w-full object-cover lg:h-[13rem] h-[10rem]" src="{{ asset('uploads/article/'.($article->image))}}">
-                            <div class="pt-3 flex items-center justify-between overflow-hidden">
-                                <p class="text-gray-900 font-sm">
-                                    {{ Illuminate\Support\Str::limit($article->title, 15) }}
-                                </p>
-                            </div>
-                            <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
-                        </a>
-                    </div>  
-                  </div>
-              </div>
-            </div>
             
-<!-- 
-            <div class="bg-sky-200 w-full lg:h-[40rem] grid grid-cols-1 content-center mt-2">
+            <!-- <div class="bg-sky-200/30 w-full lg:h-[40rem] grid grid-cols-1 content-center mt-5">
               <div class="flex justify-center w-full">
                 <div class="w-3/4 lg:w-full md:flex justify-center gap-4">
                   <div class="flex justify-center ">
@@ -528,6 +423,30 @@
                 </div>
               </div>
             </div> -->
+            <div class="w-full 2xl:w-3/4 flex items-center justify-center px-8 md:px-32 lg:px-16 2xl:px-0 mx-auto -mt-8">
+          <div class="w-full grid grid-cols-1 xl:grid-cols-4 gap-8">
+              <div class="bg-white shadow-2xl rounded-lg py-4">
+                  <div class="flex items-center justify-center mt-6">
+                      <a href="#" class="bg-blue-600 hover:bg-blue-700 px-8 py-2 text-sm text-gray-200 uppercase rounded font-bold transition duration-150" title="Purchase">Project 1</a>
+                  </div>
+              </div>
+              <div class="bg-white shadow-2xl rounded-lg py-4">
+                  <div class="flex items-center justify-center mt-6">
+                      <a href="#" class="bg-blue-600 hover:bg-blue-700 px-8 py-2 text-sm text-gray-200 uppercase rounded font-bold transition duration-150" title="Purchase">Project 2</a>
+                  </div>
+              </div>
+              <div class="bg-white shadow-2xl rounded-lg py-4">
+                  <div class="flex items-center justify-center mt-6">
+                      <a href="#" class="bg-blue-600 hover:bg-blue-700 px-8 py-2 text-sm text-gray-200 uppercase rounded font-bold transition duration-150" title="Purchase">Project 3</a>
+                  </div>
+              </div>
+              <div class="bg-white shadow-2xl rounded-lg py-4">
+                  <div class="flex items-center justify-center mt-6">
+                      <a href="#" class="bg-blue-600 hover:bg-blue-700 px-8 py-2 text-sm text-gray-200 uppercase rounded font-bold transition duration-150" title="Purchase">Project 4</a>
+                  </div>
+              </div>
+          </div>
+        </div>
           </div>
         <!-- /Project -->
 
@@ -592,8 +511,49 @@
             </div>
           </div>
         <!-- /Coop Agencies -->
-    </div>
 
+        <!-- Footer -->
+          <footer id="footer" style="display: none;" class="bg-white dark:bg-gray-800 mt-5">
+            <div class="max-w-screen-xl mx-auto lg:py-5 md:p-8 lg:p-10">
+              <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-2">
+                  <div class="place-content-center grid ">
+                      <img class="w-40 h-40 sm:w-36 sm:h-36 " src="img/coaster.png" alt="" >
+                  </div>
+                  <div class="">
+                      <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">COASTER</h3>
+                      <ul class="text-gray-500 dark:text-gray-400  justify-end">
+                          <li class="mb-4">
+                              <a href="#" class=" hover:underline">About</a>
+                          </li>
+                          <li class="mb-4">
+                              <a href="#" class="hover:underline">Careers</a>
+                          </li>
+                          <li class="mb-4">
+                              <a href="#" class="hover:underline">Brand Center</a>
+                          </li>
+                          <li class="mb-4">
+                              <a href="#" class="hover:underline">Blog</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+                <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-1">
+              <div class="text-center">
+                  <span class="block text-sm text-center text-gray-500 dark:text-gray-400">© 2022-2023 COASTER. All Rights Reserved.
+                  </span>
+                  <ul class="flex justify-center mt-5 space-x-5">
+                      <li>
+                          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+          </footer>
+        <!-- /Footer -->
+
+    </div>
 </body>
 <!-- Side Navigation Bar -->
   <script>
@@ -688,6 +648,7 @@
             $("#aboutUs").fadeIn();
             $("#projectObjective").fadeIn();
             $("#coopAgencies").fadeIn();
+            $("#footer").fadeIn();
         });
   </script>
 <!-- /Preload Effects-->
