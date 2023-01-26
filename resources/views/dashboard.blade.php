@@ -296,7 +296,7 @@
         <!-- /Carousel -->
 
         <!-- Latest Update -->
-          <div id="latestUpdate" style="display: none;" class="w-full drop-shadow-md border ">
+          <div id="latestUpdate" style="display: none;" class="w-full drop-shadow-md">
               <div class="grid gap-2 place-content-center lg:mt-10 mt-2">
                   <div class="text-center">
                   <h1 class="font-medium leading-tight text-3xl text-sky-600">LATEST UPDATES</h1>
@@ -423,30 +423,51 @@
                 </div>
               </div>
             </div> -->
-            <div class="w-full 2xl:w-3/4 flex items-center justify-center px-8 md:px-32 lg:px-16 2xl:px-0 mx-auto -mt-8">
-          <div class="w-full grid grid-cols-1 xl:grid-cols-4 gap-8">
-              <div class="bg-white shadow-2xl rounded-lg py-4">
-                  <div class="flex items-center justify-center mt-6">
-                      <a href="#" class="bg-blue-600 hover:bg-blue-700 px-8 py-2 text-sm text-gray-200 uppercase rounded font-bold transition duration-150" title="Purchase">Project 1</a>
+            <section class="body-font text-gray-600">
+              <div class="container mx-auto px-5 py-10">
+                <div class="-m-4 flex flex-wrap">
+                  <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+                    <a class="relative block overflow-hidden rounded">
+                      <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer" src="img/P1.png" />
+                    </a>
+                    <div class="mt-4">
+                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT</h3>
+                      <h2 class="title-font text-lg font-medium text-gray-900">The Catalyzer</h2>
+                      <p class="mt-1">01/09/2022</p>
+                    </div>
+                  </div>
+                  <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+                    <a class="relative block overflow-hidden rounded">
+                      <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer" src="img/P2.png" />
+                    </a>
+                    <div class="mt-4">
+                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT</h3>
+                      <h2 class="title-font text-lg font-medium text-gray-900">Shooting Stars</h2>
+                      <p class="mt-1">01/09/2022</p>
+                    </div>
+                  </div>
+                  <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+                    <a class="relative block overflow-hidden rounded">
+                      <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer" src="img/P3.png" />
+                    </a>
+                    <div class="mt-4">
+                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT</h3>
+                      <h2 class="title-font text-lg font-medium text-gray-900">Shooting Stars</h2>
+                      <p class="mt-1">01/09/2022</p>
+                    </div>
+                  </div>
+                  <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+                    <a class="relative block overflow-hidden rounded">
+                      <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer" src="img/P4.png" />
+                    </a>
+                    <div class="mt-4">
+                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT</h3>
+                      <h2 class="title-font text-lg font-medium text-gray-900">Shooting Stars</h2>
+                      <p class="mt-1">01/09/2022</p>
+                    </div>
                   </div>
               </div>
-              <div class="bg-white shadow-2xl rounded-lg py-4">
-                  <div class="flex items-center justify-center mt-6">
-                      <a href="#" class="bg-blue-600 hover:bg-blue-700 px-8 py-2 text-sm text-gray-200 uppercase rounded font-bold transition duration-150" title="Purchase">Project 2</a>
-                  </div>
-              </div>
-              <div class="bg-white shadow-2xl rounded-lg py-4">
-                  <div class="flex items-center justify-center mt-6">
-                      <a href="#" class="bg-blue-600 hover:bg-blue-700 px-8 py-2 text-sm text-gray-200 uppercase rounded font-bold transition duration-150" title="Purchase">Project 3</a>
-                  </div>
-              </div>
-              <div class="bg-white shadow-2xl rounded-lg py-4">
-                  <div class="flex items-center justify-center mt-6">
-                      <a href="#" class="bg-blue-600 hover:bg-blue-700 px-8 py-2 text-sm text-gray-200 uppercase rounded font-bold transition duration-150" title="Purchase">Project 4</a>
-                  </div>
-              </div>
-          </div>
-        </div>
+            </section>
           </div>
         <!-- /Project -->
 
