@@ -37,6 +37,7 @@ html {
      tab-size: 4; /* 3 */
   font-family: Inter, sans-serif; /* 4 */
   font-feature-settings: normal; /* 5 */
+  scroll-behavior: smooth;
 }
 
 /*

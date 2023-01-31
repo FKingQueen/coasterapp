@@ -65,7 +65,7 @@
                           <a href="/dashboard"><img src="img/coaster.png" class="duration-200 hover:scale-110 cursor-pointer object-fill w-10 h-10" alt="#"></a>
                       </div>
                       <div class="font-sans pointer tracking-widest text-white font-semibold text-[13px] hidden md:flex">
-                          <a href="/dashboard" class="flex cursor-pointer font-bold text-white">
+                          <a href="#containerSidebar" class="flex cursor-pointer font-bold text-white">
                           COASTAL ENGINEERING, MANAGEMENT RESEARCH <br> & DEVELOPMENT CENTER
                           </a>
                       </div>
@@ -100,7 +100,7 @@
 
                                 <div class="overflow-hidden shadow-lg ring-1 ring-black  ring-opacity-5">
                                     <div class="relative grid gap-6 bg-stone-700 border-x-4 px-5 py-6 sm:gap-8 sm:p-8">
-                                        <a href="#" class="-m-3 flex items-start p-2  hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                        <a href="#" @click="autoScroll()" class="-m-3 flex items-start p-2  hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                             <div class="ml-4">
                                                 <p class="text-[12px] font-semibold font-medium text-gray-100">ABOUT</p>
                                             </div>
@@ -228,7 +228,7 @@
         <!-- Navbar end -->
 
         <!-- Sidebar start-->
-          <div id="containerSidebar" class="z-40">
+          <div id="containerSidebar" class=" z-40">
               <div class="navbar-menu relative z-40">
                   <nav id="sidebar"
                       class="fixed left-0 bottom-0 flex w-3/4 -translate-x-full flex-col overflow-y-auto bg-sky-900 pt-6 pb-8 sm:max-w-xs lg:w-80">
@@ -605,7 +605,7 @@
           const carousel = document.getElementById("carousel");
 
           carousel.style.marginTop = parseInt(navbar.clientHeight) + "px";
-          console.log(navbar.clientHeight);
+        //   console.log(navbar.clientHeight);
       });
   </script>
 <!-- /Carousel -->
@@ -656,4 +656,20 @@
         });
   </script>
 <!-- /Preload Effects-->
+
+<!-- Auto Scroll Page -->
+<script>
+    window.addEventListener('scroll', () => {
+        const scrollable = document.documentElement.scrollHeight ;
+        const scrolled = window.scrollY;
+        console.log(scrolled);
+    })
+function autoScroll(){
+
+window.scrollTo(0, 200);
+
+}
+</script>
+
+<!-- /Auto Scroll Page -->
 </html>
