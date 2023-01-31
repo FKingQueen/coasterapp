@@ -424,46 +424,38 @@
               </div>
             </div> -->
             <section class="body-font text-gray-600">
-              <div class="container mx-auto px-5 py-10">
-                <div class="-m-4 flex flex-wrap">
-                  <div class="w-full p-4 md:w-1/2 lg:w-1/4">
-                    <a class="relative block overflow-hidden rounded">
-                      <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer" src="img/P1.png" />
+              <div class="container mx-auto px-5">
+                <div class="-m-4 flex flex-wrap ">
+                  <div class="w-full p-4 md:w-1/2 lg:w-1/4 drop-shadow-lg ">
+                    <a class="relative block overflow-hidden rounded flex justify-center">
+                      <img alt="ecommerce" class="block h-full w-80 object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P1.png" />
                     </a>
-                    <div class="mt-4">
-                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT</h3>
-                      <h2 class="title-font text-lg font-medium text-gray-900">The Catalyzer</h2>
-                      <p class="mt-1">01/09/2022</p>
+                    <div class="mt-4 flex justify-center">
+                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 1</h3>
                     </div>
                   </div>
-                  <div class="w-full p-4 md:w-1/2 lg:w-1/4">
-                    <a class="relative block overflow-hidden rounded">
-                      <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer" src="img/P2.png" />
+                  <div class="w-full p-4 md:w-1/2 lg:w-1/4 drop-shadow-lg">
+                    <a class="relative block overflow-hidden rounded flex justify-center">
+                      <img alt="ecommerce" class="block h-full w-80 object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P2.png" />
                     </a>
-                    <div class="mt-4">
-                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT</h3>
-                      <h2 class="title-font text-lg font-medium text-gray-900">Shooting Stars</h2>
-                      <p class="mt-1">01/09/2022</p>
+                    <div class="mt-4 flex justify-center">
+                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 2</h3>
                     </div>
                   </div>
-                  <div class="w-full p-4 md:w-1/2 lg:w-1/4">
-                    <a class="relative block overflow-hidden rounded">
-                      <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer" src="img/P3.png" />
+                  <div class="w-full p-4 md:w-1/2 lg:w-1/4 drop-shadow-lg">
+                    <a class="relative block overflow-hidden rounded flex justify-center">
+                      <img alt="ecommerce" class="block h-full w-80 object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P3.png" />
                     </a>
-                    <div class="mt-4">
-                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT</h3>
-                      <h2 class="title-font text-lg font-medium text-gray-900">Shooting Stars</h2>
-                      <p class="mt-1">01/09/2022</p>
+                    <div class="mt-4 flex justify-center">
+                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 3</h3>
                     </div>
                   </div>
-                  <div class="w-full p-4 md:w-1/2 lg:w-1/4">
-                    <a class="relative block overflow-hidden rounded">
-                      <img alt="ecommerce" class="block h-full w-full object-cover object-center cursor-pointer" src="img/P4.png" />
+                  <div class="w-full p-4 md:w-1/2 lg:w-1/4 drop-shadow-lg">
+                    <a class="relative block overflow-hidden rounded flex justify-center">
+                      <img alt="ecommerce" class="block h-full w-80 object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P4.png" />
                     </a>
-                    <div class="mt-4">
-                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT</h3>
-                      <h2 class="title-font text-lg font-medium text-gray-900">Shooting Stars</h2>
-                      <p class="mt-1">01/09/2022</p>
+                    <div class="mt-4 flex justify-center">
+                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 4</h3>
                     </div>
                   </div>
               </div>
@@ -507,7 +499,7 @@
                   <hr class="">
                   </div>
               </div>
-            <div class="flex justify-center">
+            <div class="flex justify-center gap gap-4">
                 <div class="shrink-0">
                     <a href="https://www.dost.gov.ph/"><img src="img/DOST.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
                 </div>
@@ -545,15 +537,6 @@
                       <ul class="text-gray-500 dark:text-gray-400  justify-end">
                           <li class="mb-4">
                               <a href="#" class=" hover:underline">About</a>
-                          </li>
-                          <li class="mb-4">
-                              <a href="#" class="hover:underline">Careers</a>
-                          </li>
-                          <li class="mb-4">
-                              <a href="#" class="hover:underline">Brand Center</a>
-                          </li>
-                          <li class="mb-4">
-                              <a href="#" class="hover:underline">Blog</a>
                           </li>
                       </ul>
                   </div>
