@@ -182,10 +182,6 @@
                 <!-- /Content Main -->
             </div>
         </div>
-
-        <main class="{{ route('login') == url()->current() || route('register') == url()->current() ? '' : 'hidden'}}">
-            @yield('content')
-        </main>
         
     </div>
 

@@ -100,12 +100,12 @@
 
                                 <div class="overflow-hidden shadow-lg ring-1 ring-black  ring-opacity-5">
                                     <div class="relative grid gap-6 bg-stone-700 border-x-4 px-5 py-6 sm:gap-8 sm:p-8">
-                                        <a href="#" @click="autoScroll()" class="-m-3 flex items-start p-2  hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                        <a href="#aboutUs" @click="autoScroll()" class="-m-3 flex items-start p-2  hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                             <div class="ml-4">
                                                 <p class="text-[12px] font-semibold font-medium text-gray-100">ABOUT</p>
                                             </div>
                                         </a>
-                                        <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
+                                        <a href="#contact" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                             <div class="ml-4">
                                                 <p class="text-[12px] font-semibold font-medium text-gray-100">CONTACT</p>
                                             </div>
@@ -527,7 +527,7 @@
 
         <!-- Footer -->
           <footer id="footer" style="display: none;" class="bg-white dark:bg-gray-800 mt-5">
-            <div class="max-w-screen-xl mx-auto lg:py-5 md:p-8 lg:p-10">
+            <div id="contact" class="max-w-screen-xl mx-auto lg:py-5 md:p-8 lg:p-10">
               <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-2">
                   <div class="place-content-center grid ">
                       <img class="w-40 h-40 sm:w-36 sm:h-36 " src="img/coaster.png" alt="" >
