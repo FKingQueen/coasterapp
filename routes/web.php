@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SuperAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +20,16 @@ use App\Http\Controllers\AdminController;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/createArticle', [App\Http\Controllers\HomeController::class, 'createArticle'])->name('createArticle');
-Route::post('/updateArticle/{id}', [App\Http\Controllers\HomeController::class, 'updateArticle'])->name('updateArticle');
-Route::post('/deleteArticle/{id}', [App\Http\Controllers\HomeController::class, 'deleteArticle'])->name('deleteArticle');
-// Route::post('/article', [App\Http\Controllers\HomeController::class, '/userManagement'])->name('article');
+Route::get('/article/{id}', [App\Http\Controllers\DashboardController::class, 'articlePage'])->name('articlePage');
 
 // Admin
-Route::get('/userManagement', [App\Http\Controllers\AdminController::class, 'index'])->name('userManagement');
-Route::post('/createUser', [App\Http\Controllers\AdminController::class, 'createUser'])->name('createUser');
-Route::post('/updateUser/{id}', [App\Http\Controllers\AdminController::class, 'updateUser'])->name('updateUser');
+Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('home');
+Route::post('/createArticle', [App\Http\Controllers\AdminController::class, 'createArticle'])->name('createArticle');
+Route::post('/updateArticle/{id}', [App\Http\Controllers\AdminController::class, 'updateArticle'])->name('updateArticle');
+Route::post('/deleteArticle/{id}', [App\Http\Controllers\AdminController::class, 'deleteArticle'])->name('deleteArticle');
+// Route::post('/article', [App\Http\Controllers\HomeController::class, '/userManagement'])->name('article');
+
+// SuperAdmin
+Route::get('/userManagement', [App\Http\Controllers\SuperAdminController::class, 'index'])->name('userManagement');
+Route::post('/createUser', [App\Http\Controllers\SuperAdminController::class, 'createUser'])->name('createUser');
+Route::post('/updateUser/{id}', [App\Http\Controllers\SuperAdminController::class, 'updateUser'])->name('updateUser');

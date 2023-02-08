@@ -17,6 +17,15 @@ class DashboardController extends Controller
             $article[$key]->date = Carbon::createFromFormat('Y-m-d H:i:s', $arti->created_at)->format('F d, Y');
         }
 
-        return view('dashboard', array('articles' => $article));
+        return view('article.home', array('articles' => $article));
+    }
+
+    public function articlePage($id)
+    {
+        $article = Article::all()->reverse();
+        $selArticle = Article::find($id);
+        $selArticle->date = Carbon::createFromFormat('Y-m-d H:i:s', $selArticle->created_at)->format('F d, Y');
+        
+        return view('article.articlePage', array("articles" => $article, "selArticles" => $selArticle));
     }
 }

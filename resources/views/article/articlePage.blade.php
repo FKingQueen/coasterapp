@@ -1,30 +1,58 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('css')
 @endsection
 
 @section('content')
-    <div class="bg-indigo-50">
-        <!-- Header -->
-        <header>
-            <h1 class="bg-white py-4 text-center">
-            <a href="#" class="text-xl font-bold text-gray-700 cursor-pointer">Article Management</h1>
-            </h1>
-            <nav class="mt-3">
-            <ul class="items-center">
-                <li class="text-center">
+<div class="w-screen flex justify-center pb-2 pt-8">
+    <div class="lg:w-3/5 w-full lg:flex grid gap-4 ">
+        <div class="lg:w-2/3 w-full border shadow-xl drop-shadow-md">
+            <img class=" w-full object-cover lg:h-[20rem] rounded-lg h-[10rem] pb-2 px-2" src="{{ URL::asset("uploads/article/".($selArticles->image)) }}">
+               <!-- {{$selArticles}} -->
+               <div class="p-2 ">
+                <h1 class="text-3xl text-neutral-600">{{$selArticles->title}}</h1>
+                <h1 class="text-base text-neutral-800">{{$selArticles->date}}</h1>
 
-                </li>
-            </ul>
-            </nav>
-        </header>
-        <section class="h-fit body-font text-gray-600 ">
+
+                <h1 class="text-base text-neutral-900 py-4 italic">By</h1>
+
+                
+                <h1 class="text-base text-neutral-900 text-justify text-neutral-800 pt-3 indent-10">
+                    {!!$selArticles->article !!}
+                </h1>
+               </div>
+        </div>
+        <div class="lg:w-1/3 w-full divide-y-4 divide-slate-400/25">
             <div>
-                Hello
+                <h1 class="text-center text-2xl text-cyan-800">Other Updates</h1>
+                <hr class="bg-blue-600">
             </div>
-        </section>
+
+            <div class="pt-2 divide-y-4 divide-cyan-400/25">
+                @foreach($articles as $key => $article)
+                    @if($loop->iteration == 5)
+                        @break
+                    @endif
+                    <div class="w-full flex flex-col">
+                        <a href="{{ route('articlePage', $article->id)}}" class="hover:drop-shadow-2xl">
+                            <img class=" w-full object-cover lg:h-[8rem] rounded h-[6rem] px-2 pt-1" src="{{ asset('uploads/article/'.($article->image))}}">
+                            <div class="px-2 flex items-center justify-between overflow-hidden">
+                                <p class="text-gray-900 font-sm">
+                                    {{ Illuminate\Support\Str::limit($article->title, 15) }}
+                                </p>
+                            </div>
+                        </a>
+                    </div>  
+                @endforeach
+            </div>
+            <div>
+            <button type="button" class="lg:mb-0 mb-2 font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_100rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">View More</button>
+            </div>
+        </div>
     </div>
+</div>
 @endsection
 
 @section('js')
+
 @endsection

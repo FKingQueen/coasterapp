@@ -5,67 +5,115 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\File;
 use App\Models\User;
 use Carbon\Carbon;
 use DB;
 
 class AdminController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+
     public function index()
     {
-        $user = User::all()->reverse();
-
-        foreach($user as $key => $us)
+        // remove html tag
+        // $taglessBody = strip_tags($subject->body);
+        $article = Article::all()->reverse();
+        
+        foreach($article as $key => $arti)
         {
-            $user[$key]->date = Carbon::createFromFormat('Y-m-d H:i:s', $us->created_at)->format('F d, Y');
+            $article[$key]->date = Carbon::createFromFormat('Y-m-d H:i:s', $arti->created_at)->format('F d, Y');
         }
 
-        return view('admin.userManagement', array('users' => $user));
+        return view('admin.article', array('articles' => $article));
     }
+    
+    public function createArticle(Request $request)
+    {
 
-    public function createUser(Request $request){
-
-        $validated = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        $request->validate([
+            'image' => 'required',
         ]);
 
-        $user =  new User();
-        // Super Admin = 1, Admin = 2
-        $user->role_id = 1;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $res = $user->save();
+        $article =  new Article();
+        $article->project_id = 1;
+        $article->title = $request->title;
+        $article->article = $request->editor;
+        $res = $article->save();
 
+        $art = Article::find($article->id);
+        
+        if($request->hasfile('image'))
+        {
+            $dest = 'uploads/article/'.$art->image;
+            if(File::exists($dest))
+            {
+                File::delete($dest);
+            }
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = $art->id.'.'.$extension;
+            $file->move('uploads/article/', $filename);
+            $art->image = $filename;
+        }
+        $res = $art->update();
 
         return back();
     }
 
-    public function updateUser(Request $request, $id){
-        
-        $validated = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+    public function updateArticle(Request $request, $id)
+    {
+        $request->validate([
+            'image' => 'required',
         ]);
-
-        DB::table('users')
+        
+        DB::table('articles')
         ->where('id', $id)
         ->update([
-            'name'  => $request->name,
-            'email'  => $request->email,
-            'password'  => Hash::make($request->password),
+            'title'  => $request->title,
+            'article'  => $request->editor,
         ]);
+
+        $art = Article::find($id);
+        
+        if($request->hasfile('image'))
+        {
+            $dest = 'uploads/article/'.$art->image;
+            if(File::exists($dest))
+            {
+                File::delete($dest);
+            }
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = $art->id.'.'.$extension;
+            $file->move('uploads/article/', $filename);
+            $art->image = $filename;
+        }
+        $res = $art->update();
 
         return back();
     }
 
-    public function deleteUser($id){
-        $res = DB::table('users')
+    public function deleteArticle($id)
+    {
+        $res = DB::table('articles')
         ->where('id', $id)
         ->delete();
+
         return back();
     }
 }

@@ -184,7 +184,6 @@
         </div>
         
     </div>
-
 </body>
 <!-- Scripts -->
 @yield('js')

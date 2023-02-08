@@ -55,22 +55,22 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 </head>
 <body class="bg-gray-50">
-    <div id="app">
 
+    <div id="app">
         <!-- Navbar start -->
           <nav id="navbar" class="fixed top-0 z-40 flex w-full flex-row justify-between bg-[#0d2247] lg:px-20 md:px-3 sm:px-1 border-b-4 border-cyan-900 ">
               <div class="px-5 xl:px-12 py-2 flex w-full items-center {{ route('login') == url()->current() || route('register') ==  url()->current() ? 'hidden' : '' }}">
                   <div class="items-center flex space-x-3">
                       <div class="shrink-0 hidden md:flex">
-                          <a href="/dashboard"><img src="img/coaster.png" class="duration-200 hover:scale-110 cursor-pointer object-fill w-10 h-10" alt="#"></a>
+                          <a href="/"><img src="{{ URL::asset("img/coaster.png") }}" class="duration-200 hover:scale-110 cursor-pointer object-fill w-10 h-10" alt="#"></a>
                       </div>
                       <div class="font-sans pointer tracking-widest text-white font-semibold text-[13px] hidden md:flex">
-                          <a href="#containerSidebar" class="flex cursor-pointer font-bold text-white">
+                          <a href="/" class="flex cursor-pointer font-bold text-white">
                           COASTAL ENGINEERING, MANAGEMENT RESEARCH <br> & DEVELOPMENT CENTER
                           </a>
                       </div>
                       <div class="font-sans pointer tracking-widest text-white text-[15px] font-semibold flex md:hidden">
-                              <a href="/dashboard"><img src="img/coastername.png" class="duration-200 hover:scale-110 cursor-pointer object-fill w-32" alt="#"></a>
+                              <a href="/"><img src="{{ URL::asset("img/coastername.png") }}" class="duration-200 hover:scale-110 cursor-pointer object-fill w-32" alt="#"></a>
                           </a>
                       </div>
                   </div>
@@ -263,274 +263,15 @@
               </div>
           </div>
         <!-- Sidebar end -->
-
-        <!-- Carousel -->
-          <div id="carousel" style="display: none;" class="sample swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  class="object-cover w-full lg:h-[35rem]"
-                  src="img/field1.jpg"
-                  alt="apple watch photo"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  class="object-cover w-full lg:h-[35rem]"
-                  src="img/field2.jpg"
-                  alt="apple watch photo"
-                />
-              </div>
-              <div class="swiper-slide">
-                <img
-                  class="object-cover w-full lg:h-[35rem]"
-                  src="img/field3.jpg "
-                  alt="apple watch photo"
-                />
-              </div>
-            </div>
-            <div class="swiper-button-next "></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
+          <div id="articleContent">
+            @yield('content')
           </div>
-        <!-- /Carousel -->
-
-        <!-- Latest Update -->
-          <div id="latestUpdate" style="display: none;" class="w-full drop-shadow-md">
-              <div class="grid gap-2 place-content-center lg:mt-10 mt-2">
-                  <div class="text-center">
-                  <h1 class="font-medium leading-tight text-3xl text-sky-600">LATEST UPDATES</h1>
-                  <hr class="">
-                  </div>
-              </div>
-
-              <div class="lg:w-4/5 sm:w-2/3 bg-white mx-auto mt-5 ">
-                  <div class="flex items-center mt-2 flex-wrap pt-4">
-                      @foreach($articles as $key => $article)
-                          @if($loop->iteration == 5)
-                              @break
-                          @endif
-                            <div class="w-full md:w-2/3 xl:w-1/4 p-6 flex flex-col">
-                                <a href="#" class="border-b-4 border-cyan-600/30 hover:drop-shadow-2xl">
-                                    <img class=" w-full object-cover lg:h-[13rem] h-[10rem] p-2" src="{{ asset('uploads/article/'.($article->image))}}">
-                                    <div class="pt-3 flex items-center justify-between overflow-hidden">
-                                        <p class="text-gray-900 font-sm">
-                                            {{ Illuminate\Support\Str::limit($article->title, 15) }}
-                                        </p>
-                                    </div>
-                                    <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
-                                </a>
-                            </div>  
-                      @endforeach
-                  </div>
-                  <div>
-                    <button type="button" class="lg:mb-0 mb-2 font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_100rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">View More</button>
-                  </div>
-              </div>
-          </div>
-        <!-- /Latest Update -->  
-   
-        <!-- Project -->
-          <div id="projectObjective" style="display: none;">
-            <div class="grid gap-2 place-content-center m-10">
-                <div class="text-center">
-                  <h1 class="font-medium leading-tight text-3xl text-sky-600">PROJECT OBJECTIVES</h1>
-                  <hr class="">
-                </div>
-            </div>
-            
-            <!-- <div class="bg-sky-200/30 w-full lg:h-[40rem] grid grid-cols-1 content-center mt-5">
-              <div class="flex justify-center w-full">
-                <div class="w-3/4 lg:w-full md:flex justify-center gap-4">
-                  <div class="flex justify-center ">
-                    <div class="rounded-lg shadow-lg bg-white max-w-xs  grid-cols-3 gap-4">
-                      <a href="#!" class="">
-                        <img class="rounded-t-lg " src="img/project1.png" alt=""/>
-                      </a>
-                      <div class="p-6 grid grid-cols-1 gap-4">
-                        <div>
-                          <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 1</h5>
-                        </div>
-                        <div>
-                          <p class="text-gray-700 text-base mb-4 text-justify whitespace-normal">
-                            Coastal erosion trend and management strategies for Region 1
-                          </p>
-                        </div>
-                      </div>
-                      <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
-                    </div>
-                  </div>
-
-                  <div class="flex justify-center">
-                    <div class="rounded-lg shadow-lg bg-white max-w-xs">
-                      <a href="#!">
-                        <img class="rounded-t-lg" src="img/project2.png" alt=""/>
-                      </a>
-                      <div class="p-6 grid grid-cols-1 gap-4">
-                        <div>
-                          <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 2</h5>
-                        </div>
-                        <div>
-                          <p class="text-gray-700 text-base mb-4 text-justify whitespace-normal">
-                            Assessment, Monitoring, and Prediction of Coastal Flodding of Seelcted Municipalities in Region 1
-                          </p>
-                        </div>
-                      </div>
-                      <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
-                    </div>
-                  </div>
-
-
-                  <div class="flex justify-center">
-                    <div class="rounded-lg shadow-lg bg-white max-w-xs">
-                      <a href="#!">
-                        <img class="rounded-t-lg" src="img/project3.png" alt=""/>
-                      </a>
-                      <div class="p-6 grid grid-cols-1 gap-4">
-                        <div>
-                          <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 3</h5>
-                        </div>
-                        
-                        <div>
-                          <p class="text-gray-700 text-base mb-4 text-justify">
-                            Development of Sceiened-Based Engineering Approach to Coastal Protection in Region 1
-                          </p>
-                        </div>
-                      </div>
-                      <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
-                    </div>
-                    
-                  </div>
-
-                  <div class="flex justify-center">
-                    <div class="rounded-lg shadow-lg bg-white max-w-xs">
-                      <a href="#!">
-                        <img class="rounded-t-lg" src="img/project4.png" alt=""/>
-                      </a>
-                      <div class="p-4 grid grid-cols-1 gap-2 ">
-                        <div>
-                          <h5 class="text-gray-900 text-xl font-medium mb-2 font-bold">Project 4</h5>
-                        </div>
-                        <div>
-                          <p class="text-gray-700 text-base mb-4 text-justify">
-                            Enhancing Coastal Design and Infrastructure Intervention Through the Establishment of Wave Testing Facility
-                          </p>
-                        </div>
-                      </div>
-                        <button type="button" class="font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">See more</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <section class="body-font text-gray-600">
-              <div class="container mx-auto px-5">
-                <div class="-m-4 flex flex-wrap ">
-                  <div class="w-full p-4 md:w-1/2 lg:w-1/4 drop-shadow-lg ">
-                    <a class="relative block overflow-hidden rounded flex justify-center">
-                      <img alt="ecommerce" class="block h-full w-80 object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P1.png" />
-                    </a>
-                    <div class="mt-4 flex justify-center">
-                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 1</h3>
-                    </div>
-                  </div>
-                  <div class="w-full p-4 md:w-1/2 lg:w-1/4 drop-shadow-lg">
-                    <a class="relative block overflow-hidden rounded flex justify-center">
-                      <img alt="ecommerce" class="block h-full w-80 object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P2.png" />
-                    </a>
-                    <div class="mt-4 flex justify-center">
-                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 2</h3>
-                    </div>
-                  </div>
-                  <div class="w-full p-4 md:w-1/2 lg:w-1/4 drop-shadow-lg">
-                    <a class="relative block overflow-hidden rounded flex justify-center">
-                      <img alt="ecommerce" class="block h-full w-80 object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P3.png" />
-                    </a>
-                    <div class="mt-4 flex justify-center">
-                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 3</h3>
-                    </div>
-                  </div>
-                  <div class="w-full p-4 md:w-1/2 lg:w-1/4 drop-shadow-lg">
-                    <a class="relative block overflow-hidden rounded flex justify-center">
-                      <img alt="ecommerce" class="block h-full w-80 object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P4.png" />
-                    </a>
-                    <div class="mt-4 flex justify-center">
-                      <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 4</h3>
-                    </div>
-                  </div>
-              </div>
-            </section>
-          </div>
-        <!-- /Project -->
-
-        <!-- About Us -->
-            <div id="aboutUs" style="display: none;">
-                <div class="grid gap-2 place-content-center mt-10">
-                    <div class="text-center">
-                    <h1 class="font-medium leading-tight text-3xl text-sky-600">ABOUT US</h1>
-                    <hr class="">
-                    </div>
-                </div>
-                <div class="flex justify-center w-full mt-5">
-                    <div>
-                        <div class="xl:w-[90rem] lg:w-[50rem] sm:w-[10rem] text-justify indent-8 p-3">
-                            The Coastal Engineering Research Center or CoastER Center is the country’s first coastal engineering and management research and development center and 
-                            the hub of innovations for coastal resiliency. This facility will spur the development of innovations that address coastal erosion, development construction 
-                            materials for coastal protection, policies, and guidelines intended to protect resources from coastal flooding and improve the lives of people in coastal 
-                            communities. It will also bolster the capability of Filipino engineers towards coastal engineering leading to the development of a master’s degree for coastal 
-                            engineering.
-                        </div>
-                        <hr class="my-6 border-sky-300" />
-                        <div class="xl:w-[90rem] lg:w-[50rem] sm:w-[10rem] text-justify indent-8 p-3">
-                            The COASTER aims to spearhead the development of technologies and innovation to mitigate and manage coastal disasters and risks. The overall goal of the 
-                            center is to take the lead in coastal science and engineering studies to better undertand the magniture of certain process and hazards and their impacts
-                            on the maritime environment including tidal deltas and low-lying lands.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <!-- /About Us -->
-
-        <!-- Coop Agencies -->
-          <div id="coopAgencies" style="display: none;" class="grid gap-2 place-content-center mt-10">
-              <div class="grid gap-2 place-content-center lg:mt-10 mt-2">
-                  <div class="text-center">
-                  <h1 class="font-medium leading-tight text-3xl text-sky-600">COOP AGENCIES</h1>
-                  <hr class="">
-                  </div>
-              </div>
-            <div class="flex justify-center gap gap-4">
-                <div class="shrink-0">
-                    <a href="https://www.dost.gov.ph/"><img src="img/DOST.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
-                </div>
-                <div class="shrink-0">
-                    <a href="https://www.dost.gov.ph/"><img src="img/MMSU.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
-                </div>
-                <div class="shrink-0">
-                    <a href="https://www.mmsu.edu.ph/"><img src="img/KYOTO.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
-                </div>
-                <div class="shrink-0">
-                    <a href="https://www.mmsu.edu.ph/"><img src="img/DILIMAN.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
-                </div>
-                <div class="shrink-0">
-                    <a href="https://www.mmsu.edu.ph/"><img src="img/DMMMSU.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
-                </div>
-                <div class="shrink-0">
-                    <a href="https://www.mmsu.edu.ph/"><img src="img/CIVIL.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
-                </div>
-                <div class="shrink-0">
-                    <a href="https://www.mmsu.edu.ph/"><img src="img/DPWH.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
-                </div>
-            </div>
-          </div>
-        <!-- /Coop Agencies -->
-
         <!-- Footer -->
           <footer id="footer" style="display: none;" class="bg-white dark:bg-gray-800 mt-5">
             <div id="contact" class="max-w-screen-xl mx-auto lg:py-5 md:p-8 lg:p-10">
               <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-2">
                   <div class="place-content-center grid ">
-                      <img class="w-40 h-40 sm:w-36 sm:h-36 " src="img/coaster.png" alt="" >
+                      <img class="w-40 h-40 sm:w-36 sm:h-36 " src="{{ URL::asset("img/coaster.png") }}" alt="" >
                   </div>
                   <div class="">
                       <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">COASTER</h3>
@@ -600,76 +341,40 @@
       },
     });
 
-    document.addEventListener("DOMContentLoaded", () => {
-          const navbar = document.getElementById("navbar");
-          const carousel = document.getElementById("carousel");
-
-          carousel.style.marginTop = parseInt(navbar.clientHeight) + "px";
-        //   console.log(navbar.clientHeight);
-      });
   </script>
 <!-- /Carousel -->
-<!-- Content Slider -->
-  <script>
-    let sliderContainer = document.getElementById('sliderContainer');
-    let slider = document.getElementById('slider');
-    let cards = document.getElementsByTagName('li');
+<script>
+        var articleContent = document.getElementById("articleContent");
 
-    let elementsToShow = 3;
+        articleContent.style.marginTop = parseInt(navbar.clientHeight) + "px";
 
-    let sliderContainerWidth = sliderContainer.clientWidth;
-
-    let cardWidth = sliderContainerWidth/elementsToShow;
-
-    slider.style.width = cards.length*cardWidth+'px';
-
-    for(let index = 0; index < cards.length; index++) 
-    {
-      const element = cards[index];
-      element.style.width = cardWidth+'px';
-    }
-
-    function prev(){
-      if(+slider.style.marginLeft.slice(0, -2) != -cardWidth*(cards.length-elementsToShow))
-      slider.style.marginLeft= ((+slider.style.marginLeft.slice(0, -2)) - cardWidth) + 'px';
-    }
-
-    function next(){
-      if(+slider.style.marginLeft.slice(0, -2) != 0)
-      slider.style.marginLeft= ((+slider.style.marginLeft.slice(0, -2)) + cardWidth) + 'px';
-    }
-  </script>
-<!-- /Content Slider -->
+        console.log(articleContent.style);
+</script>
 
 <!-- Preload Effects-->
   <script>
         $(window).on("load",function(){
         //   $(".loader-wrapper").fadeOut("slow");
             $("#navButton").fadeIn();
-            $("#carousel").fadeIn();
-            $("#latestUpdate").fadeIn();
-            $("#latestUpdate").fadeIn();
-            $("#aboutUs").fadeIn();
-            $("#projectObjective").fadeIn();
-            $("#coopAgencies").fadeIn();
+            $("#articleContent").fadeIn();
             $("#footer").fadeIn();
         });
   </script>
 <!-- /Preload Effects-->
 
 <!-- Auto Scroll Page -->
-<script>
-    window.addEventListener('scroll', () => {
-        const scrollable = document.documentElement.scrollHeight ;
-        const scrolled = window.scrollY;
-        console.log(scrolled);
-    })
-function autoScroll(){
+  <script>
+      window.addEventListener('scroll', () => {
+          const scrollable = document.documentElement.scrollHeight ;
+          const scrolled = window.scrollY;
+          console.log(scrolled);
+      })
+  function autoScroll(){
 
-window.scrollTo(0, 200);
+  window.scrollTo(0, 200);
 
-}
-</script>
+  }
+  </script>
 
 <!-- /Auto Scroll Page -->
 </html>
