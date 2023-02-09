@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SuperAdminController;
 
 /*
@@ -21,6 +22,7 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 Route::get('/article/{id}', [App\Http\Controllers\DashboardController::class, 'articlePage'])->name('articlePage');
+Route::get('/more', [App\Http\Controllers\DashboardController::class, 'articleMore'])->name('articleMore');
 
 // Admin
 Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('home');

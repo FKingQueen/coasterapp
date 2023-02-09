@@ -50,7 +50,7 @@
                         @if($loop->iteration == 5)
                             @break
                         @endif
-                        <div class="w-full md:w-2/3 xl:w-1/4 p-6 flex flex-col">
+                        <div class="w-full xl:w-1/4 p-6 flex flex-col">
                             <a href="{{ route('articlePage', $article->id)}}" class="border-b-4 border-cyan-600/30 hover:drop-shadow-2xl">
                                 <img class=" w-full object-cover lg:h-[13rem] h-[10rem] py-1" src="{{ asset('uploads/article/'.($article->image))}}">
                                 <div class="pt-3 flex items-center justify-between overflow-hidden">
@@ -63,8 +63,8 @@
                         </div>  
                     @endforeach
                 </div>
-                <div>
-                <button type="button" class="lg:mb-0 mb-2 font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_100rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">View More</button>
+                <div class="w-full">
+                    <a href="{{ route('articleMore')}}" type="button" class="lg:mb-0 mb-2 font-bold text-center hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_100rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">View More</a>
                 </div>
             </div>
         </div>

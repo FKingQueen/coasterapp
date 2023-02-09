@@ -24,8 +24,30 @@ class DashboardController extends Controller
     {
         $article = Article::all()->reverse();
         $selArticle = Article::find($id);
+
         $selArticle->date = Carbon::createFromFormat('Y-m-d H:i:s', $selArticle->created_at)->format('F d, Y');
         
-        return view('article.articlePage', array("articles" => $article, "selArticles" => $selArticle));
+        foreach($article as $key => $arti)
+        {
+            $article[$key]->date = Carbon::createFromFormat('Y-m-d H:i:s', $arti->created_at)->format('F d, Y');
+        }
+        foreach($article as $key => $art ) 
+        {
+            if($art->id != $id){
+               $fArticle[$key] = $article[$key];  
+            }
+        }
+        // dd($fArticle);
+        return view('article.articlePage', array("fArticles" => $fArticle, "selArticles" => $selArticle));
+    }
+
+    public function articleMore()
+    {
+        $article = Article::all()->reverse();
+        foreach($article as $key => $arti)
+        {
+            $article[$key]->date = Carbon::createFromFormat('Y-m-d H:i:s', $arti->created_at)->format('F d, Y');
+        }
+        return view('article.articleMore', array('articles' => $article));
     }
 }
