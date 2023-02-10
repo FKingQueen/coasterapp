@@ -35,3 +35,4 @@ Route::post('/deleteArticle/{id}', [App\Http\Controllers\AdminController::class,
 Route::get('/userManagement', [App\Http\Controllers\SuperAdminController::class, 'index'])->name('userManagement');
 Route::post('/createUser', [App\Http\Controllers\SuperAdminController::class, 'createUser'])->name('createUser');
 Route::post('/updateUser/{id}', [App\Http\Controllers\SuperAdminController::class, 'updateUser'])->name('updateUser');
+Route::post('/deleteUser/{id}', [App\Http\Controllers\SuperAdminController::class, 'deleteUser'])->name('deleteUser');

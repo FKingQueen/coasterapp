@@ -19,10 +19,10 @@
 <body>
     <div class="flex justify-center h-screen w-screen items-center">
         <div class="w-full flex flex-col items-center" >
-            <form method="POST" action="{{ route('login')}}" class="w-1/4">
+            <form method="POST" action="{{ route('login')}}" class="md:w-1/4 w-11/12">
                 @csrf
                 <!-- text login -->
-                <h1 class="text-center text-2xl font-bold text-gray-600 mb-6">LOGIN</h1>
+                <h1 class="text-center text-2xl font-bold text-gray-600 mb-6">COASTER LOGIN</h1>
                 <!-- email input -->
                 <div class=" mb-6">
                     <input id="email" type="email" class="w-full py-4 px-8 bg-slate-200 placeholder:font-semibold rounded hover:ring-1 outline-blue-500" name="email" value="{{ old('email') }}" placeholder="Email Address" required autocomplete="email" autofocus>
@@ -34,7 +34,7 @@
                 <!-- remember input -->
                 <div class=" flex flex-row justify-between">
                     <div class=" flex items-center gap-x-1">
-                        <input type="checkbox" name="remember" id="" class=" w-4 h-4  ">
+                        <input type="checkbox" name="remember" id="" class=" w-4  h-4  ">
                         <label for="" class="text-sm text-slate-400">Remember me</label>
                     </div>
                     <div>

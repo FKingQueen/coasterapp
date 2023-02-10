@@ -127,9 +127,9 @@
                 <hr class="">
                 </div>
             </div>
-            <div class="flex justify-center w-full mt-5">
+            <div class="flex justify-center w-full  mt-5">
                 <div>
-                    <div class="xl:w-[90rem] lg:w-[50rem] sm:w-[10rem] text-justify indent-8 p-3">
+                    <div class="xl:w-[90rem] lg:w-[50rem] w-full text-justify indent-8 p-3">
                         The Coastal Engineering Research Center or CoastER Center is the country’s first coastal engineering and management research and development center and 
                         the hub of innovations for coastal resiliency. This facility will spur the development of innovations that address coastal erosion, development construction 
                         materials for coastal protection, policies, and guidelines intended to protect resources from coastal flooding and improve the lives of people in coastal 
@@ -137,7 +137,7 @@
                         engineering.
                     </div>
                     <hr class="my-6 border-sky-300" />
-                    <div class="xl:w-[90rem] lg:w-[50rem] sm:w-[10rem] text-justify indent-8 p-3">
+                    <div class="xl:w-[90rem] lg:w-[50rem] w-full text-justify indent-8 p-3">
                         The COASTER aims to spearhead the development of technologies and innovation to mitigate and manage coastal disasters and risks. The overall goal of the 
                         center is to take the lead in coastal science and engineering studies to better undertand the magniture of certain process and hazards and their impacts
                         on the maritime environment including tidal deltas and low-lying lands.
@@ -155,29 +155,29 @@
                 <hr class="">
                 </div>
             </div>
-        <div class="flex justify-center gap gap-4">
-            <div class="shrink-0">
-                <a href="https://www.dost.gov.ph/"><img src="img/DOST.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+            <div class="flex justify-center gap gap-4 px-10">
+                <div class="shrink-0">
+                    <a href="https://www.dost.gov.ph/"><img src="img/DOST.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.dost.gov.ph/"><img src="img/MMSU.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/KYOTO.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/DILIMAN.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/DMMMSU.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/CIVIL.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+                </div>
+                <div class="shrink-0">
+                    <a href="https://www.mmsu.edu.ph/"><img src="img/DPWH.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
+                </div>
             </div>
-            <div class="shrink-0">
-                <a href="https://www.dost.gov.ph/"><img src="img/MMSU.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
-            </div>
-            <div class="shrink-0">
-                <a href="https://www.mmsu.edu.ph/"><img src="img/KYOTO.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
-            </div>
-            <div class="shrink-0">
-                <a href="https://www.mmsu.edu.ph/"><img src="img/DILIMAN.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
-            </div>
-            <div class="shrink-0">
-                <a href="https://www.mmsu.edu.ph/"><img src="img/DMMMSU.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
-            </div>
-            <div class="shrink-0">
-                <a href="https://www.mmsu.edu.ph/"><img src="img/CIVIL.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
-            </div>
-            <div class="shrink-0">
-                <a href="https://www.mmsu.edu.ph/"><img src="img/DPWH.png" class="object-fill lg:w-[4vw] lg:h-[4vw] w-[11vw] h-[11vw]" alt="#"></a>
-            </div>
-        </div>
         </div>
     <!-- /Coop Agencies -->
 @endsection

@@ -12,9 +12,9 @@
             <h1 class="bg-white py-4 text-center">
             <a href="#" class="text-xl font-bold text-gray-700 cursor-pointer">Article Management</h1>
             </h1>
-            <nav class="mt-3">
+            <nav class="mt-3 h-fit">
             <ul class="items-center">
-                <li class="text-center">
+                <li class="text-center ">
                     <!-- Create Article Modal -->
                     <div x-data="{ modalCreate: false }" class="grid grid-cols-1 gap-4 place-content-center">
                     <a href="#" @click="modalCreate =!modalCreate" class="text-md font-semibold text-gray-600 hover:text-gray-800">New Article</a>

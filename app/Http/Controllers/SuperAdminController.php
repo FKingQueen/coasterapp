@@ -13,7 +13,8 @@ class SuperAdminController extends Controller
 {
     public function index()
     {
-        $user = User::all()->reverse();
+        $user = User::with('role')->get()->reverse();
+        // dd($user);
 
         foreach($user as $key => $us)
         {
@@ -32,8 +33,7 @@ class SuperAdminController extends Controller
         ]);
 
         $user =  new User();
-        // Super Admin = 1, Admin = 2
-        $user->role_id = 1;
+        $user->role_id = $request->role;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);

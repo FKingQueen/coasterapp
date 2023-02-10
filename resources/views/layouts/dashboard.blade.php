@@ -205,33 +205,57 @@
           <div id="containerSidebar" class=" z-40">
               <div class="navbar-menu relative z-40">
                   <nav id="sidebar"
-                      class="fixed left-0 bottom-0 flex w-3/4 -translate-x-full flex-col overflow-y-auto bg-sky-900 pt-6 pb-8 sm:max-w-xs lg:w-80">
+                      class="fixed left-0 bottom-0 flex w-3/4 -translate-x-full flex-col overflow-y-auto bg-stone-700 pt-6 pb-8 sm:max-w-xs lg:w-80">
                       <!-- one category / navigation group -->
-                      <div class="px-4 pb-6">
-                          <ul class="mb-8 text-sm font-medium">
-                              <li>
-                                  <router-link class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"  to='/' exact>HOME</router-link>
-                              </li>
-                              <li>
-                                  <router-link class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600" to='/services'>SERVICES</router-link>
-                              </li>
-                              <li>
-                                  <router-link class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600" to='/about'>ABOUT</router-link>
-                              </li>
-                              <li>
-                                  <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
-                                      href="#link1">
-                                      <span class="select-none">Blog</span>
-                                  </a>
-                              </li>
-                              <li>
-                                  <a class="flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600"
-                                      href="#link1">
-                                      <span class="select-none">Contact</span>
-                                  </a>
-                              </li>
-                          </ul>
-                      </div>
+                        <div class="">
+                            <ul class="mb-8 text-sm font-medium">
+                                <li>
+                                    <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                                        <button @click="open = !open" class="w-full flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600">
+                                            <span>ABOUT</span>
+                                            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-5 h-5 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                        </button>
+                                        <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full z-50 mt-2 origin-top-right rounded-md shadow-lg">
+                                            <div class="px-2 py-2 bg-white shadow dark-mode:bg-gray-800 ">
+                                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#aboutUs">ABOUT</a>
+                                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#contact">CONTACT</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                                        <button @click="open = !open" class="w-full flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600">
+                                            <span>SERVICES</span>
+                                            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-5 h-5 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                        </button>
+                                        <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
+                                            <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">TIDAL & WAVE</a>
+                                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">WEATHER</a>
+                                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">MAP</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                                        <button @click="open = !open" class="w-full flex items-center rounded py-3 pl-3 pr-4 text-gray-50 hover:bg-gray-600">
+                                            <span>PEOJECT</span>
+                                            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-5 h-5 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                        </button>
+                                        <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg">
+                                            <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">PROJETC 1</a>
+                                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">PROJETC 2</a>
+                                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">PROJETC 3</a>
+                                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">PROJETC 4</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                       <!-- navigation group end-->
                   </nav>
               </div>
@@ -339,14 +363,15 @@
 
   </script>
 <!-- /Carousel -->
-<script>
-        var articleContent = document.getElementById("articleContent");
+<!-- Content -->
+    <script>
+            var articleContent = document.getElementById("articleContent");
 
-        articleContent.style.marginTop = parseInt(navbar.clientHeight) + "px";
+            articleContent.style.marginTop = parseInt(navbar.clientHeight) + "px";
 
-        console.log(articleContent.style);
-</script>
-
+            console.log(articleContent.style);
+    </script>
+<!-- Content -->
 <!-- Preload Effects-->
   <script>
         $(window).on("load",function(){
@@ -357,7 +382,6 @@
         });
   </script>
 <!-- /Preload Effects-->
-
 <!-- Auto Scroll Page -->
   <script>
       window.addEventListener('scroll', () => {

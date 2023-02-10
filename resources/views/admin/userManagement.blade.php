@@ -50,6 +50,16 @@
                                     <!-- Register Article Form -->
                                     <form action="{{ route('createUser') }}" method="POST" enctype="multipart/form-data">
                                         @csrf
+                                        <div class="mt-4">
+                                        <label for="user name" class="block text-sm text-gray-700 capitalize dark:text-gray-200 mt-2">Select Role</label>
+                                            <select id="role" name="role" required class="block w-full px-3 py-2  text-gray-600 placeholder-gray-400 bg-white border border-gray-200 rounded-md focus:border-indigo-400 focus:outline-none focus:ring focus:ring-indigo-300 focus:ring-opacity-40">
+                                                <option value="" disabled selected>Role</option>
+                                                <option value="1">Super Admin</option>
+                                                <option value="2">Admin</option>
+                                                <option value="3">Article Supervisor</option>
+                                            </select>     
+                                        </div>
+
 
                                         <div class="mt-4">
                                             <label for="user name" class="block text-sm text-gray-700 capitalize dark:text-gray-200 mt-2">Name</label>
@@ -85,7 +95,7 @@
                     <!-- Register Article Modal -->
                 </div>
 
-                <div class="w-1/4 flex">
+                <div class="lg:w-1/4 w-full flex">
                     <label for="simple-search" class="sr-only">Search</label>
                     <div class="relative w-full">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -100,13 +110,13 @@
                 </div>
             </div>
 
-            <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md">
+            <div class="overflow-hidden rounded-lg border border-gray-200 shadow-md w-full">
                 <table id="myTable" class="w-full border-collapse bg-white text-left text-sm text-gray-500">
                     <thead class="bg-gray-50">
                     <tr>
                         <th scope="col" class="px-6 py-4 font-medium text-gray-900">Name</th>
                         <th scope="col" class="px-6 py-4 font-medium text-gray-900">Email</th>
-                        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Create at</th>
+                        <th scope="col" class=" px-6 py-4 font-medium text-gray-900">User Role</th>
                         <th scope="col" class="px-6 py-4 font-medium text-gray-900 flex justify-end">Option</th>
                     </tr>
                     </thead>
@@ -120,7 +130,7 @@
                                     {{$user->email}}
                                 </td>
                                 <td class=" gap-3 px-6 py-4 font-normal text-gray-900">
-                                    {{$user->date}}
+                                    {{$user->role->role}}
                                 </td>
                                 <td class="px-6 py-4">
                                     <div class="flex justify-end gap-4">
@@ -185,28 +195,28 @@
                                                                         >
 
                                                                             <!-- Delete User Form -->
-                                                                            <form action="" method="POST">
-                                                                                @csrf
-                                                                                    <!--body-->
-                                                                                    <div class="text-center p-5 flex-auto justify-center">
-                                                                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 -m-1 flex items-center text-red-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                                                                            </svg>
-                                                                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 flex items-center text-red-500 mx-auto" viewBox="0 0 20 20" fill="currentColor">
-                                                                                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                                                                                            </svg>
-                                                                                                    <h2 class="text-xl font-bold py-4 ">Are you sure?</h3>
-                                                                                                    <p class="text-sm text-gray-500 px-8">Do you really want to delete this account?
-                                                                                            This process cannot be undone</p>    
-                                                                                    </div>
-                                                                                    <!--footer-->
-                                                                                    <div class="p-3  mt-2 text-center space-x-4 md:block">
-                                                                                        <button @click="modaluserDelete = false" type="button" class="mb-2 md:mb-0 bg-white px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-gray-600 rounded-full hover:shadow-lg hover:bg-gray-100">
-                                                                                            Cancel
-                                                                                        </button>
-                                                                                        <button class="mb-2 md:mb-0 bg-red-500 border border-red-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-red-600">Delete</button>
-                                                                                    </div>
-                                                                            </form>
+                                                                                <form action="{{ route('deleteUser', $user->id) }}" method="POST">
+                                                                                    @csrf
+                                                                                        <!--body-->
+                                                                                        <div class="text-center p-5 flex-auto justify-center">
+                                                                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 -m-1 flex items-center text-red-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                                                                </svg>
+                                                                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 flex items-center text-red-500 mx-auto" viewBox="0 0 20 20" fill="currentColor">
+                                                                                                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                                                                                </svg>
+                                                                                                        <h2 class="text-xl font-bold py-4 ">Are you sure?</h3>
+                                                                                                        <p class="text-sm text-gray-500 px-8">Do you really want to delete this account?
+                                                                                                This process cannot be undone</p>    
+                                                                                        </div>
+                                                                                        <!--footer-->
+                                                                                        <div class="p-3  mt-2 text-center space-x-4 md:block">
+                                                                                            <button @click="modaluserDelete = false" type="button" class="mb-2 md:mb-0 bg-white px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-gray-600 rounded-full hover:shadow-lg hover:bg-gray-100">
+                                                                                                Cancel
+                                                                                            </button>
+                                                                                            <button type="submit" class="mb-2 md:mb-0 bg-red-500 border border-red-500 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-red-600">Delete</button>
+                                                                                        </div>
+                                                                                </form>
                                                                             <!-- Delete User Form -->
                                                                         </div>
                                                                     </div>

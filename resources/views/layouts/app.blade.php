@@ -136,7 +136,7 @@
                                 </a>
                             </li>
 
-                            <li x-data="{isActive: false, open: false}" >
+                            <li x-data="{isActive: false, open: false}" class="{{ Auth::user()->role_id == 1 ? '' : 'hidden'}}">
                                 <a
                                 href="{{ route('userManagement') }}"
                                     class="{{ route('userManagement') == url()->current() ? 'bg-cyan-700 dark:bg-cyan-700' : ''}}  relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6"
