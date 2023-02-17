@@ -24,11 +24,15 @@ Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->nam
 Route::get('/article/{id}', [App\Http\Controllers\DashboardController::class, 'articlePage'])->name('articlePage');
 Route::get('/more', [App\Http\Controllers\DashboardController::class, 'articleMore'])->name('articleMore');
 
+// Projects
+Route::get('/project1', [App\Http\Controllers\ProjectsController::class, 'project1'])->name('project1');
+
 // Admin
 Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('home');
 Route::post('/createArticle', [App\Http\Controllers\AdminController::class, 'createArticle'])->name('createArticle');
 Route::post('/updateArticle/{id}', [App\Http\Controllers\AdminController::class, 'updateArticle'])->name('updateArticle');
 Route::post('/deleteArticle/{id}', [App\Http\Controllers\AdminController::class, 'deleteArticle'])->name('deleteArticle');
+Route::get('/userSetting', [App\Http\Controllers\AdminController::class, 'userSetting'])->name('userSetting');
 // Route::post('/article', [App\Http\Controllers\HomeController::class, '/userManagement'])->name('article');
 
 // SuperAdmin

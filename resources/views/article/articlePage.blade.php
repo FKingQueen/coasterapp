@@ -4,7 +4,7 @@
 @endsection
 
 @section('content')
-<div class="w-screen flex justify-center pb-2 pt-8">
+<div class="w-full flex justify-center pb-2 pt-8">
     <div class="lg:w-3/5 w-full lg:flex grid gap-4 ">
         <div class="lg:w-2/3 w-full shadow-xl">
             <img class=" w-full object-cover lg:h-[20rem] rounded-lg h-[10rem] pb-2 px-2" src="{{ URL::asset("uploads/article/".($selArticles->image)) }}">

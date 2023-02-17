@@ -39,7 +39,7 @@ class AdminController extends Controller
             $article[$key]->date = Carbon::createFromFormat('Y-m-d H:i:s', $arti->created_at)->format('F d, Y');
         }
 
-        return view('admin.article', array('articles' => $article));
+        return view('admin.articleManagement', array('articles' => $article));
     }
     
     public function createArticle(Request $request)
@@ -115,5 +115,10 @@ class AdminController extends Controller
         ->delete();
 
         return back();
+    }
+
+    public function userSetting()
+    {
+        return view('admin.userSetting');
     }
 }
