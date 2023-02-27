@@ -26,6 +26,10 @@ Route::get('/more', [App\Http\Controllers\DashboardController::class, 'articleMo
 
 // Projects
 Route::get('/project1', [App\Http\Controllers\ProjectsController::class, 'project1'])->name('project1');
+Route::get('/project2', [App\Http\Controllers\ProjectsController::class, 'project2'])->name('project2');
+
+// Services
+Route::get('/mapServices', [App\Http\Controllers\ServicesController::class, 'mapServices'])->name('mapServices');
 
 // Admin
 Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('home');

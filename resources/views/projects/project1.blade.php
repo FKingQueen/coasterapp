@@ -9,7 +9,7 @@
         <div class="lg:w-3/4 w-full shadow-xl ">
             <div class="flex justify-center">
                 <img class="lg:w-[80px] lg:h-[80px] md:w-[80px] md:h-[80px] w-[70px] h-[70px]" src="{{ URL::asset("img/coaster.png") }}" alt="" >
-                <div class="text-center border">
+                <div class="text-center ">
                     <h1 class="font-serif lg:text-[25px] text-[20px] font-extrabold">Coastal Engineering and Management</h1>
                     <h1 class="font-serif lg:text-[25px] text-[20px] font-extrabold">Research and Development Center</h1>
                 </div>
@@ -18,24 +18,43 @@
                 <h1 class="font-sans lg:text-[20px] text-[15px] font-bold lg:px-1 px-5 tracking-tight">Project 1: Coastal Erosion Trends and Management Strategies for Region 1</h1>
             </div>
             <div>
-                <hr class="lg:w-3/4 w-11/12 h-1 mx-auto my-4 bg-blue-400 border-0 md:my-10">
+                <hr class="lg:w-3/4 w-11/12 h-1 mx-auto my-4 bg-blue-400 border-0 md:my-6">
             </div>
-            <div class="w-full border flex justify-center">
+            <div class="w-full flex justify-center mb-2">
                 <div class="lg:w-4/5 w-11/12">
                     <h1 class="font-sans lg:text-[25px] text-[20px] font-extrabold tracking-tight">ABOUT THE PROJECT:</h1>
-                    <p class="text-justify font-sans font-semibold tracking-tighter">Coastal erosion is the prevelent in the Philippines and will worsen rising seas. Measures to address coastal erosion, in many cases,
+                    <p class="text-justify font-sans font-medium tracking-tighter">Coastal erosion is the prevelent in the Philippines and will worsen rising seas. Measures to address coastal erosion, in many cases,
                         exacerbate rather than metigate the problem. Due to lack of proper understanding of causes of erosion in particular and Coastal
                         dynamic in general and scarcity of personnel that can provide information and guidance for informed coastal erosion management strategies.
                     </p>
                 </div>
             </div>
-            <div class="w-full border flex justify-center">
+            <div class="w-full flex justify-center mb-2">
                 <div class="lg:w-4/5 w-11/12">
-                    <h1 class="font-sans lg:text-[25px] text-[20px] font-extrabold tracking-tight">ABOUT THE PROJECT:</h1>
-                    <p class="text-justify font-sans font-semibold tracking-tighter">Coastal erosion is the prevelent in the Philippines and will worsen rising seas. Measures to address coastal erosion, in many cases,
-                        exacerbate rather than metigate the problem. Due to lack of proper understanding of causes of erosion in particular and Coastal
-                        dynamic in general and scarcity of personnel that can provide information and guidance for informed coastal erosion management strategies.
-                    </p>
+                    <h1 class="font-sans lg:text-[25px] text-[20px] font-extrabold tracking-tight">OBJECTIVES:</h1>
+                    <div>
+                        <p class="text-justify font-sans font-medium tracking-tighter">
+                            1. Provide knowledge know-how to Region 1 HEI researchers on coastal erosion research
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-justify font-sans font-medium tracking-tighter">
+                            2. Establish the trends and possible causes of erosion along the coasts of Region 1
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-justify font-sans font-medium tracking-tighter">
+                            3. Identify hotspots of erosion and recommend management options that can be considered by the LGU
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full flex justify-center mb-2">
+                <div class="lg:w-4/5 w-11/12">
+                    <h1 class="font-sans lg:text-[25px] text-[20px] font-extrabold tracking-tight">HIGHLIGHT OF THE ACTIVITIES:</h1>
+                    <div>
+                        <img class=" " src="{{ URL::asset("img/projectpic1.jpg") }}" alt="" >
+                    </div>
                 </div>
             </div>
         </div>
