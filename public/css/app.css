@@ -1557,6 +1557,16 @@ textarea.form-control.is-invalid {
   white-space: nowrap;
   border-width: 0;
 }
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
 .pointer-events-none {
   pointer-events: none;
 }
@@ -1802,6 +1812,9 @@ textarea.form-control.is-invalid {
 .h-1 {
   height: 0.25rem;
 }
+.h-\[1px\] {
+  height: 1px;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1864,6 +1877,12 @@ textarea.form-control.is-invalid {
 }
 .w-\[70px\] {
   width: 70px;
+}
+.w-24 {
+  width: 6rem;
+}
+.w-52 {
+  width: 13rem;
 }
 .max-w-xl {
   max-width: 36rem;
@@ -1934,6 +1953,12 @@ textarea.form-control.is-invalid {
 .cursor-pointer {
   cursor: pointer;
 }
+.snap-x {
+  scroll-snap-type: x var(--tw-scroll-snap-strictness);
+}
+.snap-center {
+  scroll-snap-align: center;
+}
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -1972,6 +1997,12 @@ textarea.form-control.is-invalid {
 }
 .justify-between {
   justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-evenly {
+  justify-content: space-evenly;
 }
 .gap-4 {
   gap: 1rem;
@@ -2193,8 +2224,33 @@ textarea.form-control.is-invalid {
   --tw-bg-opacity: 1;
   background-color: rgb(68 64 60 / var(--tw-bg-opacity));
 }
+.bg-lime-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(77 124 15 / var(--tw-bg-opacity));
+}
+.bg-emerald-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(6 78 59 / var(--tw-bg-opacity));
+}
+.bg-sky-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(3 105 161 / var(--tw-bg-opacity));
+}
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
 .bg-opacity-40 {
   --tw-bg-opacity: 0.4;
+}
+.bg-opacity-100 {
+  --tw-bg-opacity: 1;
+}
+.bg-opacity-80 {
+  --tw-bg-opacity: 0.8;
+}
+.bg-opacity-90 {
+  --tw-bg-opacity: 0.9;
 }
 .stroke-rose-700 {
   stroke: #be123c;
@@ -2234,6 +2290,12 @@ textarea.form-control.is-invalid {
 }
 .p-0 {
   padding: 0px;
+}
+.p-20 {
+  padding: 5rem;
+}
+.p-9 {
+  padding: 2.25rem;
 }
 .py-4 {
   padding-top: 1rem;
@@ -2291,6 +2353,10 @@ textarea.form-control.is-invalid {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
 .pr-2 {
   padding-right: 0.5rem;
 }
@@ -2335,6 +2401,12 @@ textarea.form-control.is-invalid {
 }
 .pr-4 {
   padding-right: 1rem;
+}
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+.pt-0 {
+  padding-top: 0px;
 }
 .text-left {
   text-align: left;
@@ -2722,7 +2794,6 @@ ul.breadcrumb li span {
         opacity: 0;
     }
 }
-
 
   /* Compiled dark classes from Tailwind */
   .dark .dark\:divide-gray-700 > :not([hidden]) ~ :not([hidden]) {
@@ -3196,31 +3267,6 @@ ul.breadcrumb li span {
     visibility: visible;
   }
 
-  .md\:my-10 {
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .md\:my-8 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .md\:my-2 {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .md\:my-4 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .md\:my-5 {
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
-  }
-
   .md\:my-6 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -3403,12 +3449,20 @@ ul.breadcrumb li span {
     width: 80px;
   }
 
+  .lg\:w-full {
+    width: 100%;
+  }
+
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .lg\:p-10 {
     padding: 2.5rem;
+  }
+
+  .lg\:p-8 {
+    padding: 2rem;
   }
 
   .lg\:px-20 {
@@ -3426,8 +3480,22 @@ ul.breadcrumb li span {
     padding-right: 0.25rem;
   }
 
+  .lg\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .lg\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
   .lg\:pt-8 {
     padding-top: 2rem;
+  }
+
+  .lg\:pt-4 {
+    padding-top: 1rem;
   }
 
   .lg\:text-\[25px\] {
@@ -3436,6 +3504,11 @@ ul.breadcrumb li span {
 
   .lg\:text-\[20px\] {
     font-size: 20px;
+  }
+
+  .lg\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
   @media (min-width: 1280px) {

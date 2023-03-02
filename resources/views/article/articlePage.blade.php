@@ -4,20 +4,20 @@
 @endsection
 
 @section('content')
-<div class="w-full flex justify-center pb-2 pt-8">
+<div class="w-full flex justify-center pb-2 lg:pt-4 pt-1">
     <div class="lg:w-3/5 w-full lg:flex grid gap-4 ">
         <div class="lg:w-2/3 w-full shadow-xl">
             <img class=" w-full object-cover lg:h-[20rem] rounded-lg h-[10rem] pb-2 px-2" src="{{ URL::asset("uploads/article/".($selArticles->image)) }}">
                <!-- {{$selArticles}} -->
-               <div class="p-2 pb-5">
+               <div class="lg:px-8 px-5">
                     <h1 class="text-3xl text-neutral-600">{{$selArticles->title}}</h1>
                     <h1 class="text-gray-900/50 text-sm">{{$selArticles->date}}</h1>
 
 
-                    <h1 class="text-base text-neutral-900 py-4 italic">By</h1>
+                    <h1 class="text-sm text-neutral-900 py-4 italic">By</h1>
 
                     
-                    <h1 class="text-base text-neutral-900 text-justify text-neutral-800  indent-10">
+                    <h1 class="text-sm text-neutral-900 text-justify text-neutral-800  indent-10">
                         {!!$selArticles->article!!}
                     </h1>
                </div>
@@ -32,7 +32,7 @@
                     @if($loop->iteration == 5)
                         @break
                     @endif
-                    <div class="w-full flex flex-col divide-y-4 divide-gray-400/20">
+                    <div class="w-full flex flex-col divide-y-4 divide-gray-400/20 p">
                         <a href="{{ route('articlePage', $article->id)}}" class="hover:drop-shadow-2xl">
                             <img class=" w-full object-cover lg:h-[8rem] rounded-lg h-[11rem] px-2 pt-1" src="{{ asset('uploads/article/'.($article->image))}}">
                             <div class="">

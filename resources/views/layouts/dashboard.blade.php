@@ -265,7 +265,7 @@
             @yield('content')
           </div>
         <!-- Footer -->
-          <footer id="footer" style="display: none;" class="bg-white dark:bg-gray-800 mt-5">
+          <footer id="footer" style="display: none;" class="bg-white dark:bg-gray-800">
             <div id="contact" class="max-w-screen-xl mx-auto lg:py-5 md:p-8 lg:p-10">
               <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-2">
                   <div class="place-content-center grid ">

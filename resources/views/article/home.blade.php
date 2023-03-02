@@ -72,50 +72,50 @@
 
     <!-- Project -->
         <div>
-        <div class="grid gap-2 place-content-center m-10">
-            <div class="text-center">
-                <h1 class="font-medium leading-tight text-3xl text-sky-600">PROJECT OBJECTIVES</h1>
-                <hr class="">
-            </div>
-        </div>
-        
-        <section class="body-font text-gray-600">
-            <div class="container mx-auto px-5">
-            <div class="-m-4 flex flex-wrap ">
-                <div class="w-full p-4 md:w-1/2 lg:w-1/4 ">
-                <a href="{{ route('project1')}}" class="relative block overflow-hidden rounded flex justify-center">
-                    <img alt="ecommerce" class="block h-full w-80 shadow-lg object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P1.png" />
-                </a>
-                <div class="mt-4 flex justify-center">
-                    <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 1</h3>
-                </div>
-                </div>
-                <div class="w-full p-4 md:w-1/2 lg:w-1/4">
-                <a href="{{ route('project2')}}" class="relative block overflow-hidden rounded flex justify-center">
-                    <img alt="ecommerce" class="block h-full w-80 shadow-lg object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P2.png" />
-                </a>
-                <div class="mt-4 flex justify-center">
-                    <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 2</h3>
-                </div>
-                </div>
-                <div class="w-full p-4 md:w-1/2 lg:w-1/4">
-                <a class="relative block overflow-hidden rounded flex justify-center">
-                    <img alt="ecommerce" class="block h-full w-80 shadow-lg object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P3.png" />
-                </a>
-                <div class="mt-4 flex justify-center">
-                    <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 3</h3>
-                </div>
-                </div>
-                <div class="w-full p-4 md:w-1/2 lg:w-1/4">
-                <a class="relative block overflow-hidden rounded flex justify-center">
-                    <img alt="ecommerce" class="block h-full w-80 shadow-lg object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P4.png" />
-                </a>
-                <div class="mt-4 flex justify-center">
-                    <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 4</h3>
-                </div>
+            <div class="grid gap-2 place-content-center m-10">
+                <div class="text-center">
+                    <h1 class="font-medium leading-tight text-3xl text-sky-600">PROJECT OBJECTIVES</h1>
+                    <hr class="">
                 </div>
             </div>
-        </section>
+            
+            <section class="body-font text-gray-600">
+                <div class="container mx-auto px-5">
+                <div class="-m-4 flex flex-wrap ">
+                    <div class="w-full p-4 md:w-1/2 lg:w-1/4 ">
+                    <a href="{{ route('project1')}}" class="relative block overflow-hidden rounded flex justify-center">
+                        <img alt="ecommerce" class="block h-full w-80 shadow-lg object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P1.png" />
+                    </a>
+                    <div class="mt-4 flex justify-center">
+                        <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 1</h3>
+                    </div>
+                    </div>
+                    <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+                    <a href="{{ route('project2')}}" class="relative block overflow-hidden rounded flex justify-center">
+                        <img alt="ecommerce" class="block h-full w-80 shadow-lg object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P2.png" />
+                    </a>
+                    <div class="mt-4 flex justify-center">
+                        <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 2</h3>
+                    </div>
+                    </div>
+                    <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+                    <a class="relative block overflow-hidden rounded flex justify-center">
+                        <img alt="ecommerce" class="block h-full w-80 shadow-lg object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P3.png" />
+                    </a>
+                    <div class="mt-4 flex justify-center">
+                        <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 3</h3>
+                    </div>
+                    </div>
+                    <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+                    <a class="relative block overflow-hidden rounded flex justify-center">
+                        <img alt="ecommerce" class="block h-full w-80 shadow-lg object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P4.png" />
+                    </a>
+                    <div class="mt-4 flex justify-center">
+                        <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 4</h3>
+                    </div>
+                    </div>
+                </div>
+            </section>
         </div>
     <!-- /Project -->
 

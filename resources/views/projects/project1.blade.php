@@ -7,8 +7,10 @@
 <div class="w-full flex justify-center pb-2 lg:pt-8 pt-4">
     <div class="lg:w-4/5 w-full lg:flex grid gap-4 ">
         <div class="lg:w-3/4 w-full shadow-xl ">
-            <div class="flex justify-center">
-                <img class="lg:w-[80px] lg:h-[80px] md:w-[80px] md:h-[80px] w-[70px] h-[70px]" src="{{ URL::asset("img/coaster.png") }}" alt="" >
+            <div class="lg:flex justify-center">
+                <div class="flex justify-center">
+                    <img class="lg:w-[80px] lg:h-[80px] md:w-[80px] md:h-[80px] w-[70px] h-[70px] object-center" src="{{ URL::asset("img/coaster.png") }}" alt="" >
+                </div>
                 <div class="text-center ">
                     <h1 class="font-serif lg:text-[25px] text-[20px] font-extrabold">Coastal Engineering and Management</h1>
                     <h1 class="font-serif lg:text-[25px] text-[20px] font-extrabold">Research and Development Center</h1>
@@ -29,6 +31,7 @@
                     </p>
                 </div>
             </div>
+            
             <div class="w-full flex justify-center mb-2">
                 <div class="lg:w-4/5 w-11/12">
                     <h1 class="font-sans lg:text-[25px] text-[20px] font-extrabold tracking-tight">OBJECTIVES:</h1>
@@ -57,6 +60,41 @@
                     </div>
                 </div>
             </div>
+            <div>
+                <hr class="lg:w-7/8 w-11/12 h-[1px] mx-auto  bg-sky-700 border-0 md:my-6">
+            </div>
+            <div class="">
+                <h1 class="text-center text-2xl text-cyan-800">Other Projects</h1>
+            </div>
+            <section class="body-font text-gray-600">
+                <div class="container mx-auto px-5">
+                    <div class="-m-4 flex flex-wrap justify-center">
+                        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+                        <a href="{{ route('project2')}}" class="relative block overflow-hidden rounded flex justify-center">
+                            <img alt="ecommerce" class="block h-full w-32 shadow-lg object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P2.png" />
+                        </a>
+                        <div class="mt-4 flex justify-center">
+                            <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 2</h3>
+                        </div>
+                        </div>
+                        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+                        <a class="relative block overflow-hidden rounded flex justify-center">
+                            <img alt="ecommerce" class="block h-full w-32 shadow-lg object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P3.png" />
+                        </a>
+                        <div class="mt-4 flex justify-center">
+                            <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 3</h3>
+                        </div>
+                        </div>
+                        <div class="w-full p-4 md:w-1/2 lg:w-1/4">
+                        <a class="relative block overflow-hidden rounded flex justify-center">
+                            <img alt="ecommerce" class="block h-full w-32 shadow-lg object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P4.png" />
+                        </a>
+                        <div class="mt-4 flex justify-center">
+                            <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">PROJECT 4</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
         <div class="lg:w-1/4 w-full divide-y-4 divide-cyan-400/40 lg:mt-0 mt-5">
             <div class="">
@@ -84,9 +122,9 @@
                     <a href="{{ route('articleMore')}}" type="button" class="text-center lg:mb-0 mb-2 font-bold hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_100rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">View More</a>
                 </div>
             </div>
-
         </div>
     </div>
+
 </div>
 @endsection
 
