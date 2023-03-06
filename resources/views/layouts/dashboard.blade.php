@@ -18,6 +18,112 @@
 
     <!-- Styles -->
       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+      <style>
+    * {
+	margin: 0; 
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+}
+header {
+	width: 100%;
+	background: url(1.jpg);
+	background-position: center center;
+	height: 100vh;
+}
+header #main-menu {
+	background: #222;
+	float: left;
+	height: 60px;
+	line-height: 30px;
+	width: 100%;
+}
+header nav#menu-area {
+	margin: 0 auto;
+	padding: 0 15px;
+	position: relative;
+	width: 900px;
+}
+header nav#menu-area ul li {
+	float: left;
+	position: relative;
+	font-size: 15px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 180px;
+	text-align: center;
+	text-transform: uppercase;
+}
+header nav#menu-area ul li a {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	line-height: 60px;
+}
+header nav#menu-area ul li:hover>a {
+	background: #555555;
+}
+header nav#menu-area ul li ul.submenu-1 {
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0px;
+	top: 60px;
+	background: #222;
+	width: 180px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease-out, visibility 0.1s 0.1s linear;
+}
+header nav#menu-area ul li ul.submenu-1 li {
+	border: none;
+	border-bottom: 1px solid #ccc;
+	clear: both;
+	margin-top: -15px;
+	padding: 0;
+	width: 180px;
+	transition: opacity 0.15s 0.15s ease-out, margin 0.3s 0.1s ease-out;
+}
+header nav#menu-area ul li:hover ul.submenu-1 {
+	opacity: 1;
+	visibility: visible;
+}
+header nav#menu-area ul li:hover ul.submenu-1 li {
+	margin-top: 0;
+	opacity: 1;
+}
+header nav#menu-area ul li ul.submenu-1 li ul.submenu-2 {
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 61px;
+	top: 0px;
+	background: #222;
+	width: 180px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
+}
+ul.submenu-1 li ul.submenu-2 li {
+	border: none;
+	border-bottom: 1px solid #ccc;
+	clear: both;
+	margin: 0;
+	padding: 0;
+	width: 180px;
+	opacity: 1;
+}
+header nav#menu-area ul li ul.submenu-1 li:hover ul.submenu-2 {
+	opacity: 1;
+	left: 180px;
+	visibility: visible;
+}
+
+</style>
     <!-- Styles -->
 
     <!-- Navigaiton Bar Dropdown -->

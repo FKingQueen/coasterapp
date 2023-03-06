@@ -51,6 +51,7 @@ class AdminController extends Controller
 
         $article =  new Article();
         $article->project_id = 1;
+        $article->author = $request->author;
         $article->title = $request->title;
         $article->article = $request->editor;
         $res = $article->save();

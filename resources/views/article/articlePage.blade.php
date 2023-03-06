@@ -14,7 +14,7 @@
                     <h1 class="text-gray-900/50 text-sm">{{$selArticles->date}}</h1>
 
 
-                    <h1 class="text-sm text-neutral-900 py-4 italic">By</h1>
+                    <h1 class="text-sm text-neutral-900 py-4 italic">By {{$selArticles->author}}</h1>
 
                     
                     <h1 class="text-sm text-neutral-900 text-justify text-neutral-800  indent-10">
