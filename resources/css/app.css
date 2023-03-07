@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 
-
-
 ul.breadcrumb li+li::before {
     content: "\276F";
     padding-left: 8px;
@@ -22,7 +20,7 @@ ul.breadcrumb li span {
 }
 
 #sidebar.show {
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 #sidebar ul li a.active {
@@ -177,7 +175,7 @@ ul.breadcrumb li span {
   .dark .dark\:hover\:text-blue-500:hover {
     color: rgba(59, 130, 246);
   }
-
+  
   /* Custom style */
   .header-right {
       width: calc(100% - 3.5rem);
