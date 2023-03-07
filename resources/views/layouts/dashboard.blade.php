@@ -320,7 +320,7 @@ header nav#menu-area ul li ul.submenu-1 li:hover ul.submenu-2 {
         <!-- Sidebar start-->
           <div id="containerSidebar" class=" z-40">
               <div class="navbar-menu relative z-40 flex justify-center ">
-                  <nav id="sidebar" class="fixed flex lg:w-1/4 w-full rounded-md -translate-y-full flex-col overflow-y-auto bg-white ">
+                  <nav id="sidebar" class="absolute flex lg:w-1/4 w-full rounded-md -translate-y-full flex-col overflow-y-auto bg-white ">
                       <!-- one category / navigation group -->
                         <div class="px-5 py-2">
                             <div class="relative text-sm bg-transparent text-gray-800">
