@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use Carbon\Carbon;
+use DB;
 
 class DashboardController extends Controller
 {
@@ -49,5 +50,15 @@ class DashboardController extends Controller
             $article[$key]->date = Carbon::createFromFormat('Y-m-d H:i:s', $arti->created_at)->format('F d, Y');
         }
         return view('article.articleMore', array('articles' => $article));
+    }
+
+    public function searchArticle(Request $request)
+    {
+        $search = $request->searchInput;
+        $article = Article::where('title','LIKE',"%{$search}%")
+        ->orWhere('article','LIKE',"%{$search}%")
+        ->get();
+
+        dd($article);
     }
 }

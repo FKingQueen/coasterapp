@@ -20,9 +20,11 @@ use App\Http\Controllers\SuperAdminController;
 
 Auth::routes();
 
+//Dashboard
 Route::get('/', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 Route::get('/article/{id}', [App\Http\Controllers\DashboardController::class, 'articlePage'])->name('articlePage');
 Route::get('/more', [App\Http\Controllers\DashboardController::class, 'articleMore'])->name('articleMore');
+Route::get('/searchArticle', [App\Http\Controllers\DashboardController::class, 'searchArticle'])->name('searchArticle');
 
 // Projects
 Route::get('/project1', [App\Http\Controllers\ProjectsController::class, 'project1'])->name('project1');

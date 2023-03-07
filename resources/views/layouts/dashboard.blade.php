@@ -18,112 +18,6 @@
 
     <!-- Styles -->
       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-      <style>
-    * {
-	margin: 0; 
-	padding: 0;
-	font-family: 'Montserrat', sans-serif;
-}
-header {
-	width: 100%;
-	background: url(1.jpg);
-	background-position: center center;
-	height: 100vh;
-}
-header #main-menu {
-	background: #222;
-	float: left;
-	height: 60px;
-	line-height: 30px;
-	width: 100%;
-}
-header nav#menu-area {
-	margin: 0 auto;
-	padding: 0 15px;
-	position: relative;
-	width: 900px;
-}
-header nav#menu-area ul li {
-	float: left;
-	position: relative;
-	font-size: 15px;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	width: 180px;
-	text-align: center;
-	text-transform: uppercase;
-}
-header nav#menu-area ul li a {
-	color: #fff;
-	text-decoration: none;
-	display: block;
-	line-height: 60px;
-}
-header nav#menu-area ul li:hover>a {
-	background: #555555;
-}
-header nav#menu-area ul li ul.submenu-1 {
-	float: left;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	left: 0px;
-	top: 60px;
-	background: #222;
-	width: 180px;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 0.3s ease-out, visibility 0.1s 0.1s linear;
-}
-header nav#menu-area ul li ul.submenu-1 li {
-	border: none;
-	border-bottom: 1px solid #ccc;
-	clear: both;
-	margin-top: -15px;
-	padding: 0;
-	width: 180px;
-	transition: opacity 0.15s 0.15s ease-out, margin 0.3s 0.1s ease-out;
-}
-header nav#menu-area ul li:hover ul.submenu-1 {
-	opacity: 1;
-	visibility: visible;
-}
-header nav#menu-area ul li:hover ul.submenu-1 li {
-	margin-top: 0;
-	opacity: 1;
-}
-header nav#menu-area ul li ul.submenu-1 li ul.submenu-2 {
-	float: left;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	position: absolute;
-	left: 61px;
-	top: 0px;
-	background: #222;
-	width: 180px;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 0.2s 0.01s ease-in-out, left 0.2s 0.1s ease-out, visibility 0.1s 0.1s linear;
-}
-ul.submenu-1 li ul.submenu-2 li {
-	border: none;
-	border-bottom: 1px solid #ccc;
-	clear: both;
-	margin: 0;
-	padding: 0;
-	width: 180px;
-	opacity: 1;
-}
-header nav#menu-area ul li ul.submenu-1 li:hover ul.submenu-2 {
-	opacity: 1;
-	left: 180px;
-	visibility: visible;
-}
-
-</style>
     <!-- Styles -->
 
     <!-- Navigaiton Bar Dropdown -->
@@ -295,7 +189,7 @@ header nav#menu-area ul li ul.submenu-1 li:hover ul.submenu-2 {
               </div>
 
               <!-- Sidebar Button -->
-                <button id="btnSearchrToggler" type="button" class=" text-2xl text-white hover:text-gray-200  ">
+                <button id="btnSearchrToggler" onclick="topFunction()" type="button" class=" text-2xl text-white hover:text-gray-200  ">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 focus:outline outline-offset-2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                     </svg>
@@ -325,12 +219,15 @@ header nav#menu-area ul li ul.submenu-1 li:hover ul.submenu-2 {
                         <div class="px-5 py-2">
                             <div class="relative text-sm bg-transparent text-gray-800">
                                 <div class="flex items-center border-b border-b-2 border-teal-500 py-2">
-                                    <input class="bg-transparent w-full border-none mr-3 leading-tight focus:outline-none" type="text" placeholder="Search Updates & Projects">
-                                    <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
-                                    <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
-                                        <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
-                                    </svg>
-                                    </button>
+                                    <form action="{{ route('searchArticle') }}" method="GET">
+                                        @csrf
+                                        <input name="searchInput" class="bg-transparent w-full border-none mr-3 leading-tight focus:outline-none" type="text" placeholder="Search Updates & Projects">
+                                        <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                                            <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
+                                                <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
+                                            </svg>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -399,27 +296,29 @@ header nav#menu-area ul li ul.submenu-1 li:hover ul.submenu-2 {
     </div>
 </body>
 
-<!-- Side Navigation Bar -->
+<!-- Search Bar -->
   <script>
-      document.addEventListener("DOMContentLoaded", () => {
-          const navbar = document.getElementById("navbar");
-          const sidebar = document.getElementById("sidebar");
-          const btnSidebarToggler = document.getElementById("btnSearchrToggler");
-          const navClosed = document.getElementById("navClosed");
-          const navOpen = document.getElementById("navOpen");
-          const content1 = document.getElementById("content");
+    document.addEventListener("DOMContentLoaded", () => {
+        const navbar = document.getElementById("navbar");
+        const sidebar = document.getElementById("sidebar");
+        const btnSearchrToggler = document.getElementById("btnSearchrToggler");
 
-          btnSearchrToggler.addEventListener("click", (e) => {
-              e.preventDefault();
-              sidebar.classList.toggle("show");
-              navClosed.classList.toggle("hidden");
-              navOpen.classList.toggle("hidden");
-          });
-          sidebar.style.top = parseInt(navbar.clientHeight) - 1 + "px";
-          
-      });
+        btnSearchrToggler.addEventListener("click", (e) => {
+            e.preventDefault();
+            sidebar.classList.toggle("show");
+            
+        });
+
+        sidebar.style.top = parseInt(navbar.clientHeight) - 1 + "px";
+    });
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
   </script>
-<!-- /Side Navigation Bar -->
+<!-- /Search Bar -->
 <!-- Carousel -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
