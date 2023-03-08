@@ -59,6 +59,12 @@ class DashboardController extends Controller
         ->orWhere('article','LIKE',"%{$search}%")
         ->get();
 
-        dd($article);
+        foreach($article as $key => $arti)
+        {
+            $article[$key]->date = Carbon::createFromFormat('Y-m-d H:i:s', $arti->created_at)->format('F d, Y');
+        }
+        
+
+        return view('article.articleSearch', array('articles' => $article, "search" => $search));
     }
 }

@@ -32,111 +32,57 @@
 
     <div id="app">
         <!-- Navbar start -->
-          <nav id="navbar" class="fixed top-0 z-50 flex w-full flex-row justify-between bg-[#0d2247] lg:px-20 md:px-3 sm:px-1 border-b-4 border-cyan-900 ">
-              <div class="px-5 xl:px-12 py-2 flex w-full items-center {{ route('login') == url()->current() || route('register') ==  url()->current() ? 'hidden' : '' }}">
-                  <div class="items-center flex space-x-3">
-                      <div class="shrink-0 hidden md:flex">
-                          <a href="/"><img src="{{ URL::asset("img/coaster.png") }}" class="duration-200 hover:scale-110 cursor-pointer object-fill w-10 h-10" alt="#"></a>
-                      </div>
-                      <div class="font-sans pointer tracking-widest text-white font-semibold text-[13px] hidden md:flex">
-                          <a href="/" class="flex cursor-pointer font-bold text-white">
-                          COASTAL ENGINEERING, MANAGEMENT RESEARCH <br> & DEVELOPMENT CENTER
-                          </a>
-                      </div>
-                      <div class="font-sans pointer tracking-widest text-white text-[15px] font-semibold flex md:hidden">
-                              <a href="/"><img src="{{ URL::asset("img/coastername.png") }}" class="duration-200 hover:scale-110 cursor-pointer object-fill w-32" alt="#"></a>
-                          </a>
-                      </div>
-                  </div>
-                      
-                  <!-- Nav Links -->
-                  <div id="navButton" style="display: none;" class="mx-auto">
-                    <ul class="hidden lg:flex text-white px-5  text-[9px] font-semibold font-heading space-x-8 ">
+          <nav id="navbar" class="fixed top-0 z-50 flex w-full bg-[#0d2247] lg:px-20 md:px-3 sm:px-1 border-b-4 border-cyan-900 ">
+            <div class="px-5 xl:px-12 py-2 flex w-full items-center {{ route('login') == url()->current() || route('register') ==  url()->current() ? 'hidden' : '' }}">
+                <div class="items-center flex space-x-3">
+                    <div class="shrink-0 hidden md:flex">
+                        <a href="/"><img src="{{ URL::asset("img/coaster.png") }}" class="duration-200 hover:scale-110 cursor-pointer object-fill w-12 h-12" alt="#"></a>
+                    </div>
+                    <div class=" pointer tracking-widest text-white hidden md:flex">
+                        <a href="/" class="flex cursor-pointer text-base font-normal text-white">
+                        COASTAL ENGINEERING, MANAGEMENT RESEARCH <br> & DEVELOPMENT CENTER
+                        </a>
+                    </div>
+                    <div class=" pointer tracking-widest text-white text-[15px] font-semibold flex md:hidden">
+                            <a href="/"><img src="{{ URL::asset("img/coastername.png") }}" class="duration-200 hover:scale-110 cursor-pointer object-fill w-32" alt="#"></a>
+                        </a>
+                    </div>
+                </div>
+                    
+                <!-- Nav Links -->
+                <div id="navButton" style="display: none;" class="mx-auto">
+                    <ul class="hidden lg:flex text-white px-5 font-normal font-heading space-x-8 ">
                         <!-- About -->
-                        <div class="relative" x-data="{ open: false }">
-                            <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white hover:text-white
-                            cursor-pointer transition-colors duration-300" aria-expanded="false">
+                            <a href="#footer" class=" flex text-white 
+                            cursor-pointer transition-colors duration-300 ">
                                 ABOUT
-                                <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-white h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-
-                            <div 
-                                x-show="open" 
-                                x-transition:enter="transition ease-out duration-200"
-                                x-transition:enter-start="opacity-0 scale-90"
-                                x-transition:enter-end="opacity-100 scale-100"
-                                x-transition:leave="transition ease-in duration-200"
-                                x-transition:leave-start="opacity-100 scale-100"
-                                x-transition:leave-end="opacity-0 scale-90"
-                                class="absolute left-1/2 z-full mt-3 w-screen w-60 -translate-x-1/2 transform px-5 sm:px-0">
-
-                                <div class="overflow-hidden shadow-lg ring-1 ring-black  ring-opacity-5">
-                                    <div class="relative grid gap-6 bg-stone-700 border-x-4 px-5 py-6 sm:gap-8 sm:p-8">
-                                        <a href="#aboutUs" @click="autoScroll()" class="-m-3 flex items-start p-2  hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
-                                            <div class="ml-4">
-                                                <p class="text-[12px] font-semibold font-medium text-gray-100">ABOUT</p>
-                                            </div>
-                                        </a>
-                                        <a href="#contact" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
-                                            <div class="ml-4">
-                                                <p class="text-[12px] font-semibold font-medium text-gray-100">CONTACT</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            </a>
                         <!-- /About -->
-                        <!-- Services -->
-                        <div class="relative" x-data="{ open: false }">
-                            <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white hover:text-white
-                            cursor-pointer transition-colors duration-300 " aria-expanded="false">
-                                SERVICES
-                                <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-white h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
+                        <!-- Tidal & Wave -->
+                            <a href="/" class=" flex text-white 
+                            cursor-pointer transition-colors duration-300 ">
+                                TIDAL & WAVE
+                            </a>
+                        <!-- /Tidal & Wave -->
+                        <!-- Weather -->
+                            <a href="/" class=" flex text-white 
+                            cursor-pointer transition-colors duration-300 ">
+                                WEATHER
+                            </a>
+                        <!-- /Weather -->
+                        <!-- Map -->
+                            <a href="{{ route('mapServices')}}" class=" flex text-white 
+                            cursor-pointer transition-colors duration-300 ">
+                                MAP
+                            </a>
+                        <!-- /Map -->
 
-                            <div 
-                                x-show="open" 
-                                x-transition:enter="transition ease-out duration-200"
-                                x-transition:enter-start="opacity-0 scale-90"
-                                x-transition:enter-end="opacity-100 scale-100"
-                                x-transition:leave="transition ease-in duration-200"
-                                x-transition:leave-start="opacity-100 scale-100"
-                                x-transition:leave-end="opacity-0 scale-90"
-                                class="absolute left-1/2 z-full mt-3 w-screen w-60 -translate-x-1/2 transform px-5 sm:px-0">
-
-                                <div class="overflow-hidden shadow-lg ring-1 ring-black  ring-opacity-5">
-                                    <div class="relative grid gap-6 bg-stone-700 border-x-4 px-5 py-6 sm:gap-8 sm:p-8">
-                                        <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
-                                            <div class="ml-4">
-                                                <p class="text-[12px] font-semibold font-medium text-gray-100">TIDAL & WAVE</p>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
-                                            <div class="ml-4">
-                                                <p class="text-[12px] font-semibold font-medium text-gray-100">WEATHER</p>
-                                            </div>
-                                        </a>
-                                        <a href="{{ route('mapServices')}}" class="-m-3 flex items-start p-2 hover:shadow-[inset_13rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
-                                            <div class="ml-4">
-                                                <p class="text-[12px] font-semibold font-medium text-gray-100">MAP</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /Services -->
                         <!-- Project -->
                         <div class="relative" x-data="{ open: false }">
-                            <button @click="open = ! open" type="button" class="font-sans md:text-lg flex text-white hover:text-white
+                            <button @click="open = ! open" type="button" class=" flex text-white
                             cursor-pointer transition-colors duration-300" aria-expanded="false">
                                 PROJECT
-                                <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-white h-7 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-white h-6    group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                                 </svg>
                             </button>
@@ -152,25 +98,25 @@
                                 class="absolute left-1/2 z-full mt-3 w-screen w-80 -translate-x-1/2 transform px-1 sm:px-0">
 
                                 <div class="overflow-hidden shadow-lg ring-1 ring-black  ring-opacity-5">
-                                    <div class="relative grid gap-6 bg-stone-700 border-x-4 px-5 py-6 sm:gap-8 sm:p-8">
+                                    <div class="relative grid gap-6 bg-white border-x-4 p-5">
                                         <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                             <div class="">
-                                                <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">COASTAL EROSION TRENDS AND MANAGEMENT STRATEGIES FOR REGION 1</p>
+                                                <p class="text-[12px] font-bold font-medium text-gray-900 text-justify">COASTAL EROSION TRENDS AND MANAGEMENT STRATEGIES FOR REGION 1</p>
                                             </div>
                                         </a>
                                         <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                             <div class="">
-                                                <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">ASSESSMENT MONITORING, AND PREDICTION OF COASTAL FLOODING OF SELECTED MUNICIPALITIES IN REGION 1</p>
+                                                <p class="text-[12px] font-bold font-medium text-gray-900 text-justify">ASSESSMENT MONITORING, AND PREDICTION OF COASTAL FLOODING OF SELECTED MUNICIPALITIES IN REGION 1</p>
                                             </div>
                                         </a>
                                         <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                             <div class="">
-                                                <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">DEVELOPMENT OF SCIENCE-BASED ENGINEERING APPROACH TO COASTAL PROTECTION IN REGION 1</p>
+                                                <p class="text-[12px] font-bold font-medium text-gray-900 text-justify">DEVELOPMENT OF SCIENCE-BASED ENGINEERING APPROACH TO COASTAL PROTECTION IN REGION 1</p>
                                             </div>
                                         </a>
                                         <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                             <div class="">
-                                                <p class="text-[12px] font-semibold font-medium text-gray-100 text-justify">ENHANCING COASTAL DESIGN AND INFRASTRUCTURE INTERVENTION THROUGH THE ESTABLISHMENT OF WAVE TESTING FACILITY</p>
+                                                <p class="text-[12px] font-bold font-medium text-gray-900 text-justify">ENHANCING COASTAL DESIGN AND INFRASTRUCTURE INTERVENTION THROUGH THE ESTABLISHMENT OF WAVE TESTING FACILITY</p>
                                             </div>
                                         </a>
                                     </div>
@@ -179,22 +125,17 @@
                         </div>
                         <!-- /Project -->
                     </ul>
-                  </div>
+                </div>
 
+            </div>
 
-                  <!-- Header Icons -->
-                  <div class="hidden xl:flex items-center space-x-5 items-center">
-                  
-                  </div>
-              </div>
-
-              <!-- Sidebar Button -->
-                <button id="btnSearchrToggler" onclick="topFunction()" type="button" class=" text-2xl text-white hover:text-gray-200  ">
+              <!-- Search Bar -->
+                <button id="btnSearchrToggler" onclick="topFunction()" type="button" class=" text-2xl text-white hover:text-gray-200  lg:mr-0 mr-8">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 focus:outline outline-offset-2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                     </svg>
                 </button>
-              <!-- /Sidebar Button -->
+              <!-- /Search Bar -->
 
               <!-- Sidebar Button -->
                 <!-- <button id="btnSidebarToggler" type="button" class=" text-2xl lg:invisible md:visible sm:visible text-white hover:text-gray-200">
@@ -211,18 +152,18 @@
           </nav>
         <!-- Navbar end -->
 
-        <!-- Sidebar start-->
+        <!-- Search Bar start-->
           <div id="containerSidebar" class=" z-40">
               <div class="navbar-menu relative z-40 flex justify-center ">
-                  <nav id="sidebar" class="absolute flex lg:w-1/4 w-full rounded-md -translate-y-full flex-col overflow-y-auto bg-white ">
+                  <nav id="sidebar" class="absolute flex lg:w-2/4 w-full -translate-y-full flex-col overflow-y-auto bg-white ">
                       <!-- one category / navigation group -->
                         <div class="px-5 py-2">
                             <div class="relative text-sm bg-transparent text-gray-800">
-                                <div class="flex items-center border-b border-b-2 border-teal-500 py-2">
-                                    <form action="{{ route('searchArticle') }}" method="GET">
+                                <div class="flex items-center border-b border-b-2 border-gray-500 py-2">
+                                    <form action="{{ route('searchArticle') }}" method="GET" class="w-full">
                                         @csrf
-                                        <input name="searchInput" class="bg-transparent w-full border-none mr-3 leading-tight focus:outline-none" type="text" placeholder="Search Updates & Projects">
-                                        <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                                        <input name="searchInput" required class="bg-transparent w-full leading-tight focus:outline-none" type="text" placeholder="Search Updates & Projects">
+                                        <button type="submit"  class="absolute right-0 top-0 mt-3 mr-4">
                                             <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
                                                 <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
                                             </svg>
@@ -235,7 +176,7 @@
                   </nav>
               </div>
           </div>
-        <!-- Sidebar end -->
+        <!-- Search Bar end -->
           <div id="articleContent">
             @yield('content')
           </div>
@@ -319,6 +260,37 @@
 
   </script>
 <!-- /Search Bar -->
+<!-- Footer -->
+    <script>
+        element = document.getElementById("articleContent");
+        CH = element.offsetHeight;
+        FH = $("#footer").height();
+        SH = screen.height;
+        
+        var body = document.body;
+        // WH = body.offsetHeight;
+        html = document.documentElement;
+
+        var WH = Math.max( body.scrollHeight, body.offsetHeight, 
+                        html.clientHeight, html.scrollHeight, html.offsetHeight );
+                       console.log("CH: " + CH);
+                       console.log("FH: " + FH);
+                       console.log("SH: " + SH);
+                       console.log("WH: " + WH);
+
+        if(WH >= SH){
+console.log("no worry");
+        }else{
+            let value1 = SH - FH;
+            if(value1 <= CH){
+                console.log("2Footer position change");
+            }else{
+                console.log("2CH scroll position");
+            }
+        }
+
+    </script>
+<!-- /Footer -->
 <!-- Carousel -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>

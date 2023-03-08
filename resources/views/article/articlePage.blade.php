@@ -17,7 +17,7 @@
                     <h1 class="text-sm text-neutral-900 py-4 italic">By {{$selArticles->author}}</h1>
 
                     
-                    <h1 class="text-sm text-neutral-900 text-justify text-neutral-800  indent-10">
+                    <h1 class="text-sm text-neutral-900 text-justify text-neutral-800 pb-6 indent-10">
                         {!!$selArticles->article!!}
                     </h1>
                </div>

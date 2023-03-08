@@ -1560,9 +1560,6 @@ textarea.form-control.is-invalid {
 .pointer-events-none {
   pointer-events: none;
 }
-.visible {
-  visibility: visible;
-}
 .fixed {
   position: fixed;
 }
@@ -1698,8 +1695,8 @@ textarea.form-control.is-invalid {
 .mb-10 {
   margin-bottom: 2.5rem;
 }
-.mr-3 {
-  margin-right: 0.75rem;
+.mr-8 {
+  margin-right: 2rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -1780,8 +1777,8 @@ textarea.form-control.is-invalid {
 .h-11 {
   height: 2.75rem;
 }
-.h-10 {
-  height: 2.5rem;
+.h-12 {
+  height: 3rem;
 }
 .h-40 {
   height: 10rem;
@@ -1794,9 +1791,6 @@ textarea.form-control.is-invalid {
 }
 .h-\[1px\] {
   height: 1px;
-}
-.h-5\/6 {
-  height: 83.333333%;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -1840,14 +1834,11 @@ textarea.form-control.is-invalid {
 .w-px {
   width: 1px;
 }
-.w-10 {
-  width: 2.5rem;
+.w-12 {
+  width: 3rem;
 }
 .w-32 {
   width: 8rem;
-}
-.w-60 {
-  width: 15rem;
 }
 .w-8 {
   width: 2rem;
@@ -2117,9 +2108,9 @@ textarea.form-control.is-invalid {
   --tw-border-opacity: 1;
   border-color: rgb(22 78 99 / var(--tw-border-opacity));
 }
-.border-teal-500 {
+.border-gray-500 {
   --tw-border-opacity: 1;
-  border-color: rgb(20 184 166 / var(--tw-border-opacity));
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 .bg-indigo-50 {
   --tw-bg-opacity: 1;
@@ -2179,10 +2170,6 @@ textarea.form-control.is-invalid {
 .bg-\[\#0d2247\] {
   --tw-bg-opacity: 1;
   background-color: rgb(13 34 71 / var(--tw-bg-opacity));
-}
-.bg-stone-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(68 64 60 / var(--tw-bg-opacity));
 }
 .bg-sky-700 {
   --tw-bg-opacity: 1;
@@ -2307,6 +2294,9 @@ textarea.form-control.is-invalid {
 .pt-1 {
   padding-top: 0.25rem;
 }
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -2337,11 +2327,11 @@ textarea.form-control.is-invalid {
 .align-baseline {
   vertical-align: baseline;
 }
-.font-sans {
-  font-family: Inter, sans-serif;
-}
 .font-serif {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+.font-sans {
+  font-family: Inter, sans-serif;
 }
 .text-xl {
   font-size: 1.25rem;
@@ -2367,21 +2357,15 @@ textarea.form-control.is-invalid {
   font-size: 0.75rem;
   line-height: 1rem;
 }
-.text-\[13px\] {
-  font-size: 13px;
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .text-\[15px\] {
   font-size: 15px;
 }
-.text-\[9px\] {
-  font-size: 9px;
-}
 .text-\[12px\] {
   font-size: 12px;
-}
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 .text-\[20px\] {
   font-size: 20px;
@@ -2508,10 +2492,6 @@ textarea.form-control.is-invalid {
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-.text-gray-100 {
-  --tw-text-opacity: 1;
-  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 .antialiased {
   -webkit-font-smoothing: antialiased;
@@ -2934,11 +2914,6 @@ ul.breadcrumb li span {
   --tw-shadow-colored: inset 100rem 0 0 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-  .hover\:shadow-\[inset_13rem_0_0_0\]:hover {
-  --tw-shadow: inset 13rem 0 0 0;
-  --tw-shadow-colored: inset 13rem 0 0 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
   .hover\:shadow-\[inset_20rem_0_0_0\]:hover {
   --tw-shadow: inset 20rem 0 0 0;
   --tw-shadow-colored: inset 20rem 0 0 0 var(--tw-shadow-color);
@@ -3120,16 +3095,8 @@ ul.breadcrumb li span {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
-  .sm\:gap-8 {
-    gap: 2rem;
-  }
-
   .sm\:p-0 {
     padding: 0px;
-  }
-
-  .sm\:p-8 {
-    padding: 2rem;
   }
 
   .sm\:px-1 {
@@ -3221,11 +3188,6 @@ ul.breadcrumb li span {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
-
-  .md\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
 }
   @media (min-width: 1024px) {
 
@@ -3248,6 +3210,10 @@ ul.breadcrumb li span {
 
   .lg\:mt-10 {
     margin-top: 2.5rem;
+  }
+
+  .lg\:mr-0 {
+    margin-right: 0px;
   }
 
   .lg\:flex {
@@ -3363,10 +3329,6 @@ ul.breadcrumb li span {
   }
 }
   @media (min-width: 1280px) {
-
-  .xl\:flex {
-    display: flex;
-  }
 
   .xl\:w-1\/4 {
     width: 25%;
