@@ -101,22 +101,22 @@
                                     <div class="relative grid gap-6 bg-white border-x-4 p-5">
                                         <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                             <div class="">
-                                                <p class="text-[12px] font-bold font-medium text-gray-900 text-justify">COASTAL EROSION TRENDS AND MANAGEMENT STRATEGIES FOR REGION 1</p>
+                                                <p class="text-[12px] font-bold font-lg text-gray-900 text-justify">Coastal Erosion Trends and Management Strategies for Region 1</p>
                                             </div>
                                         </a>
                                         <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                             <div class="">
-                                                <p class="text-[12px] font-bold font-medium text-gray-900 text-justify">ASSESSMENT MONITORING, AND PREDICTION OF COASTAL FLOODING OF SELECTED MUNICIPALITIES IN REGION 1</p>
+                                                <p class="text-[12px] font-bold font-lg text-gray-900 text-justify">Assesment Monitoring, and Prediction of Coastal Flooding of Selected Municipalities in Region 1</p>
                                             </div>
                                         </a>
                                         <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                             <div class="">
-                                                <p class="text-[12px] font-bold font-medium text-gray-900 text-justify">DEVELOPMENT OF SCIENCE-BASED ENGINEERING APPROACH TO COASTAL PROTECTION IN REGION 1</p>
+                                                <p class="text-[12px] font-bold font-lg text-gray-900 text-justify">Development of Science-based Engineering Approach to Coastal Prediction in Region 1</p>
                                             </div>
                                         </a>
                                         <a href="#" class="-m-3 flex items-start p-2 hover:shadow-[inset_20rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">
                                             <div class="">
-                                                <p class="text-[12px] font-bold font-medium text-gray-900 text-justify">ENHANCING COASTAL DESIGN AND INFRASTRUCTURE INTERVENTION THROUGH THE ESTABLISHMENT OF WAVE TESTING FACILITY</p>
+                                                <p class="text-[12px] font-bold font-lg text-gray-900 text-justify">Enhancing Coastal Design and Infrastructure Intervention through the Establishment of Wave Testing Facility</p>
                                             </div>
                                         </a>
                                     </div>
@@ -262,9 +262,13 @@
 <!-- /Search Bar -->
 <!-- Footer -->
     <script>
-        element = document.getElementById("articleContent");
-        CH = element.offsetHeight;
-        FH = $("#footer").height();
+        $(window).scroll(function (event) {
+            var scroll = $(window).scrollTop();
+            console.log(scroll);
+        });
+        // element = document.getElementById("articleContent");
+        CH =  document.getElementById('articleContent').clientHeight;
+        FH =    $("#footer").height();
         SH = screen.height;
         
         var body = document.body;
