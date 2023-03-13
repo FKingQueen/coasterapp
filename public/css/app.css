@@ -1959,6 +1959,9 @@ textarea.form-control.is-invalid {
 .h-\[1px\] {
   height: 1px;
 }
+.h-96 {
+  height: 24rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -2018,6 +2021,9 @@ textarea.form-control.is-invalid {
 }
 .w-4\/12 {
   width: 33.333333%;
+}
+.w-1\/2 {
+  width: 50%;
 }
 .max-w-xl {
   max-width: 36rem;
@@ -2405,6 +2411,9 @@ textarea.form-control.is-invalid {
 }
 .p-0 {
   padding: 0px;
+}
+.p-10 {
+  padding: 2.5rem;
 }
 .py-4 {
   padding-top: 1rem;
