@@ -41,7 +41,6 @@
   //       modalToOpen.classList.add('fadeIn');
   //       modalToOpen.style.display = 'flex';
   //       map.setZoom(9);
-        
   //     }
   //   })(marker));
     
@@ -83,39 +82,82 @@
     });
 
     var region1 = @json($region1);
-    console.log(region1);
 
+    // for (let i = 0; i < region1.length; i++) {
+    //   const cityCircle = new google.maps.Circle({
+    //     strokeColor: "#FF0000",
+    //     strokeOpacity: 0.8,
+    //     strokeWeight: 2,
+    //     fillColor: "#FF0000",
+    //     fillOpacity: 0.35,
+    //     map,
+    //     center: { lat: region1[i].latitude, lng: region1[i].longitude},
+    //     radius: 39928.215253,
+    //   });
+    // }
 
-    const contentString = [];
-    for (let i = 0; i < region1.length; i++) {
+  //   const svgMarker = {
+  //   path: "M-1.547 12l6.563-6.609-1.406-1.406-5.156 5.203-2.063-2.109-1.406 1.406zM0 0q2.906 0 4.945 2.039t2.039 4.945q0 1.453-0.727 3.328t-1.758 3.516-2.039 3.070-1.711 2.273l-0.75 0.797q-0.281-0.328-0.75-0.867t-1.688-2.156-2.133-3.141-1.664-3.445-0.75-3.375q0-2.906 2.039-4.945t4.945-2.039z",
+  //   fillColor: "blue",
+  //   fillOpacity: 0.6,
+  //   strokeWeight: 0,
+  //   rotation: 0,
+  //   scale: 2,
+  //   anchor: new google.maps.Point(0, 20),
+  // };
 
-      contentString[i] ='<div class="w-1/2">' +
-        '<div id="siteNotice">' +
-        "</div>" +
-          '<h1 id="firstHeading" class="firstHeading">' +
-          region1[i].name
-          '</h1>' +
-      "</div>";
+  //   for (let i = 0; i < region1.length; i++) {
+  //     const marker = new google.maps.Marker({
+  //       icon:svgMarker,
+  //       position: { lat: region1[i].latitude, lng: region1[i].longitude},
+  //       map,
+  //       title: region1[i].name,
+  //     });
+  //   }
 
-    }
-    for (let i = 0; i < region1.length; i++) {
-      const infowindow = new google.maps.InfoWindow({
-        content: contentString[i],
-        ariaLabel: "Sample",
-      });
+  const IlocosNorte = new google.maps.Rectangle({
+    strokeColor: "#FF0000",
+    strokeOpacity: 0.5,
+    strokeWeight: 2,
+    fillColor: "#FF0000",
+    fillOpacity: 0.25,
+    map,
+    bounds: {
+      north: 18.652879285910778,
+      south: 17.807568098889615,
+      east: 120.97511097409344,
+      west: 120.28047596432781,
+    },
+  });
 
-      const marker = new google.maps.Marker({
-        position: { lat: region1[i].latitude, lng: region1[i].longitude},
-        map,
-        title: "Uluru (Ayers Rock)",
-      });
-
-      infowindow.open({
-        anchor: marker,
-        map,
-      });
-    }
-  
+  const IlocosSur = new google.maps.Rectangle({
+    strokeColor: "#001aff",
+    strokeOpacity: 0.5,
+    strokeWeight: 2,
+    fillColor: "#001aff",
+    fillOpacity: 0.35,
+    map,
+    bounds: {
+      north: 17.87705303237476,
+      south: 16.72456396275173,
+      west: 120.235809191354,
+      east: 120.84967027533837,
+    },
+  });
+  const IlocosSur = new google.maps.Rectangle({
+    strokeColor: "#001aff",
+    strokeOpacity: 0.5,
+    strokeWeight: 2,
+    fillColor: "#001aff",
+    fillOpacity: 0.35,
+    map,
+    bounds: {
+      north: 17.87705303237476,
+      south: 16.72456396275173,
+      west: 120.235809191354,
+      east: 120.84967027533837,
+    },
+  });
 
   }
 
