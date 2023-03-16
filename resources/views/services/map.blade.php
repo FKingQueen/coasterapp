@@ -49,6 +49,15 @@
     const card = document.getElementById("pac-card");
     map.controls[google.maps.ControlPosition.RIGHT_TOP].push(card);
     card.style.display ="none";
+    const description = document.getElementById("description");
+    const graph = document.getElementById("graph");
+    const video = document.getElementById("video");
+
+    description.style.display ="none";
+    graph.style.display ="none";
+    video.style.display ="none";
+
+
 
     for (let i = 0; i < region1.length; i++) {
       const marker = new google.maps.Marker({
@@ -77,6 +86,16 @@
 
         console.log('Marker ' + marker.myData + ' has been clicked');
         console.log('Value: ' + provices.value );
+        provices.value ="none"
+
+        for(let k = 0; k < 4; k++){
+          if(marker.myData == k){
+            document.getElementById('title').innerHTML = region1[k].name;
+          }
+          if( marker.myData == ){
+
+          }
+        }
 
       });
 
@@ -151,15 +170,37 @@
 </style>
 <div class="pac-card" id="pac-card">
       <div>
-        <div id="title" class="text-center">Height of Water Level During Typhoon</div>
+        <div id="title" class="text-center"></div>
         <div id="type-selector" class="pac-controls w-full">
-          <select id="provice" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-100 focus:border-blue-100 block w-full p-2.5">
-              <option selected>Choose a Typhoon</option>
-              <option value="US">Typhoon 1</option>
-              <option value="CA">Typhoon 2</option>
-              <option value="FR">Typhoon 3</option>
-              <option value="DE">Typhoon 4  </option>
-          </select>
+          <div class="text-center mb-2 mt-1">
+            <h1 class="text-base">
+              Height of Water Level during Typhoon
+            </h1>
+          </div>
+          <div>
+            <select id="provice" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-100 focus:border-blue-100 block w-full p-2.5">
+                <option selected disabled value="none">Choose a Typhoon</option>
+                <option value="0">Typhoon 1</option>
+                <option value="1">Typhoon 2</option>
+                <option value="2">Typhoon 3</option>
+                <option value="3">Typhoon 4</option>
+            </select>
+          </div>
+          <div id="description" class="mt-2">
+            <h1>
+                Description: 
+            </h1>
+          </div>
+          <div id="graph">
+            <h1>
+                Graph: 
+            </h1>
+          </div>
+          <div id="video">
+            <h1>
+                Video/Link: 
+            </h1>
+          </div>
       </div>
     </div>
 
