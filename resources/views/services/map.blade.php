@@ -21,7 +21,8 @@
   function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 8,
-      mapTypeId: 'hybrid',
+      mapId: '2df7e97bc090438d',
+      // mapTypeId: 'hybrid',
       center: { lat: 16.549020362670005, lng: 121.17665325405989},
       mapTypeControl: true,
       zoomControl: true,
@@ -37,7 +38,7 @@
       restriction: {
       latLngBounds: LUZON,
       strictBounds: false,
-    },
+      },
     });
 
     var region1 = @json($region1);
@@ -81,6 +82,10 @@
       marker.addListener("click", () => {
         map.panTo(markerCenter.getPosition());
 
+        for(let l = 0; l < 4; l++){
+            marker.setVisible();
+        }
+
         // show card
         card.style.display ="block";
 
@@ -88,14 +93,16 @@
         console.log('Value: ' + provices.value );
         provices.value ="none"
 
+        // marker.setVisible(true);
         for(let k = 0; k < 4; k++){
+          
           if(marker.myData == k){
             document.getElementById('title').innerHTML = region1[k].name;
-          }
-          if( marker.myData == ){
+            marker.setVisible(false);
+          } 
 
-          }
         }
+        
 
       });
 
@@ -106,12 +113,75 @@
 
     }
 
-    }
+
+
+    const ilocosNorte = new google.maps.Rectangle({
+      strokeColor: "#FF0000",
+      strokeOpacity: 0.9,
+      strokeWeight: 2,
+      fillColor: "#FF0000",
+      fillOpacity: 0.35,
+      map,
+      bounds: {
+        north: 18.652700,
+        south: 17.703451,
+        west: 120.411017,
+        east: 120.975801,
+      },
+    });
+
+    const ilocosSur = new google.maps.Rectangle({
+      strokeColor: "#FF0000",
+      strokeOpacity: 0.9,
+      strokeWeight: 2,
+      fillColor: "#FF0000",
+      fillOpacity: 0.35,
+      map,
+      bounds: {
+        north: 17.904799,
+        south: 16.661774,
+        west: 120.344138,
+        east: 120.856873,
+      },
+    });
+
+    const laUnion = new google.maps.Rectangle({
+      strokeColor: "#FF0000",
+      strokeOpacity: 0.9,
+      strokeWeight: 2,
+      fillColor: "#FF0000",
+      fillOpacity: 0.35,
+      map,
+      bounds: {
+        north: 16.922623,
+        south: 16.204785,
+        west: 120.277708,
+        east: 120.582021,
+      },
+    });
+
+    const pangasinan = new google.maps.Rectangle({
+      strokeColor: "#FF0000",
+      strokeOpacity: 0.9,
+      strokeWeight: 2,
+      fillColor: "#FF0000",
+      fillOpacity: 0.35,
+      map,
+      bounds: {
+        north: 16.427216,
+        south: 15.623401,
+        west: 119.749550,
+        east: 120.918568,
+      },
+    });
+
+  }
+
 
   window.initMap = initMap;
   
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqrwTHtdIIy2XFwP3GkVGaMqtEfjjwJuY&callback=initMap" type="text/javascript"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqrwTHtdIIy2XFwP3GkVGaMqtEfjjwJuY&v=beta&callback=initMap" type="text/javascript"></script>
 
 <style>
 
