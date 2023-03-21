@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Region1;
+use App\Models\Province;
+use App\Models\Typhoon;
+use App\Models\TyphoonRecord;
 
 class ServicesController extends Controller
 {
     public function mapServices()
     {
-        $region1 = Region1::get();
-        // dd($region1);
-        return view('services.map', array("region1" => $region1));
+        $province = Province::get();
+        $typhoon = Typhoon::get();
+        $typhoonRecord = TyphoonRecord::get();
+        // dd($typhoonRecord);
+        return view('services.map', array("provinces" => $province, "typhoons" => $typhoon, "typhoonRecords" => $typhoonRecord));
     }
 }

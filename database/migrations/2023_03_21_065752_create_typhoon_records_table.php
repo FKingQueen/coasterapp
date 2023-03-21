@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProvincesTable extends Migration
+class CreateTyphoonRecordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateProvincesTable extends Migration
      */
     public function up()
     {
-        Schema::create('provinces', function (Blueprint $table) {
+        Schema::create('typhoon_records', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
+            $table->Integer("typhoon_id");
+            $table->string("title");
+            $table->string("description");
+            $table->string("graph");
+            $table->string("link");
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ class CreateProvincesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('provinces');
+        Schema::dropIfExists('typhoon_records');
     }
 }
