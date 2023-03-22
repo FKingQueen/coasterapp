@@ -5,10 +5,109 @@
 @endsection
 
 @section('content')
+<style>
+  .pac-card {
+    background-color: #fff;
+    border: 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+    padding: 0 0.5em;
+    font: 400 18px Roboto, Arial, sans-serif;
+    overflow: hidden;
+    font-family: Roboto;
+    padding: 0;
+  }
+
+  #pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+  }
+
+  .pac-controls {
+    display: inline-block;
+    padding: 5px 11px;
+  }
+
+  .pac-controls label {
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  #pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+  }
+
+  #pac-input:focus {
+    border-color: #4d90fe;
+  }
+
+  #title {
+    color: #fff;
+    background-color: #4d90fe;
+    font-size: 25px;
+    font-weight: 500;
+    padding: 6px 12px;
+  }
+</style>
 <!-- <div class="w-full flex justify-center ">
     <iframe src="https://silentnatexd.users.earthengine.app/view/coaster" title="W3Schools Free Online Web Tutorials"  width="100%" height="980" style="border:none;"></iframe>
 </div>   -->
 <div id="map" class="h-screen"></div>
+
+<div class="pac-card w-3/5 lg:w-2/5 mt-8 lg:mr-40 mr-2" id="pac-card">
+  <div>
+    <div id="title" class="text-center"><div></div></div>
+    <div></div>
+    <div id="type-selector" class="pac-controls w-full">
+      <div class="text-center mb-2 mt-1">
+        <h1 class="text-base">
+          Height of Water Level during Typhoon
+        </h1>
+        <h1></h1>
+      </div>
+      <div>
+        <select id="typhoon" onchange="onChangetyphoon()" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-100 focus:border-blue-100 block w-full p-2.5">
+            <option selected disabled value="none">Choose a Typhoon</option>
+            @foreach($typhoons as $key => $typhoon)
+              <option value="{{$typhoon->id}}">{{$typhoon->name}}</option>
+            @endforeach
+        </select>
+      </div>
+      <div class="mt-2">
+        <h1>
+            Description: 
+        </h1>
+        <div id="description" class="text-sky-700">
+
+        </div>
+      </div>
+      <div>
+        <h1>
+            Graph: 
+        </h1>
+        <div id="graph" class="text-sky-700">
+
+        </div>
+      </div>
+      <div>
+        <h1>
+            Video/Link: 
+        </h1>
+        <div id="video" class="text-sky-700">
+
+        </div>
+      </div>
+  </div>
+</div>
+
 <script>
   
   const LUZON= {
@@ -46,10 +145,6 @@
     var typhoonRecords = @json($typhoonRecords);
     
 
-    console.log(provinces);
-    console.log(typhoons);
-    console.log(typhoonRecords);
-
     // Select Option HTML
     var typhoon = document.getElementById("typhoon");
 
@@ -64,6 +159,7 @@
     const description = document.getElementById("description");
     const graph = document.getElementById("graph");
     const video = document.getElementById("video");
+    
 
     // description.style.display ="none";
     // graph.style.display ="none";
@@ -359,6 +455,9 @@
     });
 
     google.maps.event.addListener(ilocosNortePolygon, 'click', function (event) {
+      document.getElementById('description').innerHTML = null;
+      document.getElementById('graph').innerHTML = null;
+      document.getElementById('video').innerHTML = null;
       card.style.display ="block";
       typhoon.value ="none";
       document.getElementById('title').innerHTML = "Ilocos Norte";
@@ -370,9 +469,6 @@
       pangasinanPolygon.setVisible(false);
     });
     
-    function typhoon(){
-      console.log("1");
-    };
 
   // End Ilocos Norte Coordinates/Boundary/Marker
 
@@ -823,6 +919,9 @@
     });
 
     google.maps.event.addListener(ilocosSurPolygon, 'click', function (event) {
+      document.getElementById('description').innerHTML = null;
+      document.getElementById('graph').innerHTML = null;
+      document.getElementById('video').innerHTML = null;
       card.style.display ="block";
       typhoon.value ="none"
       document.getElementById('title').innerHTML = "Ilocos Sur";
@@ -834,6 +933,7 @@
       pangasinanPolygon.setVisible(false);
     });
   // End Ilocos Norte Coordinates/Boundary/Marker
+
 
   // Start La Union Coordinates/Boundary/Marker
     var laUnionBoundary = [
@@ -1085,6 +1185,9 @@
     });
 
     google.maps.event.addListener(laUnionPolygon, 'click', function (event) {
+      document.getElementById('description').innerHTML = null;
+      document.getElementById('graph').innerHTML = null;
+      document.getElementById('video').innerHTML = null;
       card.style.display ="block";
       typhoon.value ="none"
       document.getElementById('title').innerHTML = "La Union";
@@ -1599,6 +1702,9 @@
     });
 
     google.maps.event.addListener(pangasinanPolygon, 'click', function (event) {
+      document.getElementById('description').innerHTML = null;
+      document.getElementById('graph').innerHTML = null;
+      document.getElementById('video').innerHTML = null;
       card.style.display ="block";
       typhoon.value ="none"
       document.getElementById('title').innerHTML = "Pangasinan";
@@ -1622,103 +1728,41 @@
         pangasinanPolygon.setVisible(true);
       }
     });
-
   // End Events
+  }
+
+  function onChangetyphoon(){
+    const description = document.getElementById("description");
+    const graph = document.getElementById("graph");
+    const video = document.getElementById("video");
+
+    var provinces = @json($provinces);
+    var typhoons = @json($typhoons);
+    var typhoonRecords = @json($typhoonRecords);
+
+    // console.log(typhoon.value);
+
+    
+    for(let i = 0; i < provinces.length; i++){
+      // if(document.getElementById('title').innerHTML == provinces[i].name){
+      //   console.log("true");
+        // document.getElementById('description').innerHTML = "Ilocos Norte";
+        // document.getElementById('graph').innerHTML = "Ilocos Norte";
+        // document.getElementById('video').innerHTML = "Ilocos Norte";
+        if(typhoonRecords[i].typhoon_id == typhoon.value && document.getElementById('title').innerHTML == provinces[i].name){
+          document.getElementById('description').innerHTML = provinces[i].name;
+          document.getElementById('graph').innerHTML = provinces[i].name;
+          document.getElementById('video').innerHTML = provinces[i].name;
+          // console.log(typhoonRecords[i].typhoon_id);
+        }
+      // }
+    }
   }
 
   window.initMap = initMap;
   
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqrwTHtdIIy2XFwP3GkVGaMqtEfjjwJuY&v=beta&callback=initMap" type="text/javascript"></script>
-
-<style>
-  .pac-card {
-    background-color: #fff;
-    border: 0;
-    border-radius: 2px;
-    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
-    padding: 0 0.5em;
-    font: 400 18px Roboto, Arial, sans-serif;
-    overflow: hidden;
-    font-family: Roboto;
-    padding: 0;
-  }
-
-  #pac-container {
-    padding-bottom: 12px;
-    margin-right: 12px;
-  }
-
-  .pac-controls {
-    display: inline-block;
-    padding: 5px 11px;
-  }
-
-  .pac-controls label {
-    font-family: Roboto;
-    font-size: 13px;
-    font-weight: 300;
-  }
-
-  #pac-input {
-    background-color: #fff;
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 300;
-    margin-left: 12px;
-    padding: 0 11px 0 13px;
-    text-overflow: ellipsis;
-    width: 400px;
-  }
-
-  #pac-input:focus {
-    border-color: #4d90fe;
-  }
-
-  #title {
-    color: #fff;
-    background-color: #4d90fe;
-    font-size: 25px;
-    font-weight: 500;
-    padding: 6px 12px;
-  }
-</style>
-<div class="pac-card w-3/5 lg:w-2/5 mt-8 lg:mr-40 mr-2" id="pac-card">
-      <div>
-        <div id="title" class="text-center"><div></div></div>
-        <div></div>
-        <div id="type-selector" class="pac-controls w-full">
-          <div class="text-center mb-2 mt-1">
-            <h1 class="text-base">
-              Height of Water Level during Typhoon
-            </h1>
-            <h1></h1>
-          </div>
-          <div>
-            <select id="typhoon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-100 focus:border-blue-100 block w-full p-2.5">
-                <option selected disabled value="none">Choose a Typhoon</option>
-                @foreach($typhoons as $key => $typhoon)
-                  <option value="{{$typhoon->id}}">{{$typhoon->name}}</option>
-                @endforeach
-            </select>
-          </div>
-          <div id="description" class="mt-2">
-            <h1>
-                Description: 
-            </h1>
-          </div>
-          <div id="graph">
-            <h1>
-                Graph: 
-            </h1>
-          </div>
-          <div id="video">
-            <h1>
-                Video/Link: 
-            </h1>
-          </div>
-      </div>
-    </div>
 
 @endsection
 
