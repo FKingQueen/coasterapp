@@ -23,4 +23,16 @@ class ProjectsController extends Controller
         $article = Article::all()->reverse();
         return view('projects.project2', array("articles" => $article));
     }
+
+    public function project3()
+    {
+        $article = Article::all()->reverse();
+        return view('projects.project3', array("articles" => $article));
+    }
+
+    public function project4()
+    {
+        $article = Article::all()->reverse();
+        return view('projects.project4', array("articles" => $article));
+    }
 }

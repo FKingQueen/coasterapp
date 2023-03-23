@@ -1801,6 +1801,24 @@ textarea.form-control.is-invalid {
 .h-\[1px\] {
   height: 1px;
 }
+.h-\[32rem\] {
+  height: 32rem;
+}
+.h-\[40rem\] {
+  height: 40rem;
+}
+.h-\[43rem\] {
+  height: 43rem;
+}
+.h-\[50rem\] {
+  height: 50rem;
+}
+.h-\[53rem\] {
+  height: 53rem;
+}
+.h-\[54rem\] {
+  height: 54rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }

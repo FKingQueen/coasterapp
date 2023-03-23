@@ -60,7 +60,7 @@
 <!-- <div class="w-full flex justify-center ">
     <iframe src="https://silentnatexd.users.earthengine.app/view/coaster" title="W3Schools Free Online Web Tutorials"  width="100%" height="980" style="border:none;"></iframe>
 </div>   -->
-<div id="map" class="h-screen"></div>
+<div id="map" class="h-[54rem]"></div>
 
 <div class="pac-card w-3/5 lg:w-2/5 mt-8 lg:mr-40 mr-2" id="pac-card">
   <div>
@@ -112,17 +112,17 @@
   
   const LUZON= {
     north: 18.96935395317229,
-    south: 13.848818938737832,
+    south: 13.548818938737832,
     west: 114.41419433784404,
     east: 129.79651855659404,
   };
 
   function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 8,
+      zoom: 8.5,
       mapId: '2df7e97bc090438d',
       // mapTypeId: 'hybrid',
-      center: { lat: 16.549020362670005, lng: 121.17665325405989},
+      center: { lat: 17.156009, lng: 121.247046},
       mapTypeControl: true,
       zoomControl: true,
       zoomControlOptions: {
@@ -166,7 +166,7 @@
     // video.style.display ="none";
 
 
-  // Start Ilocos Norte Coordinates/Boundary/Marker
+    // Start Ilocos Norte Coordinates/Boundary/Marker
     var ilocosNorteBoundary = [
       { lng: 120.5272, lat: 17.7108 },
       { lng: 120.516, lat: 17.7222 },
@@ -470,9 +470,9 @@
     });
     
 
-  // End Ilocos Norte Coordinates/Boundary/Marker
+    // End Ilocos Norte Coordinates/Boundary/Marker
 
-  // Start Ilocos Norte Coordinates/Boundary/Marker
+    // Start Ilocos Norte Coordinates/Boundary/Marker
     var ilocosSurBoundary = [
       { lng: 120.6175, lat: 16.723 },
       { lng: 120.6079, lat: 16.6914 },
@@ -932,10 +932,10 @@
       laUnionPolygon.setVisible(false);
       pangasinanPolygon.setVisible(false);
     });
-  // End Ilocos Norte Coordinates/Boundary/Marker
+    // End Ilocos Norte Coordinates/Boundary/Marker
 
 
-  // Start La Union Coordinates/Boundary/Marker
+    // Start La Union Coordinates/Boundary/Marker
     var laUnionBoundary = [
       { lng: 120.3678, lat: 16.2589 },
       { lng: 120.3706, lat: 16.2558 },
@@ -1198,10 +1198,10 @@
       laUnionPolygon.setVisible(true);
       pangasinanPolygon.setVisible(false);
     });
-  // End Ilocos Norte Coordinates/Boundary/Marker
+    // End Ilocos Norte Coordinates/Boundary/Marker
 
 
-  // Start La Union Coordinates/Boundary/Marker
+    // Start La Union Coordinates/Boundary/Marker
     var pangasinanBoundary = [
         { lng: 120.7917, lat: 15.8231 },
         { lng: 120.7751, lat: 15.8333 },
@@ -1715,9 +1715,9 @@
       laUnionPolygon.setVisible(false);
       pangasinanPolygon.setVisible(true);
     });
-  // Start La Union Coordinates/Boundary/Marker
+    // Start La Union Coordinates/Boundary/Marker
 
-  // Start Events
+    // Start Events
 
     map.addListener("zoom_changed", () => {
       if(map.getZoom() < 10){
@@ -1728,7 +1728,7 @@
         pangasinanPolygon.setVisible(true);
       }
     });
-  // End Events
+    // End Events 
   }
 
   function onChangetyphoon(){

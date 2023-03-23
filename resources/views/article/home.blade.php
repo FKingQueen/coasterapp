@@ -99,7 +99,7 @@
                     </div>
                     </div>
                     <div class="w-full p-4 md:w-1/2 lg:w-1/4">
-                    <a class="relative block overflow-hidden rounded flex justify-center">
+                    <a href="{{ route('project3')}}" class="relative block overflow-hidden rounded flex justify-center">
                         <img alt="ecommerce" class="block h-full w-80 shadow-lg object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P3.png" />
                     </a>
                     <div class="mt-4 flex justify-center">
@@ -107,7 +107,7 @@
                     </div>
                     </div>
                     <div class="w-full p-4 md:w-1/2 lg:w-1/4">
-                    <a class="relative block overflow-hidden rounded flex justify-center">
+                    <a href="{{ route('project4')}}" class="relative block overflow-hidden rounded flex justify-center">
                         <img alt="ecommerce" class="block h-full w-80 shadow-lg object-cover object-center cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-105 duration-300" src="img/P4.png" />
                     </a>
                     <div class="mt-4 flex justify-center">

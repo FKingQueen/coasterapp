@@ -29,6 +29,8 @@ Route::get('/searchArticle', [App\Http\Controllers\DashboardController::class, '
 // Projects
 Route::get('/project1', [App\Http\Controllers\ProjectsController::class, 'project1'])->name('project1');
 Route::get('/project2', [App\Http\Controllers\ProjectsController::class, 'project2'])->name('project2');
+Route::get('/project3', [App\Http\Controllers\ProjectsController::class, 'project3'])->name('project3');
+Route::get('/project4', [App\Http\Controllers\ProjectsController::class, 'project4'])->name('project4');
 
 // Services
 Route::get('/mapServices', [App\Http\Controllers\ServicesController::class, 'mapServices'])->name('mapServices');
