@@ -33,7 +33,8 @@ Route::get('/project3', [App\Http\Controllers\ProjectsController::class, 'projec
 Route::get('/project4', [App\Http\Controllers\ProjectsController::class, 'project4'])->name('project4');
 
 // Services
-Route::get('/mapServices', [App\Http\Controllers\ServicesController::class, 'mapServices'])->name('mapServices');
+Route::get('/map', [App\Http\Controllers\ServicesController::class, 'map'])->name('map');
+Route::get('/waterLevel', [App\Http\Controllers\ServicesController::class, 'waterLevel'])->name('waterLevel');
 
 // Admin
 Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('home');

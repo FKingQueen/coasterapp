@@ -44,27 +44,29 @@
                 </div>
             </div>
 
-            <div class="lg:w-4/5 sm:w-2/3 bg-white mx-auto mt-5 shadow-md">
-                <div class="flex items-center mt-2 flex-wrap pt-4">
-                    @foreach($articles as $key => $article)
-                        @if($loop->iteration == 5)
-                            @break
-                        @endif
-                        <div class="w-full xl:w-1/4 p-6 flex flex-col">
-                            <a href="{{ route('articlePage', $article->id)}}" class="border-b-4 border-cyan-600/30 hover:drop-shadow-2xl">
-                                <img class=" w-full object-cover lg:h-[13rem] h-[10rem] py-1" src="{{ asset('uploads/article/'.($article->image))}}">
-                                <div class="pt-3 flex items-center justify-between overflow-hidden">
-                                    <p class="text-gray-900 font-sm">
-                                        {{ Illuminate\Support\Str::limit($article->title, 15) }}
-                                    </p>
-                                </div>
-                                <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
-                            </a>
-                        </div>  
-                    @endforeach
-                </div>
-                <div class="w-full">
-                    <a href="{{ route('articleMore')}}" type="button" class="lg:mb-0 mb-2 font-bold text-center hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_100rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">View More</a>
+            <div class="w-full bg-white">
+                <div class="lg:w-4/5 w-2/3 bg-white mx-auto mt-5 ">
+                    <div class="flex items-center mt-2 flex-wrap pt-4">
+                        @foreach($articles as $key => $article)
+                            @if($loop->iteration == 5)
+                                @break
+                            @endif
+                            <div class="w-full xl:w-1/4 p-6 flex flex-col">
+                                <a href="{{ route('articlePage', $article->id)}}" class="border-b-4 border-cyan-600/30 shadow-sm p-2 ">
+                                    <img class=" w-full object-cover lg:h-[13rem] h-[10rem] py-1 hover:drop-shadow-md" src="{{ asset('uploads/article/'.($article->image))}}">
+                                    <div class="pt-3 flex items-center justify-between overflow-hidden">
+                                        <p class="text-gray-900 font-sm">
+                                            {{ Illuminate\Support\Str::limit($article->title, 15) }}
+                                        </p>
+                                    </div>
+                                    <p class="pt-1 text-gray-900/30 text-xs">{{$article->date}}</p>
+                                </a>
+                            </div>  
+                        @endforeach
+                    </div>
+                    <div class="w-full">
+                        <a href="{{ route('articleMore')}}" type="button" class="lg:mb-0 mb-2 font-bold text-center hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_100rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">View More</a>
+                    </div>
                 </div>
             </div>
         </div>

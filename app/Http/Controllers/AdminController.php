@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\File;
 use App\Models\User;
 use Carbon\Carbon;
+use Spatie\ImageOptimizer\OptimizerChainFactory;
 use DB;
 
 class AdminController extends Controller
@@ -57,7 +58,7 @@ class AdminController extends Controller
         $res = $article->save();
 
         $art = Article::find($article->id);
-        
+        $optimizerChain = OptimizerChainFactory::create();
         if($request->hasfile('image'))
         {
             $dest = 'uploads/article/'.$art->image;
@@ -70,9 +71,11 @@ class AdminController extends Controller
             $filename = $art->id.'.'.$extension;
             $file->move('uploads/article/', $filename);
             $art->image = $filename;
+            $optimizerChain->optimize('uploads/article/'.$filename);
         }
         $res = $art->update();
-
+       
+        $optimizerChain->optimize( public_path('uploads/article/'.$filename));
         return back();
     }
 
@@ -103,6 +106,7 @@ class AdminController extends Controller
             $filename = $art->id.'.'.$extension;
             $file->move('uploads/article/', $filename);
             $art->image = $filename;
+            
         }
         $res = $art->update();
 
