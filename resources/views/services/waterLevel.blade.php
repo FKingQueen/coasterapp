@@ -62,7 +62,7 @@
 </div>   -->
 <div id="map" class="h-[54rem]"></div>
 
-<div class="pac-card w-3/5 lg:w-2/5 mt-8 lg:mr-40 mr-2" id="pac-card">
+<div class="pac-card w-3/5 lg:w-2/5 mt-8 lg:mr-40 mr-2 h-[40rem]" id="pac-card" style="overflow-x: hidden; overflow-y: auto;">
   <div>
     <div id="title" class="text-center"><div></div></div>
     <div></div>
@@ -1750,8 +1750,8 @@
         // document.getElementById('graph').innerHTML = "Ilocos Norte";
         // document.getElementById('video').innerHTML = "Ilocos Norte";
         if(typhoonRecords[i].typhoon_id == typhoon.value && document.getElementById('title').innerHTML == provinces[i].name){
-          document.getElementById('description').innerHTML = typhoonRecords[i].title;
-          document.getElementById('graph').innerHTML = typhoonRecords[i].graph;
+          document.getElementById('description').innerHTML = typhoonRecords[i].link;
+          document.getElementById('graph').innerHTML = typhoonRecords[i].link;
           document.getElementById('video').innerHTML = typhoonRecords[i].link;
           // console.log(typhoonRecords[i].typhoon_id);
         }

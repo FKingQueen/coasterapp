@@ -29,12 +29,6 @@
     <!-- CSS Carousel  -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 
-    <style>
-        html {
-  scroll-behavior: smooth;
-}
-
-    </style>
 
     
 </head>
@@ -58,50 +52,50 @@
             </div>
         </div>
         <!-- Navbar start -->
-          <nav id="navbar" style="transition: 0.6s;" class=" flex w-full bg-[#0d2247] lg:px-20 md:px-3 sm:px-1 border-y-4 border-cyan-900 ">
+          <nav id="navbar" style="transition: 0.6s;" class="relative z-30 flex w-full bg-[#0d2247] lg:px-20 md:px-3 sm:px-1 border-y-4 border-cyan-900 ">
             <div class="px-5 xl:px-12  flex w-full justify-evenly {{ route('login') == url()->current() || route('register') ==  url()->current() ? 'hidden' : '' }}">
                 <!-- Nav Links -->
-                <div id="navButton" style="display: none;">
+                <div id="navButton" style="">
                     <div class=" lg:flex text-white font-normal font-heading w-full ">
                         <!-- About -->
-                            <a href="/" class="py-4 px-4 flex text-white font-bold hover:bg-sky-700 
+                            <a href="/" class="py-4 px-4 flex text-white font-semibold hover:bg-sky-700 
                             cursor-pointer transition-colors duration-300 ">
                                 HOME
                             </a>
                         <!-- /About -->
                         <!-- Tidal & Wave -->
-                            <a href="/" class="py-4 px-4 flex text-white font-bold hover:bg-sky-700 
+                            <a href="/" class="py-4 px-4 flex text-white font-semibold hover:bg-sky-700 
                             cursor-pointer transition-colors duration-300 ">
                                 TIDAL & WAVE
                             </a>
                         <!-- /Tidal & Wave -->
                         <!-- Weather -->
-                            <a href="/" class="py-4 px-4 flex text-white font-bold hover:bg-sky-700 
+                            <a href="/" class="py-4 px-4 flex text-white font-semibold hover:bg-sky-700 
                             cursor-pointer transition-colors duration-300 ">
                                 WEATHER
                             </a>
                         <!-- /Weather -->
                         <!-- Map -->
-                            <div class="dropdown z-40  px-4 flex text-white font-bold hover:bg-sky-700 
+                            <div class="dropdown z-40  px-4 flex text-white font-semibold hover:bg-sky-700 
                             cursor-pointer transition-colors duration-300 " style="float:left;">
                             <button class="dropdown py-4">MAP</button>
-                                <div class="dropdown-content p-1 w-[10rem]" style="left:0;">
-                                    <a href="{{ route('map')}}" class="text-slate-900 hover:shadow-[inset_10rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">MAP</a>
-                                    <a href="{{ route('waterLevel')}}" class="text-slate-900 hover:shadow-[inset_10rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">WATER LEVEL</a>
+                                <div class="dropdown-content p-1 w-[10rem] font-normal " style="left:0;">
+                                    <a href="{{ route('map')}}" class="text-white hover:shadow-[inset_10rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">MAP</a>
+                                    <a href="{{ route('waterLevel')}}" class="text-white hover:shadow-[inset_10rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">WATER LEVEL</a>
                                 </div>
                             </div>
 
                         <!-- /Map -->
 
                         <!-- Project -->
-                        <div class="dropdown z-40  px-4 flex text-white font-bold hover:bg-sky-700 
+                        <div class="dropdown z-40  px-4 flex text-white font-semibold hover:bg-sky-700 
                             cursor-pointer transition-colors duration-300 " style="float:left;">
-                            <button class="dropdown py-4">PROJECT</button>
-                            <div class="dropdown-content p-1 w-[23rem]" style="left:0;">
-                                <a href="#" class="text-justify text-slate-900 hover:shadow-[inset_23rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">Coastal Erosion Trends and Management Strategies for Region 1</a>
-                                <a href="#" class="text-justify text-slate-900 hover:shadow-[inset_23rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">Assesment Monitoring, and Prediction of Coastal Flooding of Selected Municipalities in Region 1</a>
-                                <a href="#" class="text-justify text-slate-900 hover:shadow-[inset_23rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">Development of Science-based Engineering Approach to Coastal Prediction in Region 1</a>
-                                <a href="#" class="text-justify text-slate-900 hover:shadow-[inset_23rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">Enhancing Coastal Design and Infrastructure Intervention through the Establishment of Wave Testing Facility</a>
+                            <button class="dropdown py-4 ">PROJECT</button>
+                            <div class="dropdown-content p-1 w-[23rem] font-normal " style="left:0;">
+                                <a href="#" class="text-white text-justify  hover:shadow-[inset_23rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">Coastal Erosion Trends and Management Strategies for Region 1</a>
+                                <a href="#" class="text-white text-justify  hover:shadow-[inset_23rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">Assesment Monitoring, and Prediction of Coastal Flooding of Selected Municipalities in Region 1</a>
+                                <a href="#" class="text-white text-justify  hover:shadow-[inset_23rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">Development of Science-based Engineering Approach to Coastal Prediction in Region 1</a>
+                                <a href="#" class="text-white text-justify  hover:shadow-[inset_23rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">Enhancing Coastal Design and Infrastructure Intervention through the Establishment of Wave Testing Facility</a>
                             </div>
                         </div>
                         <!-- /Project -->
@@ -109,7 +103,7 @@
                 </div>
 
                 <!-- Search Bar -->
-                    <button id="btnSearchrToggler" onclick="topFunction()" type="button" class=" text-2xl text-white hover:text-gray-200 lg:mr-0 mr-8">
+                    <button id="btnSearchrToggler" type="button" class=" text-2xl text-white hover:text-gray-200 lg:mr-0 mr-8">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 focus:outline outline-offset-2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                         </svg>
@@ -124,35 +118,29 @@
 
 
         <!-- Search Bar start-->
-          <div id="containerSidebar" class="z-20" style="display: none;">
-              <div class="navbar-menu relative z-20 flex justify-center ">
-                  <nav id="sidebar" class="absolute flex lg:w-2/4 w-full -translate-y-full flex-col overflow-y-auto bg-white ">
-                      <!-- one category / navigation group -->
-                        <div class="px-5 py-2">
-                            <div class="relative text-sm bg-transparent text-gray-800">
-                                <div class="flex items-center border-b border-b-2 border-gray-500 py-2">
-                                    <form action="{{ route('searchArticle') }}" method="GET" class="w-full">
-                                        @csrf
-                                        <input name="searchInput" required class="bg-transparent w-full leading-tight focus:outline-none" type="text" placeholder="Search Updates & Projects">
-                                        <button type="submit"  class="absolute right-0 top-0 mt-3 mr-4">
-                                            <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
-                                                <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
-                                            </svg>
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
+            <!-- <div  class="navbar-menu relative z-40 flex justify-center ">
+                <nav id="sidebar" class="absolute flex lg:w-2/4 w-full -translate-y-full flex-col overflow-y-auto bg-white ">
+                    <div class="px-5 py-2">
+                        <div class="flex items-center border-b border-b-2 border-gray-500 py-2">
+                            <form action="{{ route('searchArticle') }}" method="GET" class="w-full">
+                                @csrf
+                                <input name="searchInput" required class="bg-transparent w-full leading-tight focus:outline-none" type="text" placeholder="Search Updates & Projects">
+                                <button type="submit"  class="absolute right-0 top-0 mt-3 mr-4">
+                                    <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
+                                        <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
+                                    </svg>
+                                </button>
+                            </form>
                         </div>
-                      <!-- navigation group end-->
-                  </nav>
-              </div>
-          </div>
+                    </div>
+                </nav>
+            </div> -->
         <!-- Search Bar end -->
           <div id="articleContent">
             @yield('content')
           </div>
         <!-- Footer -->
-          <footer id="footer" style="display: none;" class="bg-white dark:bg-gray-800">
+          <footer id="footer" style="" class="bg-white dark:bg-gray-800">
             <div id="contact" class="max-w-screen-xl mx-auto lg:py-5 md:p-8 lg:p-10">
               <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-2">
                   <div class="place-content-center grid ">
@@ -209,51 +197,42 @@
 </body>
 
 <!-- Navigation Bar -->
-<script>
-    $(window).scroll(function (event) {
-    var scroll = $(window).scrollTop();
-    CH =  $("#navbar").height();
-    TV =  $("#topView").height();
+    <script>
+        $(window).scroll(function (event) {
+            var scroll = $(window).scrollTop();
+            CH =  $("#navbar").height();
+            TV =  $("#topView").height();
 
-    // console.log(TV);
-    // console.log(scroll);
-
-    if (scroll > TV) {
-    // document.getElementById("navbar").style.top = "0";
-        document.getElementById("navbar").style.top = 0 ;
-        document.getElementById("navbar").style.zIndex = 50;
-        document.getElementById("navbar").style.position = "fixed";
-    }else{
-        console.log("false");
-        document.getElementById("navbar").style.position = "relative";
-    }
-});
-</script>
+            if (scroll > TV) {
+                document.getElementById("navbar").style.top = 0 ;
+                document.getElementById("navbar").style.zIndex = 50;
+                document.getElementById("navbar").style.position = "fixed";
+            }else{
+                console.log("false");
+                document.getElementById("navbar").style.position = "relative";
+            }
+        });
+    </script>
 <!-- /Navigation Bar -->
 
 <!-- Search Bar -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const navbar = document.getElementById("navbar");
         const sidebar = document.getElementById("sidebar");
         const btnSearchrToggler = document.getElementById("btnSearchrToggler");
-        const containerSidebar = document.getElementById("containerSidebar");
 
         btnSearchrToggler.addEventListener("click", (e) => {
             e.preventDefault();
             sidebar.classList.toggle("show");
-            containerSidebar.style.display = 'block';
-            
         });
-
-            // sidebar.style.top = parseInt(navbar.clientHeight) - 1 + "px";
+        var scroll = $(window).scrollTop();
+            CH =  $("#navbar").height();
+            TV =  $("#topView").height();
+        if (scroll > TV) {
+            document.getElementById("sidebar").style.position = "fixed";
+        }else{
+        }
     });
-
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-
   </script>
 <!-- /Search Bar -->
 <!-- Carousel -->
@@ -278,25 +257,5 @@
 
   </script>
 <!-- /Carousel -->
-<!-- Content -->
-    <script>
-            // var articleContent = document.getElementById("articleContent");
-
-            // articleContent.style.marginTop = parseInt(navbar.clientHeight) + "px";
-
-            // console.log(articleContent.style);
-    </script>
-<!-- Content -->
-<!-- Preload Effects-->
-  <script>
-        $(window).on("load",function(){
-        //   $(".loader-wrapper").fadeOut("slow");
-            $("#navButton").fadeIn();
-            $("#articleContent").fadeIn();
-            $("#footer").fadeIn();
-        });
-  </script>
-<!-- /Preload Effects-->
-
 
 </html>

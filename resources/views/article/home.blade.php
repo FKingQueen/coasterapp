@@ -65,7 +65,7 @@
                         @endforeach
                     </div>
                     <div class="w-full">
-                        <a href="{{ route('articleMore')}}" type="button" class="lg:mb-0 mb-2 font-bold text-center hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_100rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">View More</a>
+                        <a href="{{ route('articleMore')}}" type="button" class="lg:mb-0 mb-2 font-bold text-center hover:text-white text-zinc-500 w-full py-2.5 font-medium text-xs uppercase hover:shadow-[inset_105rem_0_0_0] hover:shadow-cyan-700 duration-[400ms,700ms] transition-[color,box-shadow]">View More</a>
                     </div>
                 </div>
             </div>
